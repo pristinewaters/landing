@@ -1,74 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pristine Waters Fly Fishing Destinations</title>
+    <title>Pristine Waters - Fly Fishing in Magallanes</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            background: url('https://source.unsplash.com/1600x900/?flyfishing,rivers') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
             text-align: center;
         }
-        header {
-            background-color: #003366;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
         }
-        .container {
-            padding: 20px;
+        h1 {
+            font-size: 3rem;
+            margin: 0;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #28a745;
+        p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+        .cta-button {
+            background: #4CAF50;
             color: white;
-            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
         }
-        .button:hover {
-            background-color: #218838;
-        }
-        footer {
-            background-color: #003366;
-            color: white;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 20px;
+        .cta-button:hover {
+            background: #45a049;
         }
     </style>
 </head>
 <body>
-    <header>
-        Pristine Waters Fly Fishing Patagonia
-    </header>
-
-    <div class="container">
-        <h2>Vive la mejor experiencia de pesca con mosca en la Patagonia</h2>
-        <p>Ofrecemos acceso exclusivo a ríos y lagos prístinos, guiados por expertos que garantizan una experiencia inolvidable.</p>
-        <p>Descubre la pesca de truchas, salmones y marrones migratorios en entornos naturales espectaculares.</p>
-
-        <h3>Nuestros Servicios</h3>
-        <ul>
-            <li>Full Day: $350 USD por persona (base 2 pax)</li>
-            <li>Half Day: $250 USD por persona (base 2 pax)</li>
-            <li>Paquete de 3 días: $1000 USD por persona (base 2 pax)</li>
-            <li>Paquete de 5 días: $2000 USD por persona (base 2 pax)</li>
-        </ul>
-
-        <p>Incluimos equipo de pesca, transporte en 4x4 y almuerzo en el campo con productos locales.</p>
-
-        <a href="mailto:contacto@pristinewaters.cl" class="button">Contáctanos</a>
+    <div class="overlay">
+        <h1>Pristine Waters</h1>
+        <p>Experience world-class fly fishing in the heart of Magallanes.</p>
+        <button class="cta-button" onclick="window.location.href='https://wa.me/yourwhatsappnumber'">
+            Chat with us now
+        </button>
     </div>
-
-    <footer>
-        © 2025 Pristine Waters Fly Fishing Patagonia | <a href="https://www.pristinewaters.cl" style="color: white;">www.pristinewaters.cl</a>
-    </footer>
 </body>
 </html>
