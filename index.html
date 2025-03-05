@@ -11,10 +11,20 @@
             background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn3cOOP3RfwHnaELx4HN495qDyXIbLX0wUIw&s') no-repeat center center/cover;
             height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             color: white;
             text-align: center;
+        }
+        .header, .footer {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
         }
         .overlay {
             background: rgba(0, 0, 0, 0.5);
@@ -44,14 +54,35 @@
         .cta-button:hover {
             background: #45a049;
         }
+        .footer a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .footer img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
-    <div class="overlay">
+    <div class="header">
         <h1>Pristine Waters</h1>
+    </div>
+    <div class="overlay">
+        <h1>Welcome to Pristine Waters</h1>
         <p>Experience world-class fly fishing in the heart of Magallanes.</p>
         <a class="cta-button" href="mailto:info@pristinewaters.cl">
             Contact us via Email
+        </a>
+    </div>
+    <div class="footer">
+        <p>Follow us on social media:</p>
+        <a href="https://es-la.facebook.com/pristine.waters.patagonia/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Facebook_Logo_2023.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
         </a>
     </div>
 </body>
