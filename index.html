@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pristine Waters - Fly Fishing in Magallanes</title>
+    
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Pristine Waters - Fly Fishing Destinations">
+    <meta property="og:description" content="Experience world-class fly fishing in the heart of Magallanes. Join us for unforgettable adventures in pristine waters!">
+    <meta property="og:image" content="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741270615/DSC_0002_kq5rpw.jpg">
+    <meta property="og:url" content="https://www.pristinewaters.cl">
+    <meta property="og:type" content="website">
+    
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741270615/DSC_0002_kq5rpw.jpg') no-repeat center center/cover;
+            background: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_10/v1741270615/DSC_0002_kq5rpw.jpg') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -16,6 +24,7 @@
             align-items: center;
             color: white;
             text-align: center;
+            transition: background-image 1s ease-in-out;
         }
         .header, .footer {
             width: 100%;
@@ -68,6 +77,13 @@
             vertical-align: middle;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.body.style.backgroundImage = "url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741270615/DSC_0002_kq5rpw.jpg')";
+            }, 500); // Carga la imagen de alta calidad después de 0.5 segundos
+        });
+    </script>
 </head>
 <body>
     <div class="header">
