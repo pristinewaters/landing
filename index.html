@@ -70,13 +70,8 @@
             justify-content: center;
             white-space: nowrap;
         }
-        .header-text span:first-child {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-        .header-text span:last-child {
-            font-size: 1.2rem;
+        .header-text {
+            display: none;
         }
         .menu-icon {
             display: flex;
@@ -126,15 +121,16 @@
         .cta-button:hover {
             background: rgba(0, 0, 0, 0.7);
         }
+        @media (max-width: 768px) {
+            .header-text {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters Logo" class="logo">
-        <div class="header-text">
-            <span>Pristine Waters</span>
-            <span>fly fishing destinations</span>
-        </div>
         <div class="menu-icon" onclick="toggleMenu()">
             <div></div>
             <div></div>
