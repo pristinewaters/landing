@@ -19,7 +19,7 @@
             padding: 0;
         }
         body::-webkit-scrollbar {
-            display: none; /* Oculta la barra en Chrome, Safari y Opera */
+            display: none;
         }
         
         body {
@@ -33,8 +33,8 @@
             color: white;
             text-align: center;
             overflow: auto;
-            scrollbar-width: none; /* Oculta la barra en Firefox */
-            -ms-overflow-style: none; /* Oculta la barra en IE y Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
         .header {
             width: 100%;
@@ -66,17 +66,17 @@
             text-align: center;
             flex-grow: 1;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            align-items: baseline;
+            justify-content: center;
+            white-space: nowrap;
         }
-        .header h1 {
-            margin: 0;
-            font-size: 2rem;
+        .header-text span:first-child {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-right: 8px;
         }
-        .header p {
-            margin: 0;
-            font-size: 1rem;
-            text-transform: lowercase;
+        .header-text span:last-child {
+            font-size: 1.2rem;
         }
         .menu-icon {
             display: flex;
@@ -109,15 +109,8 @@
         .menu a:hover {
             text-decoration: underline;
         }
-        .overlay {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 2rem;
-            border-radius: 10px;
-            margin-top: 120px;
-            max-width: 80%;
-        }
         .cta-button {
-            background: #8B5E3C;
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 15px 30px;
             font-size: 1.2rem;
@@ -127,32 +120,42 @@
             transition: background 0.3s;
             text-decoration: none;
             display: inline-block;
+            position: fixed;
+            bottom: 140px;
         }
         .cta-button:hover {
-            background: #6F4A2F;
-        }
-        .footer img {
-            width: 30px;
-            height: 30px;
-            vertical-align: middle;
-        }
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .desktop-hide {
-                display: none;
-            }
-            .header {
-                justify-content: space-between;
-                padding: 0.5rem 1rem;
-            }
-            .header-text {
-                display: none;
-            }
-            .logo {
-                height: 40px;
-            }
+            background: rgba(0, 0, 0, 0.7);
         }
     </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters Logo" class="logo">
+        <div class="header-text">
+            <span>Pristine Waters</span>
+            <span>fly fishing destinations</span>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu" id="menu">
+            <a href="#">Policy</a>
+            <a href="#">About Us</a>
+            <a href="#">Destinations</a>
+            <a href="#">Gallery</a>
+        </div>
+    </div>
+    <a class="cta-button" href="mailto:info@pristinewaters.cl">
+        Contact us via Email
+    </a>
+    <div class="footer">
+        <p>Follow us on social media:</p>
+        <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="30" height="30">
+        </a>
+    </div>
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
@@ -167,36 +170,5 @@
             }
         });
     </script>
-</head>
-<body>
-    <div class="header">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters Logo" class="logo">
-        <div class="header-text">
-            <h1>Pristine Waters</h1>
-            <p>fly fishing destinations</p>
-        </div>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="menu" id="menu">
-            <a href="#">Policy</a>
-            <a href="#">About Us</a>
-            <a href="#">Destinations</a>
-            <a href="#">Gallery</a>
-        </div>
-    </div>
-    <div class="overlay">
-        <a class="cta-button" href="mailto:info@pristinewaters.cl">
-            Contact us via Email
-        </a>
-    </div>
-    <div class="footer">
-        <p>Follow us on social media:</p>
-        <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-        </a>
-    </div>
 </body>
 </html>
