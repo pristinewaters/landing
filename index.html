@@ -16,7 +16,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_10/v1741270615/DSC_0002_kq5rpw.jpg') no-repeat center center/cover;
+            background: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741270615/DSC_0002_kq5rpw.jpg') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -24,33 +24,76 @@
             align-items: center;
             color: white;
             text-align: center;
-            transition: background-image 1s ease-in-out;
         }
-        .header, .footer {
+        .header {
             width: 100%;
             background: rgba(0, 0, 0, 0.7);
-            padding: 1rem 0;
+            padding: 1rem 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo {
+            height: 50px;
+            border-radius: 10px;
+        }
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
         }
         .header h1 {
             margin: 0;
             font-size: 2rem;
         }
+        .header p {
+            margin: 0;
+            font-size: 1rem;
+            text-transform: lowercase;
+        }
+        .menu-icon {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 4px 0;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: right;
+        }
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
         .overlay {
             background: rgba(0, 0, 0, 0.5);
             padding: 2rem;
             border-radius: 10px;
-            margin-top: 150px; /* Baja el cuadro más abajo */
+            margin-top: 120px;
         }
-        h1 {
+        .overlay p {
             font-size: 2rem;
-            margin: 0;
-        }
-        p {
-            font-size: 1.5rem;
-            margin: 1rem 0;
+            margin: 0 0 20px 0;
         }
         .cta-button {
-            background: #8B5E3C; /* Color tierra elegante */
+            background: #8B5E3C;
             color: white;
             padding: 15px 30px;
             font-size: 1.2rem;
@@ -62,14 +105,13 @@
             display: inline-block;
         }
         .cta-button:hover {
-            background: #6F4A2F; /* Un tono más oscuro al pasar el mouse */
+            background: #6F4A2F;
         }
-        .footer p {
-            font-size: 1rem;
-        }
-        .footer a {
-            margin: 0 10px;
-            display: inline-block;
+        .footer {
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            text-align: center;
         }
         .footer img {
             width: 30px;
@@ -78,16 +120,44 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(function() {
-                document.body.style.backgroundImage = "url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741270615/DSC_0002_kq5rpw.jpg')";
-            }, 500); // Carga la imagen de alta calidad después de 0.5 segundos
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        document.addEventListener("mousemove", function(event) {
+            var menu = document.getElementById("menu");
+            var menuIcon = document.querySelector(".menu-icon");
+            var menuRect = menu.getBoundingClientRect();
+            var centerX = menuRect.left + menuRect.width / 2;
+            var centerY = menuRect.top + menuRect.height / 2;
+            
+            if (event.clientX > centerX * 1.5 || event.clientY > centerY * 1.5) {
+                setTimeout(() => {
+                    menu.style.display = "none";
+                }, 500);
+            }
         });
     </script>
 </head>
 <body>
     <div class="header">
-        <h1>Pristine Waters</h1>
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters Logo" class="logo">
+        <div class="header-text">
+            <h1>Pristine Waters</h1>
+            <p>fly fishing destinations</p>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu" id="menu">
+            <a href="#">Policy</a>
+            <a href="#">About Us</a>
+            <a href="#">Destinations</a>
+            <a href="#">Gallery</a>
+        </div>
     </div>
     <div class="overlay">
         <p>Fly Fishing Destinations</p>
