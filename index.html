@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fly fishing in Magallanes. Unforgettable adventures in pristine waters!">
-    <meta name="keywords" content="fly fishing, Patagonia fishing, Magallanes fishing trips, pristine waters">
-    <title>Fly Fishing in Magallanes | Pristine Waters</title>
-
+    <title>Pristine Waters | Fly Fishing</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: Arial, sans-serif; text-align: center; color: white; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { text-align: center; color: white; }
 
         .header {
             width: 100%;
@@ -26,7 +23,7 @@
             max-width: 1200px;
         }
 
-        .logo { height: 50px; border-radius: 10px; }
+        .logo { height: 50px; cursor: pointer; }
         .menu-icon { cursor: pointer; padding: 10px; }
         .menu-icon div { width: 30px; height: 4px; background-color: white; margin: 5px 0; }
 
@@ -44,6 +41,7 @@
             background-position: center;
         }
 
+        #home { background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1741270615/DSC_0002_kq5rpw.jpg'); }
         #policy { background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/8d573680-924d-43c8-801f-d3c3bea3ea41_k7o5fq.jpg'); }
         #about { background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1741281644/DSC_0526_elbqff.jpg'); }
         #destinations { background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1741355481/IMG_6299_tn7eei.heic'); }
@@ -52,12 +50,48 @@
         .content { background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px; max-width: 80%; }
 
         .hidden { display: none; }
+
+        /* DESTINATIONS */
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 20px; }
+        .grid img { width: 100%; cursor: pointer; border-radius: 5px; }
+
+        /* GALLERY CARRUSEL */
+        .gallery-container { width: 80%; margin: auto; overflow: hidden; position: relative; }
+        .gallery-slider { display: flex; transition: transform 0.5s ease-in-out; }
+        .gallery-slider img { width: 100%; border-radius: 5px; }
+
+        .btn-prev, .btn-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .btn-prev { left: 0; }
+        .btn-next { right: 0; }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            color: white;
+        }
+
+        .phone { display: flex; align-items: center; }
+        .phone img { width: 20px; margin-right: 5px; }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.webp" alt="Pristine Waters Logo" class="logo">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.webp" class="logo" onclick="showSection('home')">
         <div class="menu-icon" onclick="toggleMenu()">
             <div></div><div></div><div></div>
         </div>
@@ -69,57 +103,43 @@
         </nav>
     </header>
 
-    <div id="policy" class="section">
-        <div class="content">
-            <h2>Policy</h2>
-            <p>This website provides general information about our services. Refund Policy: No refunds after booking confirmation.</p>
-        </div>
+    <div id="home" class="section">
+        <div class="content"><h2>Welcome to Pristine Waters</h2></div>
+    </div>
+
+    <div id="policy" class="section hidden">
+        <div class="content"><h2>Policy</h2><p>Refund Policy: No refunds after booking confirmation.</p></div>
     </div>
 
     <div id="about" class="section hidden">
-        <div class="content">
-            <h2>About Us</h2>
-            <p>Pristine Waters is a premier fly-fishing travel agency offering unforgettable experiences in Magallanes.</p>
-        </div>
+        <div class="content"><h2>About Us</h2><p>Pristine Waters is a premier fly-fishing travel agency in Magallanes.</p></div>
     </div>
 
     <div id="destinations" class="section hidden">
-        <div class="content">
-            <h2>Destinations</h2>
-            <p>Explore 8 incredible fishing destinations, each with breathtaking scenery and world-class fly-fishing.</p>
-            <ul>
-                <li>📍 Destination 1</li>
-                <li>📍 Destination 2</li>
-                <li>📍 Destination 3</li>
-                <li>📍 Destination 4</li>
-                <li>📍 Destination 5</li>
-                <li>📍 Destination 6</li>
-                <li>📍 Destination 7</li>
-                <li>📍 Destination 8</li>
-            </ul>
+        <div class="grid">
+            <img src="https://via.placeholder.com/150" onclick="showDestinationInfo('Destination 1')">
+            <img src="https://via.placeholder.com/150" onclick="showDestinationInfo('Destination 2')">
+            <img src="https://via.placeholder.com/150" onclick="showDestinationInfo('Destination 3')">
         </div>
     </div>
 
     <div id="gallery" class="section hidden">
-        <div class="content">
-            <h2>Gallery</h2>
-            <p>Check out our amazing fishing adventures!</p>
+        <div class="gallery-container">
+            <button class="btn-prev" onclick="prevSlide()">❮</button>
+            <div class="gallery-slider">
+                <img src="https://via.placeholder.com/600">
+                <img src="https://via.placeholder.com/600">
+            </div>
+            <button class="btn-next" onclick="nextSlide()">❯</button>
         </div>
     </div>
 
+    <footer class="footer">
+        <div class="phone"><img src="https://cdn-icons-png.flaticon.com/512/483/483947.png">+569 - 79559776</div>
+    </footer>
+
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-        }
-
-        function showSection(sectionId) {
-            var sections = document.querySelectorAll(".section");
-            sections.forEach(section => section.classList.add("hidden"));
-
-            document.getElementById(sectionId).classList.remove("hidden");
-            toggleMenu();
-        }
+        function showSection(id) { document.querySelectorAll('.section').forEach(s => s.classList.add('hidden')); document.getElementById(id).classList.remove('hidden'); }
     </script>
 
 </body>
