@@ -6,7 +6,7 @@
     <title>Pristine Waters | Fly Fishing</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body { text-align: center; color: white; display: flex; flex-direction: column; min-height: 100vh; justify-content: space-between; background-color: black; }
+        body { text-align: center; color: white; background-color: black; }
 
         .header {
             width: 100%;
@@ -17,13 +17,11 @@
             justify-content: space-between;
             position: fixed;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             z-index: 1000;
-            max-width: 1200px;
         }
 
-        .logo { height: 50px; border-radius: 10px; cursor: pointer; }
+        .logo { height: 50px; border-radius: 10px; cursor: pointer; margin-left: 20px; }
         .menu-icon { cursor: pointer; padding: 10px; }
         .menu-icon div { width: 30px; height: 4px; background-color: white; margin: 5px 0; }
 
@@ -47,14 +45,8 @@
         #destinations { background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1741355481/IMG_6299_tn7eei.heic'); }
         #gallery { background-color: white; color: black; }
 
-        /* Ajuste móvil */
-        @media (max-width: 768px) {
-            #home { background-position: left; }
-        }
-
-        .content { background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px; max-width: 80%; }
-
         .hidden { display: none; }
+        .content { background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px; max-width: 80%; }
 
         /* FOOTER */
         .footer {
@@ -62,25 +54,16 @@
             background: rgba(0, 0, 0, 0.7);
             padding: 1rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             position: fixed;
             bottom: 0;
             left: 0;
             color: white;
             z-index: 1000;
-            flex-direction: column;
-            gap: 10px;
         }
 
-        .footer .icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .footer .icons img {
-            width: 30px;
-        }
+        .footer img { width: 30px; cursor: pointer; }
 
         /* CONTACT BUTTON */
         .cta-button {
@@ -94,7 +77,7 @@
             transition: background 0.3s;
             text-decoration: none;
             position: fixed;
-            bottom: 70px;
+            bottom: 80px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1001;
@@ -103,6 +86,20 @@
         .cta-button:hover {
             background: rgba(0, 0, 0, 0.7);
         }
+
+        /* DESTINATIONS GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+        .grid img { width: 100%; cursor: pointer; border-radius: 5px; }
+
+        /* GALLERY CARRUSEL */
+        .gallery-container { width: 80%; margin: auto; overflow: hidden; position: relative; }
+        .gallery-slider { display: flex; transition: transform 0.5s ease-in-out; }
+        .gallery-slider img { width: 100%; border-radius: 5px; }
 
     </style>
 </head>
@@ -123,30 +120,22 @@
 
     <a class="cta-button" href="mailto:info@pristinewaters.cl">Contact us via Email</a>
 
-    <div id="home" class="section">
-        <div class="content"><h2>Welcome to Pristine Waters</h2></div>
-    </div>
-
-    <div id="policy" class="section hidden">
-        <div class="content"><h2>Policy</h2><p>Refund Policy: No refunds after booking confirmation.</p></div>
-    </div>
-
-    <div id="about" class="section hidden">
-        <div class="content"><h2>About Us</h2><p>Pristine Waters is a premier fly-fishing travel agency in Magallanes.</p></div>
+    <div id="destinations" class="section hidden">
+        <div class="grid">
+            <img src="https://via.placeholder.com/150" onclick="alert('Destination 1 Info')">
+            <img src="https://via.placeholder.com/150" onclick="alert('Destination 2 Info')">
+            <img src="https://via.placeholder.com/150" onclick="alert('Destination 3 Info')">
+        </div>
     </div>
 
     <footer class="footer">
-        <div class="phone">
-            +569 - 79559776
-            <a href="https://wa.me/56979559776" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30px">
-            </a>
-        </div>
-        <div class="icons">
-            <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png">
-            </a>
-        </div>
+        <a href="https://wa.me/56979559776" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+        +569 - 79559776
+        <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png">
+        </a>
     </footer>
 
     <script>
