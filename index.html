@@ -58,6 +58,11 @@
             font-weight: bold;
             white-space: nowrap;
         }
+        @media (max-width: 768px) {
+            .header-text {
+                display: none;
+            }
+        }
         .menu-icon {
             display: flex;
             flex-direction: column;
@@ -101,6 +106,11 @@
             justify-content: center;
             gap: 15px;
         }
+        .footer .links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
         .footer img {
             width: 30px;
             height: 30px;
@@ -109,14 +119,14 @@
         .cta-button {
             background: rgba(0, 0, 0, 0.5);
             color: white;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 12px 25px;
+            font-size: 1rem;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s;
             text-decoration: none;
-            position: fixed;
+            position: absolute;
             bottom: 80px;
             left: 50%;
             transform: translateX(-50%);
