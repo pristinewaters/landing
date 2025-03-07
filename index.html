@@ -45,62 +45,18 @@
             align-items: center;
             justify-content: space-between;
             position: fixed;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            top: 0;
-        }
-        .footer {
-            width: 100%;
-            max-width: 1200px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
         }
         .logo {
             height: 50px;
             border-radius: 10px;
         }
         .header-text {
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 10px;
-        }
-        .header-text span:first-child {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             font-weight: bold;
-        }
-        .header-text span:last-child {
-            font-size: 1.2rem;
-            text-transform: lowercase;
-        }
-        .cta-button {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            position: fixed;
-            bottom: 100px;
-        }
-        .cta-button:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-        @media (max-width: 768px) {
-            .header-text {
-                display: none;
-            }
+            white-space: nowrap;
         }
         .menu-icon {
             display: flex;
@@ -133,20 +89,47 @@
         .menu a:hover {
             text-decoration: underline;
         }
+        .footer {
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
         .footer img {
             width: 30px;
             height: 30px;
             display: inline-block;
+        }
+        .cta-button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .cta-button:hover {
+            background: rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
     <div class="header">
         <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters Logo" class="logo">
-        <div class="header-text">
-            <span>Pristine Waters</span>
-            <span>fly fishing destinations</span>
-        </div>
+        <div class="header-text">Pristine Waters - Fly Fishing Destinations</div>
         <div class="menu-icon" onclick="toggleMenu()">
             <div></div>
             <div></div>
@@ -159,9 +142,9 @@
             <a href="#">Gallery</a>
         </div>
     </div>
-    <a class="cta-button" href="mailto:info@pristinewaters.cl">
-        Contact us via Email
-    </a>
+    
+    <a class="cta-button" href="mailto:info@pristinewaters.cl">Contact us via Email</a>
+    
     <div class="footer">
         <p>Follow us:</p>
         <div class="links">
@@ -170,19 +153,12 @@
             </a>
         </div>
     </div>
+    
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
-        
-        document.addEventListener("click", function(event) {
-            var menu = document.getElementById("menu");
-            var menuIcon = document.querySelector(".menu-icon");
-            if (menu.style.display === "block" && !menu.contains(event.target) && !menuIcon.contains(event.target)) {
-                menu.style.display = "none";
-            }
-        });
     </script>
 </body>
 </html>
