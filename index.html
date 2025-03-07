@@ -6,7 +6,7 @@
     <title>Pristine Waters | Fly Fishing</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body { text-align: center; color: white; display: flex; flex-direction: column; min-height: 100vh; justify-content: space-between; }
+        body { text-align: center; color: white; display: flex; flex-direction: column; min-height: 100vh; justify-content: space-between; background-color: black; }
 
         .header {
             width: 100%;
@@ -70,10 +70,17 @@
             color: white;
             z-index: 1000;
             flex-direction: column;
+            gap: 10px;
         }
 
-        .phone { display: flex; align-items: center; gap: 10px; }
-        .whatsapp-link img { width: 30px; }
+        .footer .icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer .icons img {
+            width: 30px;
+        }
 
         /* CONTACT BUTTON */
         .cta-button {
@@ -97,24 +104,6 @@
             background: rgba(0, 0, 0, 0.7);
         }
 
-        /* GALLERY CARRUSEL */
-        .gallery-container { width: 80%; margin: auto; overflow: hidden; position: relative; }
-        .gallery-slider { display: flex; transition: transform 0.5s ease-in-out; }
-        .gallery-slider img { width: 100%; border-radius: 5px; }
-
-        .btn-prev, .btn-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .btn-prev { left: 0; }
-        .btn-next { right: 0; }
     </style>
 </head>
 <body>
@@ -134,25 +123,28 @@
 
     <a class="cta-button" href="mailto:info@pristinewaters.cl">Contact us via Email</a>
 
-    <div id="gallery" class="section hidden">
-        <div class="gallery-container">
-            <button class="btn-prev" onclick="prevSlide()">❮</button>
-            <div class="gallery-slider">
-                <img src="https://via.placeholder.com/600">
-                <img src="https://via.placeholder.com/600">
-                <img src="https://via.placeholder.com/600">
-                <img src="https://via.placeholder.com/600">
-                <img src="https://via.placeholder.com/600">
-            </div>
-            <button class="btn-next" onclick="nextSlide()">❯</button>
-        </div>
+    <div id="home" class="section">
+        <div class="content"><h2>Welcome to Pristine Waters</h2></div>
+    </div>
+
+    <div id="policy" class="section hidden">
+        <div class="content"><h2>Policy</h2><p>Refund Policy: No refunds after booking confirmation.</p></div>
+    </div>
+
+    <div id="about" class="section hidden">
+        <div class="content"><h2>About Us</h2><p>Pristine Waters is a premier fly-fishing travel agency in Magallanes.</p></div>
     </div>
 
     <footer class="footer">
         <div class="phone">
             +569 - 79559776
-            <a class="whatsapp-link" href="https://wa.me/56979559776" target="_blank">
+            <a href="https://wa.me/56979559776" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30px">
+            </a>
+        </div>
+        <div class="icons">
+            <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png">
             </a>
         </div>
     </footer>
@@ -161,6 +153,12 @@
         function toggleMenu() {
             var menu = document.getElementById("menu");
             menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            toggleMenu(); 
         }
 
         document.addEventListener("click", function(event) {
