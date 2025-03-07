@@ -38,6 +38,7 @@
             text-align: center;
             overflow: auto;
             scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .header {
@@ -53,6 +54,7 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
+            width: 100%;
         }
 
         .logo {
@@ -120,9 +122,10 @@
             transition: background 0.3s;
             text-decoration: none;
             position: absolute;
-            bottom: 80px;
+            bottom: 90px;
             left: 50%;
             transform: translateX(-50%);
+            z-index: 1001;
         }
 
         .cta-button:hover {
@@ -137,4 +140,67 @@
             position: fixed;
             bottom: 0;
             display: flex;
-            align-items:
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .footer .links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer img {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.webp" alt="Pristine Waters Logo" class="logo" loading="lazy">
+        <div class="header-text">Pristine Waters - Fly Fishing Destinations</div>
+        <button class="menu-icon" aria-label="Open menu" onclick="toggleMenu()" role="button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <nav class="menu" id="menu">
+            <a href="#">Policy</a>
+            <a href="#">About Us</a>
+            <a href="#">Destinations</a>
+            <a href="#">Gallery</a>
+        </nav>
+    </header>
+    
+    <a class="cta-button" href="mailto:info@pristinewaters.cl">Contact us via Email</a>
+
+    <footer class="footer">
+        <p>Follow us:</p>
+        <div class="links">
+            <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" loading="lazy">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        document.addEventListener("click", function(event) {
+            var menu = document.getElementById("menu");
+            var menuIcon = document.querySelector(".menu-icon");
+
+            if (menu.style.display === "block" && !menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
