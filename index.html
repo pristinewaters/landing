@@ -3,42 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pristine Waters - Fly Fishing in Magallanes</title>
-    
-    <!-- Open Graph meta tags for social media sharing -->
-    <meta property="og:title" content="Pristine Waters - Fly Fishing Destinations">
-    <meta property="og:description" content="Experience world-class fly fishing in the heart of Magallanes. Join us for unforgettable adventures in pristine waters!">
-    <meta property="og:image" content="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741270615/DSC_0002_kq5rpw.jpg">
-    <meta property="og:url" content="https://www.pristinewaters.cl">
-    <meta property="og:type" content="website">
-    
+    <title>Pristine Waters | Fly Fishing</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body::-webkit-scrollbar {
-            display: none;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            background: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741270615/DSC_0002_kq5rpw.jpg') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            text-align: center;
-            overflow: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { text-align: center; color: white; background-color: black; }
+
         .header {
             width: 100%;
-            max-width: 1200px;
             background: rgba(0, 0, 0, 0.7);
             padding: 1rem;
             display: flex;
@@ -46,77 +17,70 @@
             justify-content: space-between;
             position: fixed;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             z-index: 1000;
         }
-        .logo {
-            height: 50px;
-            border-radius: 10px;
-        }
-        .header-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-        @media (max-width: 768px) {
-            .header-text {
-                display: none;
-            }
-        }
-        .menu-icon {
+
+        .logo { height: 50px; border-radius: 10px; cursor: pointer; margin-left: 20px; }
+        .menu-icon { cursor: pointer; padding: 10px; }
+        .menu-icon div { width: 30px; height: 4px; background-color: white; margin: 5px 0; }
+
+        .menu { display: none; position: absolute; top: 60px; right: 20px; background: rgba(0, 0, 0, 0.8); padding: 10px; border-radius: 5px; }
+        .menu a { display: block; color: white; text-decoration: none; padding: 8px 15px; }
+        .menu a:hover { text-decoration: underline; }
+
+        .section {
+            width: 100%;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
         }
-        .menu-icon div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 4px 0;
+
+        #home { background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1741270615/DSC_0002_kq5rpw.jpg'); }
+        #policy { background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/8d573680-924d-43c8-801f-d3c3bea3ea41_k7o5fq.jpg'); }
+        #about { background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1741281644/DSC_0526_elbqff.jpg'); }
+        #destinations { background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1741355481/IMG_6299_tn7eei.heic'); }
+        #gallery { background-color: white; color: black; }
+
+        .hidden { display: none; }
+        .content { background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px; max-width: 80%; }
+
+        /* DESTINATIONS GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
         }
-        .menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            text-align: right;
-        }
-        .menu a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-        }
-        .menu a:hover {
-            text-decoration: underline;
-        }
+        .grid img { width: 100%; cursor: pointer; border-radius: 5px; }
+
+        /* GALLERY CARRUSEL */
+        .gallery-container { width: 80%; margin: auto; overflow: hidden; position: relative; }
+        .gallery-slider { display: flex; transition: transform 0.5s ease-in-out; }
+        .gallery-slider img { width: 100%; border-radius: 5px; }
+
+        /* FOOTER */
         .footer {
             width: 100%;
-            max-width: 1200px;
             background: rgba(0, 0, 0, 0.7);
             padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: fixed;
             bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            left: 0;
+            color: white;
+            z-index: 1000;
+            gap: 20px;
         }
-        .footer .links {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .footer img {
-            width: 30px;
-            height: 30px;
-            display: inline-block;
-        }
+
+        .footer img { width: 30px; cursor: pointer; }
+
+        /* CONTACT BUTTON */
         .cta-button {
             background: rgba(0, 0, 0, 0.5);
             color: white;
@@ -127,56 +91,66 @@
             cursor: pointer;
             transition: background 0.3s;
             text-decoration: none;
-            position: absolute;
+            position: fixed;
             bottom: 80px;
             left: 50%;
             transform: translateX(-50%);
+            z-index: 1001;
         }
+
         .cta-button:hover {
             background: rgba(0, 0, 0, 0.7);
         }
+
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters Logo" class="logo">
-        <div class="header-text">Pristine Waters - Fly Fishing Destinations</div>
+
+    <header class="header">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.webp" class="logo" onclick="showSection('home')">
         <div class="menu-icon" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div></div><div></div><div></div>
         </div>
-        <div class="menu" id="menu">
-            <a href="#">Policy</a>
-            <a href="#">About Us</a>
-            <a href="#">Destinations</a>
-            <a href="#">Gallery</a>
-        </div>
-    </div>
-    
+        <nav class="menu" id="menu">
+            <a href="#" onclick="showSection('policy')">Policy</a>
+            <a href="#" onclick="showSection('about')">About Us</a>
+            <a href="#" onclick="showSection('destinations')">Destinations</a>
+            <a href="#" onclick="showSection('gallery')">Gallery</a>
+        </nav>
+    </header>
+
     <a class="cta-button" href="mailto:info@pristinewaters.cl">Contact us via Email</a>
-    
-    <div class="footer">
-        <p>Follow us:</p>
-        <div class="links">
-            <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
-            </a>
+
+    <div id="destinations" class="section hidden">
+        <div class="grid">
+            <img src="https://via.placeholder.com/150" onclick="alert('Destination 1 Info')">
+            <img src="https://via.placeholder.com/150" onclick="alert('Destination 2 Info')">
+            <img src="https://via.placeholder.com/150" onclick="alert('Destination 3 Info')">
         </div>
     </div>
-    
+
+    <footer class="footer">
+        <a href="https://wa.me/56979559776" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </a>
+        +569 - 79559776
+        <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png">
+        </a>
+    </footer>
+
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
-            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
         }
-        document.addEventListener("click", function(event) {
-            var menu = document.getElementById("menu");
-            var menuIcon = document.querySelector(".menu-icon");
-            if (menu.style.display === "block" && !menu.contains(event.target) && !menuIcon.contains(event.target)) {
-                menu.style.display = "none";
-            }
-        });
+
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            toggleMenu(); 
+        }
     </script>
+
 </body>
 </html>
