@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pristine Waters - Fly Fishing in Magallanes</title>
 
-    <!-- Open Graph meta tags -->
+    <!-- Open Graph meta tags for social media sharing -->
     <meta property="og:title" content="Pristine Waters - Fly Fishing Destinations">
     <meta property="og:description" content="Experience world-class fly fishing in the heart of Magallanes. Join us for unforgettable adventures in pristine waters!">
     <meta property="og:image" content="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741270615/DSC_0002_kq5rpw.jpg">
@@ -16,149 +16,111 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: Arial, sans-serif;
             background: url('https://res.cloudinary.com/dypiqewb8/image/upload/q_10/v1741270615/DSC_0002_kq5rpw.jpg') no-repeat center center/cover;
-            height: 100vh;
-            color: white;
-            text-align: center;
-            position: relative;
+            height: 100vh; color: white; text-align: center; position: relative;
             transition: background-image 0.5s ease-in-out;
         }
-        .header {
-            width: 100%;
-            max-width: 1200px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
+        .header, .footer {
+            width: 100%; max-width: 1200px;
+            background: rgba(0, 0, 0, 0.7); padding: 1rem;
+            display: flex; align-items: center; justify-content: space-between;
+            position: fixed; left: 50%; transform: translateX(-50%); z-index: 1000;
         }
-        .logo {
-            height: 50px;
-            border-radius: 10px;
-        }
-        .header-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .menu-icon div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 4px 0;
-        }
+        .header { top: 0; }
+        .footer { bottom: 0; justify-content: center; gap: 20px; }
+        .logo { height: 50px; border-radius: 10px; cursor: pointer; }
+        .menu-icon div { width: 30px; height: 4px; background-color: white; margin: 4px 0; }
         .menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 0.5rem;
+            display: none; position: absolute; top: 60px; right: 20px;
+            background: rgba(0,0,0,0.8); padding: 0.5rem;
         }
-        .menu a {
-            color: white;
-            display: block;
-            padding: 0.5rem;
-            text-decoration: none;
-        }
-        .menu a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            width: 100%;
-            max-width: 1200px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .footer a {
-            color: white;
-            font-size: 1.5rem;
-        }
+        .menu a { color: white; display: block; padding: 0.5rem; text-decoration: none; }
+        .menu a:hover { text-decoration: underline; }
         .cta-button {
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            position: absolute;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7); color: white; padding: 12px 20px;
+            border-radius: 5px; text-decoration: none; position: fixed;
+            bottom: 100px; left: 50%; transform: translateX(-50%); z-index: 999;
+        }
+        .section {
+            display: none;
+            margin-top: 120px;
+            padding: 20px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .destination {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters Logo" class="logo">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" class="logo" onclick="showHome()">
         <div class="header-text">Pristine Waters - Fly Fishing Destinations</div>
         <div class="menu-icon" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div></div><div></div><div></div>
         </div>
         <div class="menu" id="menu">
-            <a href="#">About Us</a>
-            <a href="#">Destinations</a>
-            <a href="#">Gallery</a>
-            <a href="#">Contact</a>
+            <a href="#" onclick="showSection('about')">About Us</a>
+            <a href="#" onclick="showSection('destinations')">Destinations</a>
+            <a href="#" onclick="showSection('gallery')">Gallery</a>
         </div>
     </div>
 
     <a class="cta-button" href="mailto:info@pristinewaters.cl">Contact us via Email</a>
 
+    <div class="section" id="about">
+        <h2>About Us</h2>
+        <p>We offer unforgettable fly fishing experiences in Patagonia, guided by our commitment to sustainability and conservation.</p>
+    </div>
+
+    <div class="section" id="destinations">
+        <h2>Destinations</h2>
+        <div class="destination">Destino 1</div>
+        <div class="destination">Destino 2</div>
+        <div class="destination">Destino 3</div>
+        <div class="destination">Destino 4</div>
+        <div class="destination">Destino 5</div>
+        <div class="destination">Destino 6</div>
+    </div>
+
+    <div class="section" id="gallery">
+        <h2>Gallery</h2>
+        <p>Coming soon: our best fly fishing moments.</p>
+    </div>
+
     <div class="footer">
         <p>Follow us:</p>
-        <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://wa.me/56979559776" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:+56979559776">
-            <i class="fas fa-phone"></i>
-        </a>
+        <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/56979559776" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+56979559776"><i class="fas fa-phone"></i></a>
     </div>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        function toggleMenu(){
+            const menu=document.getElementById('menu');
+            menu.style.display=menu.style.display==='block'?'none':'block';
         }
 
-        document.addEventListener("click", function(event) {
-            const menu = document.getElementById("menu");
-            const menuIcon = document.querySelector(".menu-icon");
-            if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-                menu.style.display = "none";
-            }
-        });
+        function showSection(section){
+            document.querySelectorAll('.section').forEach(sec=>sec.style.display='none');
+            document.getElementById(section).style.display='block';
+            menu.style.display='none';
+        }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const img = new Image();
-            img.src = 'https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741270615/DSC_0002_kq5rpw.jpg';
-            img.onload = () => {
-                document.body.style.backgroundImage = `url('${img.src}')`;
-            };
-        });
+        function showHome(){
+            document.querySelectorAll('.section').forEach(sec => sec.style.display='none');
+        }
     </script>
 </body>
 </html>
