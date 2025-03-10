@@ -70,10 +70,24 @@
             background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/64673_z24lg6.jpg');
         }
         #gallery {
-            background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/gallery_image.jpg');
+            background: black;
+            padding: 60px 20px;
         }
-        #contact {
-            background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/8d573680-924d-43c8-801f-d3c3bea3ea41_k7o5fq.jpg');
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-container img:hover {
+            transform: scale(1.05);
         }
         .cta-button {
             background: rgba(0, 0, 0, 0.8);
@@ -93,10 +107,14 @@
             padding: 20px;
             margin-top: 40px;
         }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
         .social-icons a {
             color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
+            font-size: 2rem;
             transition: color 0.3s ease-in-out;
         }
         .social-icons a:hover {
@@ -133,6 +151,12 @@
     <div id="gallery" class="section">
         <h2>Gallery</h2>
         <p>Discover moments from our adventures.</p>
+        <div class="gallery-container">
+            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_400/sample_fishing1.jpg" alt="Fly fishing in Patagonia">
+            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_400/sample_fishing2.jpg" alt="Scenic fishing spot">
+            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_400/sample_fishing3.jpg" alt="Angler holding a trout">
+            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_400/sample_fishing4.jpg" alt="Fishing in a pristine river">
+        </div>
     </div>
 
     <div class="footer">
