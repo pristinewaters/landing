@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pristine Waters - Fly Fishing in Magallanes</title>
+    <title>Pristine Waters - Fly Fishing in Patagonia</title>
 
     <!-- Open Graph meta tags for social media sharing -->
     <meta property="og:title" content="Pristine Waters - Fly Fishing Destinations">
@@ -12,109 +12,107 @@
     <meta property="og:url" content="https://www.pristinewaters.cl">
     <meta property="og:type" content="website">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0a0a0a;
-            color: white;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #333;
             text-align: center;
-            padding-top: 80px; /* Compensa el header fijo */
+            padding-top: 80px;
+            overflow-x: hidden;
         }
         .header {
             width: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             padding: 1rem;
             display: flex; justify-content: space-between; align-items: center;
             position: fixed; top: 0; left: 0; right: 0;
             z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .logo {
-            height: 50px;
+            height: 60px;
             border-radius: 10px;
             cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .logo:hover {
+            transform: scale(1.1);
         }
         .menu a {
-            color: white;
-            margin: 0 15px;
+            color: #333;
+            margin: 0 20px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             transition: color 0.3s ease-in-out;
         }
         .menu a:hover {
             color: #f0a500;
         }
         .section {
-            padding: 60px 20px;
-            max-width: 900px;
+            padding: 80px 20px;
+            max-width: 1100px;
             margin: auto;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
         }
         .hero {
-            background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/DSC_0002_kq5rpw.jpg');
-        }
-        #about {
-            background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/DSC_0526_elbqff.jpg');
-        }
-        #destinations {
-            background-image: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/64673_z24lg6.jpg');
-        }
-        #gallery {
-            background: black;
-            padding: 60px 20px;
-        }
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
-            padding: 20px;
-        }
-        .gallery-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
-        .gallery-container img:hover {
-            transform: scale(1.05);
+            background: url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/DSC_0002_kq5rpw.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
         }
         .cta-button {
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 5px;
+            background: #f0a500;
+            color: black;
+            padding: 15px 30px;
+            border-radius: 8px;
             text-decoration: none;
             margin-top: 20px;
             font-size: 1.2rem;
-            transition: transform 0.3s ease-in-out;
+            font-weight: 600;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+            display: inline-block;
         }
         .cta-button:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            background: #d48c00;
+        }
+        .about-container, .destinations-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            padding: 40px 0;
+        }
+        .about-text, .destination-text {
+            text-align: left;
+        }
+        .about-image, .destination-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
             margin-top: 40px;
-        }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
         }
         .social-icons a {
-            color: white;
+            color: #333;
             font-size: 2rem;
+            margin: 0 10px;
             transition: color 0.3s ease-in-out;
         }
         .social-icons a:hover {
@@ -128,7 +126,6 @@
         <nav class="menu">
             <a href="#about">About Us</a>
             <a href="#destinations">Destinations</a>
-            <a href="#gallery">Gallery</a>
         </nav>
     </div>
 
@@ -140,31 +137,30 @@
 
     <div id="about" class="section">
         <h2>About Us</h2>
-        <p>We provide unforgettable fly fishing adventures in Patagonia, combining expert guidance and sustainability.</p>
+        <div class="about-container">
+            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/sample_about.jpg" class="about-image" alt="Fly fishing in Patagonia">
+            <div class="about-text">
+                <p>At Pristine Waters, we are passionate about providing unparalleled fly fishing experiences. Our guided tours take you to some of the most pristine rivers and lakes in Patagonia, ensuring an unforgettable adventure in nature.</p>
+            </div>
+        </div>
     </div>
 
     <div id="destinations" class="section">
         <h2>Destinations</h2>
-        <p>Explore our world-class fishing spots.</p>
-    </div>
-
-    <div id="gallery" class="section">
-        <h2>Gallery</h2>
-        <p>Discover moments from our adventures.</p>
-        <div class="gallery-container">
-            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_400/sample_fishing1.jpg" alt="Fly fishing in Patagonia">
-            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_400/sample_fishing2.jpg" alt="Scenic fishing spot">
-            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_400/sample_fishing3.jpg" alt="Angler holding a trout">
-            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_400/sample_fishing4.jpg" alt="Fishing in a pristine river">
+        <div class="destinations-container">
+            <div class="destination-text">
+                <p>Explore breathtaking fly fishing destinations, where wild trout and stunning landscapes create the perfect angling experience.</p>
+            </div>
+            <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/sample_destination.jpg" class="destination-image" alt="Scenic fishing spot">
         </div>
     </div>
 
     <div class="footer">
         <p>Follow us:</p>
         <div class="social-icons">
-            <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/56979559776" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="tel:+56979559776"><i class="fas fa-phone"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fas fa-phone"></i></a>
         </div>
     </div>
 </body>
