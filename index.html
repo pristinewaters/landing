@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <!-- Meta Description for SEO -->
   <meta name="description" content="Pristine Waters offers exclusive fly fishing adventures in Patagonia with breathtaking experiences and unmatched expertise.">
-  <!-- Google Fonts: Poppins (para títulos) y Montserrat para cuerpo -->
+  <!-- Google Fonts: Poppins para títulos y Montserrat para cuerpo -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -34,8 +34,7 @@
       background: #f9f9f9; 
       color: #333; 
     }
-    
-    /* Secciones con scroll-margin para header fijo */
+    /* Secciones con scroll-margin-top para compensar el header fijo */
     section {
       padding: 100px 2rem;
       scroll-margin-top: 80px;
@@ -73,7 +72,7 @@
     }
     nav a:hover { color: #f0a500; }
     
-    /* Hero Section con overlay */
+    /* Hero Section */
     .hero {
       position: relative;
       height: 800px;
@@ -85,12 +84,10 @@
       color: #fff;
       overflow: hidden;
     }
-    /* Overlay degradado en hero */
     .hero::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
@@ -149,7 +146,7 @@
     }
     .about p { font-size: 1.1rem; }
     
-    /* Destinations Section (antes Experiences) */
+    /* Destinations Section (antes Experiences) - Diseño Mosaico */
     .experiences { background: #fff; }
     .experiences h2 {
       text-align: center;
@@ -160,10 +157,25 @@
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 200px; /* Base para filas */
       gap: 20px;
       max-width: 1200px;
       margin: auto;
+      /* Definición de áreas para un layout mosaico */
+      grid-template-areas:
+        "item1 item1 item2"
+        "item1 item3 item2"
+        "item4 item3 item5"
+        "item4 item6 item5";
     }
+    /* Asignamos a cada item su grid area */
+    .gallery-item.item1 { grid-area: item1; }
+    .gallery-item.item2 { grid-area: item2; }
+    .gallery-item.item3 { grid-area: item3; }
+    .gallery-item.item4 { grid-area: item4; }
+    .gallery-item.item5 { grid-area: item5; }
+    .gallery-item.item6 { grid-area: item6; }
+    
     .gallery-item {
       position: relative;
       overflow: hidden;
@@ -172,12 +184,11 @@
       justify-content: center;
       background: #fff;
       padding: 10px;
-      height: 400px;
     }
     .gallery-item img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover; /* Puedes usar cover para que se llene el area o contain si prefieres ver la imagen completa */
       object-position: center;
       transition: transform 0.3s;
       border: 5px solid white;
@@ -238,8 +249,11 @@
         padding-top: 80px;
         height: calc(100vh - 80px);
       }
+      /* Para móviles, revertimos al grid simple de una columna */
       .gallery {
         grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+        grid-template-areas: none;
       }
       .gallery-item {
         height: 300px;
@@ -248,7 +262,6 @@
   </style>
   
   <script>
-    // Actualiza la variable CSS --vh en móviles
     function setVh() {
       if(window.innerWidth <= 768) {
         let vh = window.innerHeight * 0.01;
@@ -275,7 +288,7 @@
     </div>
   </header>
   
-  <!-- Hero Section (Home) -->
+  <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-content">
       <h1>Discover the Fly Fishing Adventure</h1>
@@ -299,34 +312,29 @@
   <section class="experiences" id="experiences">
     <h2>Destinations</h2>
     <div class="gallery">
-      <!-- Gallery Item 1 -->
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg" alt="Experience 1">
+      <!-- Asignamos clases item1 a item6 para definir sus áreas -->
+      <div class="gallery-item item1">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg" alt="Destination 1">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 2 -->
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355948/PHOTO-2023-03-27-21-17-02_1_nm7akz.jpg" alt="Experience 2">
+      <div class="gallery-item item2">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355948/PHOTO-2023-03-27-21-17-02_1_nm7akz.jpg" alt="Destination 2">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 3 -->
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/165227_pcvpqw.jpg" alt="Experience 3">
+      <div class="gallery-item item3">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/165227_pcvpqw.jpg" alt="Destination 3">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 4 -->
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741653822/5b2e2879-1e46-4795-ad9d-37b23145efaf_tinvgb.jpg" alt="Experience 4">
+      <div class="gallery-item item4">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741653822/5b2e2879-1e46-4795-ad9d-37b23145efaf_tinvgb.jpg" alt="Destination 4">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 5 -->
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355470/64673_z24lg6.jpg" alt="Experience 5">
+      <div class="gallery-item item5">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355470/64673_z24lg6.jpg" alt="Destination 5">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 6 -->
-      <div class="gallery-item">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/8d573680-924d-43c8-801f-d3c3bea3ea41_k7o5fq.jpg" alt="Experience 6">
+      <div class="gallery-item item6">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/8d573680-924d-43c8-801f-d3c3bea3ea41_k7o5fq.jpg" alt="Destination 6">
         <div class="overlay">View Details</div>
       </div>
     </div>
