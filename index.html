@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pristine Waters</title>
   <!-- Import modern fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-  <!-- Import Font Awesome for elegant icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHqT9N4W0GQvex1wvY9N9OaXZ+jZbLq+V0MZ5U4d2qZk7FPD6jI3X5fjJ3XV7J4UQv47O/Jw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Import Font Awesome for icons in footer -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHqT9N4W0GQvex1wvY9N9OaXZ+jZbLq+V0MZ5U4d2qZk7FPD6jI3X5fjJ3XV7J4UQv47O/Jw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <style>
     /* Reset and basic styles */
     * {
@@ -15,7 +24,8 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body, html {
+    body,
+    html {
       font-family: 'Open Sans', sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
@@ -26,7 +36,7 @@
       text-decoration: none;
       color: inherit;
     }
-    
+
     /* Header */
     header {
       position: fixed;
@@ -36,16 +46,24 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       z-index: 1000;
     }
     header .logo img {
       height: 50px;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      align-items: center;
     }
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
+    }
+    nav li {
+      position: relative;
     }
     nav a {
       color: #333;
@@ -68,7 +86,41 @@
     .contact-btn:hover {
       background: #ff4757;
     }
-    
+
+    /* Hamburger Menu (hidden on desktop) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      transition: background 0.3s;
+    }
+    /* Mobile nav styles */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: #fff;
+        padding: 1rem;
+        transition: left 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      nav ul.active {
+        left: 0;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
@@ -85,7 +137,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.3)
+      );
       z-index: 1;
     }
     .hero-content {
@@ -120,10 +176,16 @@
       background: #ff4757;
     }
     @keyframes slideIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    
+
     /* About Us Section */
     .about {
       padding: 6rem 2rem 4rem;
@@ -158,7 +220,7 @@
     .about .about-content p {
       line-height: 1.6;
     }
-    
+
     /* Destinations Section */
     .destinations {
       padding: 4rem 2rem;
@@ -205,7 +267,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: opacity 0.3s;
       display: flex;
@@ -224,13 +286,13 @@
       left: 0;
       width: 100%;
       padding: 0.5rem;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255, 255, 255, 0.9);
       color: #333;
       font-family: 'Montserrat', sans-serif;
       font-size: 1rem;
       text-align: center;
     }
-    
+
     /* Testimonials Section */
     .testimonials {
       padding: 4rem 2rem;
@@ -253,7 +315,7 @@
       background: #fff;
       border-radius: 8px;
       padding: 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       min-width: 300px;
       text-align: center;
     }
@@ -281,7 +343,7 @@
       pointer-events: none;
     }
     .slider-nav button {
-      background: rgba(255,255,255,0.8);
+      background: rgba(255, 255, 255, 0.8);
       border: none;
       font-size: 2rem;
       cursor: pointer;
@@ -290,9 +352,9 @@
       transition: background 0.3s;
     }
     .slider-nav button:hover {
-      background: rgba(255,255,255,1);
+      background: rgba(255, 255, 255, 1);
     }
-    
+
     /* Contact Section */
     .contact {
       padding: 4rem 2rem;
@@ -323,7 +385,7 @@
     .contact .cta-button:hover {
       background: #ff4757;
     }
-    
+
     /* Footer */
     footer {
       background: #fff;
@@ -359,14 +421,28 @@
     footer .social a span {
       font-size: 0.9rem;
     }
-    
-    /* Responsive */
+
+    /* Responsive for mobile: Hamburger menu */
     @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.8rem;
-      }
-      .about {
+      nav ul {
         flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: #fff;
+        padding: 1rem;
+        transition: left 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      nav ul.active {
+        left: 0;
+      }
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
       }
     }
   </style>
@@ -375,65 +451,88 @@
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Logo">
+      <!-- Al hacer clic en el logo se redirige al home (#hero) -->
+      <a href="#hero"><img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Logo" /></a>
     </div>
     <nav>
-      <ul>
+      <ul id="nav-menu">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#destinations">Destinations</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <!-- Hamburger icon visible en mobile -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
     <button class="contact-btn" onclick="scrollToSection('contact')">Contact</button>
   </header>
-  
+
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-content">
       <h1>Pristine Waters</h1>
       <p>Experience unforgettable fly fishing adventures in exotic and remote destinations.</p>
-      <button class="cta-button" onclick="scrollToSection('destinations')">Discover More</button>
+      <button class="cta-button" onclick="scrollToSection('destinations')">
+        Discover More
+      </button>
     </div>
   </section>
-  
+
   <!-- About Us Section -->
   <section id="about" class="about">
     <div class="about-img">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741281644/DSC_0526_elbqff.jpg" alt="About Us">
+      <img
+        src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741281644/DSC_0526_elbqff.jpg"
+        alt="About Us"
+      />
     </div>
     <div class="about-content">
       <h2>About Us</h2>
-      <p>We are a specialized agency in fly fishing trips, committed to offering unique experiences in breathtaking natural settings. Our expert team plans each journey so that you can create unforgettable memories.</p>
+      <p>
+        We are a specialized agency in fly fishing trips, committed to offering unique experiences in breathtaking natural settings. Our expert team plans each journey so that you can create unforgettable memories.
+      </p>
     </div>
   </section>
-  
+
   <!-- Destinations Section -->
   <section id="destinations" class="destinations">
     <h2>Our Destinations</h2>
     <div class="destinations-grid">
       <!-- Destination 1: Serrano River (antes Colorado River) -->
       <div class="destination-item">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg" alt="Serrano River">
+        <img
+          src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg"
+          alt="Serrano River"
+        />
         <div class="destination-overlay">View Details</div>
         <div class="destination-info">Serrano River</div>
       </div>
       <!-- Destination 2: Penitente River (antes Andean Lakes) -->
       <div class="destination-item">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355488/86082_tt0fbq.jpg" alt="Penitente River">
+        <img
+          src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355488/86082_tt0fbq.jpg"
+          alt="Penitente River"
+        />
         <div class="destination-overlay">View Details</div>
         <div class="destination-info">Penitente River</div>
       </div>
       <!-- Destination 3: Tierra del Fuego (antes Northern Mountains) -->
       <div class="destination-item">
-        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355470/64673_z24lg6.jpg" alt="Tierra del Fuego">
+        <img
+          src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355470/64673_z24lg6.jpg"
+          alt="Tierra del Fuego"
+        />
         <div class="destination-overlay">View Details</div>
         <div class="destination-info">Tierra del Fuego</div>
       </div>
     </div>
   </section>
-  
+
   <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials">
     <h2>Testimonials</h2>
@@ -456,66 +555,68 @@
       <button id="next">&#10095;</button>
     </div>
   </section>
-  
+
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <p>Click the button below to open your default mail client and send us an email.</p>
-    <a class="cta-button" href="mailto:info@pristinewaters.cl?subject=Inquiry from Website" target="_blank">Contact Us</a>
+    <a
+      class="cta-button"
+      href="mailto:info@pristinewaters.cl?subject=Inquiry from Website"
+      target="_blank"
+      >Contact Us</a
+    >
   </section>
-  
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Fly Fishing Adventures</p>
     <div class="social">
       <a href="https://facebook.com/pristinewaters" target="_blank">
-        <div class="icon">
-          <i class="fab fa-facebook-f"></i>
-        </div>
+        <div class="icon"><i class="fab fa-facebook-f"></i></div>
         <span>Facebook</span>
       </a>
       <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
-        <div class="icon">
-          <i class="fab fa-instagram"></i>
-        </div>
+        <div class="icon"><i class="fab fa-instagram"></i></div>
         <span>Instagram</span>
       </a>
       <a href="https://wa.me/56979559776" target="_blank">
-        <div class="icon">
-          <i class="fab fa-whatsapp"></i>
-        </div>
+        <div class="icon"><i class="fab fa-whatsapp"></i></div>
         <span>WhatsApp</span>
       </a>
       <a href="tel:+56979559776" target="_blank">
-        <div class="icon">
-          <i class="fas fa-phone-alt"></i>
-        </div>
+        <div class="icon"><i class="fas fa-phone-alt"></i></div>
         <span>Call Us</span>
       </a>
     </div>
   </footer>
-  
-  <!-- JavaScript for Smooth Scroll and Testimonials Navigation -->
+
+  <!-- JavaScript for Smooth Scroll and Mobile Menu Toggle & Testimonials Navigation -->
   <script>
+    // Smooth scroll for internal links
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
-    
+
+    // Mobile hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
     // Testimonials Slider Navigation
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
-    
     function showSlide(index) {
       slides[currentSlide].classList.remove('active');
       currentSlide = (index + slides.length) % slides.length;
       slides[currentSlide].classList.add('active');
     }
-    
-    document.getElementById('prev').addEventListener('click', function() {
+    document.getElementById('prev').addEventListener('click', function () {
       showSlide(currentSlide - 1);
     });
-    
-    document.getElementById('next').addEventListener('click', function() {
+    document.getElementById('next').addEventListener('click', function () {
       showSlide(currentSlide + 1);
     });
   </script>
