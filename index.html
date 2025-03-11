@@ -141,6 +141,7 @@
       padding: 4rem 2rem;
       background: #fff;
     }
+    /* Cambio de "Our Destinations" a "Destinations" */
     .destinations h2 { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #333; }
     .destinations-grid {
       display: grid;
@@ -170,8 +171,10 @@
     }
     .destination-overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(0,0,0,0.5);
       opacity: 0;
       transition: opacity 0.3s;
@@ -185,7 +188,8 @@
     .destination-item:hover .destination-overlay { opacity: 1; }
     .destination-info {
       position: absolute;
-      bottom: 0; left: 0;
+      bottom: 0;
+      left: 0;
       width: 100%;
       padding: 0.5rem;
       background: rgba(255,255,255,0.9);
@@ -387,7 +391,7 @@
   
   <!-- Destinations Section -->
   <section id="destinations" class="destinations">
-    <h2>Our Destinations</h2>
+    <h2>Destinations</h2>
     <div class="destinations-grid">
       <!-- Destination 1: Serrano River -->
       <div class="destination-item" onclick="openModal('Serrano River', 'A privileged vantage point for enjoying a breathtaking postcard of the Torres del Paine massif, this river is home to the great Chinook—a worthy opponent for any angler eager to challenge their prowess against nature. Its waters, interconnected with lakes and other rivers, carry the purity of glaciers that embody the very essence of Patagonia, while the local flora and fauna offer spectacles such as a black eagle soaring through the noble branches of the Magellanic forest.')">
