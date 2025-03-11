@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fly Fishing Adventures</title>
+  <title>Pristine Waters</title>
   <!-- Import modern fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
@@ -243,6 +243,7 @@
       border-radius: 8px;
       padding: 2rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      min-width: 300px;
     }
     .slide p {
       font-style: italic;
@@ -342,8 +343,8 @@
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-content">
-      <h1>Fly Fishing Adventures</h1>
-      <p>Experience unforgettable journeys in exotic and remote destinations.</p>
+      <h1>Pristine Waters</h1>
+      <p>Experience unforgettable fly fishing adventures in exotic and remote destinations.</p>
       <button class="cta-button" onclick="scrollToSection('destinations')">Discover More</button>
     </div>
   </section>
@@ -384,7 +385,7 @@
   <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials">
     <h2>Testimonials</h2>
-    <div class="slider">
+    <div class="slider" id="slider">
       <!-- Testimonial 1 -->
       <div class="slide">
         <p>"An unforgettable experience – fly fishing in these landscapes is truly magical."</p>
@@ -421,11 +422,26 @@
     </div>
   </footer>
   
-  <!-- JavaScript for Smooth Scroll -->
+  <!-- JavaScript for Smooth Scroll and Slider AutoScroll -->
   <script>
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
+    
+    // Slider Autoscroll for Testimonials
+    const slider = document.getElementById('slider');
+    let slideIndex = 0;
+    const slides = slider.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    
+    function autoSlide() {
+      slideIndex = (slideIndex + 1) % totalSlides;
+      const slideWidth = slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginRight);
+      slider.scrollTo({ left: slideIndex * slideWidth, behavior: 'smooth' });
+    }
+    
+    // Cambia slide cada 5 segundos (5000 ms)
+    setInterval(autoSlide, 5000);
   </script>
 </body>
 </html>
