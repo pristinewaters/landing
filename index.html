@@ -15,8 +15,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body,
-    html {
+    body, html {
       font-family: 'Open Sans', sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
@@ -37,7 +36,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
     header .logo img {
@@ -100,7 +99,7 @@
         background: #fff;
         padding: 1rem;
         transition: left 0.3s;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       }
       nav ul.active {
         left: 0;
@@ -252,7 +251,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0,0,0,0.5);
       opacity: 0;
       transition: opacity 0.3s;
       display: flex;
@@ -271,7 +270,7 @@
       left: 0;
       width: 100%;
       padding: 0.5rem;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255,255,255,0.9);
       color: #333;
       font-family: 'Montserrat', sans-serif;
       font-size: 1rem;
@@ -300,7 +299,7 @@
       background: #fff;
       border-radius: 8px;
       padding: 2rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       min-width: 300px;
       text-align: center;
     }
@@ -328,7 +327,7 @@
       pointer-events: none;
     }
     .slider-nav button {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255,255,255,0.8);
       border: none;
       font-size: 2rem;
       cursor: pointer;
@@ -337,7 +336,7 @@
       transition: background 0.3s;
     }
     .slider-nav button:hover {
-      background: rgba(255, 255, 255, 1);
+      background: rgba(255,255,255,1);
     }
     
     /* Contact Section */
@@ -418,7 +417,7 @@
         background: #fff;
         padding: 1rem;
         transition: left 0.3s;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       }
       nav ul.active {
         left: 0;
@@ -573,14 +572,17 @@
     // Testimonials Slider Navigation
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
+    
     function showSlide(index) {
       slides[currentSlide].classList.remove('active');
       currentSlide = (index + slides.length) % slides.length;
       slides[currentSlide].classList.add('active');
     }
+    
     document.getElementById('prev').addEventListener('click', function () {
       showSlide(currentSlide - 1);
     });
+    
     document.getElementById('next').addEventListener('click', function () {
       showSlide(currentSlide + 1);
     });
