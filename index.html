@@ -1,36 +1,344 @@
-<!-- Experiences Section -->
-<section class="experiences" id="experiences">
-  <h2>Experiences</h2>
-  <div class="gallery">
-    <!-- Gallery Item 1: Primera foto -->
-    <div class="gallery-item">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg" alt="Experience 1">
-      <div class="overlay">View Details</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pristine Waters - Fly Fishing in Patagonia</title>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Pristine Waters - Fly Fishing in Patagonia">
+  <meta property="og:description" content="Experience exclusive fly fishing adventures in the pristine waters of Patagonia.">
+  <meta property="og:image" content="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg">
+  <meta property="og:url" content="https://www.pristinewaters.cl">
+  <meta property="og:type" content="website">
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Pristine Waters offers exclusive fly fishing adventures in Patagonia with breathtaking experiences and unmatched expertise.">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    /* Global Reset & Typography */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: none;
+      touch-action: pan-y;
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* Altura del header */
+    }
+    body { 
+      font-family: 'Montserrat', sans-serif; 
+      line-height: 1.6; 
+      background: #f9f9f9; 
+      color: #333; 
+    }
+    
+    /* Aplicar scroll-margin-top a cada sección para compensar el header fijo */
+    section {
+      padding: 100px 2rem;
+      scroll-margin-top: 80px;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    /* Aumentamos la altura del logo a 70px */
+    .nav-container .logo {
+      height: 70px;
+      transition: transform 0.3s;
+    }
+    .nav-container .logo:hover { transform: scale(1.1); }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #f0a500; }
+    
+    /* Hero Section (Home) */
+    .hero {
+      position: relative;
+      height: 800px; /* Altura fija en escritorio */
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+      overflow-anchor: none;
+    }
+    .hero .hero-content { z-index: 1; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+    .cta-button {
+      display: inline-block;
+      background: #f0a500;
+      color: #000;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .cta-button:hover { transform: scale(1.1); background: #d48c00; }
+    
+    /* About Us Section */
+    .about {
+      background: #f4f4f4;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .about .about-media,
+    .about .about-text { flex: 1; min-width: 300px; }
+    .about .about-media img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .about p { font-size: 1.1rem; }
+    
+    /* Experiences Section */
+    .experiences { background: #fff; }
+    .experiences h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas por línea */
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      padding: 10px;
+      height: 400px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.3s;
+      border: 5px solid white;
+      border-radius: 8px;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .gallery-item:hover .overlay { opacity: 1; }
+    
+    /* Reservation Section */
+    .reservation { background: #f4f4f4; text-align: center; }
+    .reservation h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    /* Botón de contacto mailto */
+    .reservation a.cta-button {
+      margin: 20px auto;
+      display: inline-block;
+    }
+    
+    /* Footer */
+    footer {
+      background: rgba(255,255,255,0.95);
+      text-align: center;
+      padding: 20px;
+    }
+    footer .social-icons a {
+      margin: 0 10px;
+      color: #333;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    footer .social-icons a:hover { color: #f0a500; }
+    
+    /* Responsive ajustes para móviles */
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; }
+      nav a { margin: 0 10px; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1rem; }
+      
+      /* Ajuste para el hero para que el contenido no quede tapado */
+      .hero {
+        padding-top: 80px;
+        height: calc(100vh - 80px);
+      }
+      
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      .gallery-item {
+        height: 300px;
+      }
+    }
+  </style>
+  
+  <script>
+    // En móviles, actualiza la variable CSS --vh según la altura real del viewport
+    function setVh() {
+      if(window.innerWidth <= 768) {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+    }
+    setVh();
+    window.addEventListener('resize', setVh);
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#hero">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_200/logo_oemeer.jpg" alt="Pristine Waters Logo" class="logo">
+      </a>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#reservation">Reservation</a>
+      </nav>
     </div>
-    <!-- Gallery Item 2: Segunda foto -->
-    <div class="gallery-item">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355948/PHOTO-2023-03-27-21-17-02_1_nm7akz.jpg" alt="Experience 2">
-      <div class="overlay">View Details</div>
+  </header>
+  
+  <!-- Hero Section (Home) -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Discover the Fly Fishing Adventure</h1>
+      <p>Exclusive experiences in the pristine waters of Patagonia</p>
+      <a href="#reservation" class="cta-button">Book Your Trip</a>
     </div>
-    <!-- Gallery Item 3: Tercera foto -->
-    <div class="gallery-item">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/165227_pcvpqw.jpg" alt="Experience 3">
-      <div class="overlay">View Details</div>
+  </section>
+  
+  <!-- About Us Section (solo imagen) -->
+  <section class="about" id="about">
+    <div class="about-media">
+      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741281644/DSC_0526_elbqff.jpg" alt="Fly Fishing in Patagonia">
     </div>
-    <!-- Gallery Item 4: Cuarta foto -->
-    <div class="gallery-item">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741653822/5b2e2879-1e46-4795-ad9d-37b23145efaf_tinvgb.jpg" alt="Experience 4">
-      <div class="overlay">View Details</div>
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>At Pristine Waters, we live and breathe adventure. With years of expertise in fly fishing, our team will guide you to the best destinations in Patagonia for an unforgettable experience in nature.</p>
     </div>
-    <!-- Gallery Item 5: Nueva imagen 1 -->
-    <div class="gallery-item">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355470/64673_z24lg6.jpg" alt="Experience 5">
-      <div class="overlay">View Details</div>
+  </section>
+  
+  <!-- Experiences Section -->
+  <section class="experiences" id="experiences">
+    <h2>Experiences</h2>
+    <div class="gallery">
+      <!-- Gallery Item 1: Primera foto -->
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg" alt="Experience 1">
+        <div class="overlay">View Details</div>
+      </div>
+      <!-- Gallery Item 2: Segunda foto -->
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355948/PHOTO-2023-03-27-21-17-02_1_nm7akz.jpg" alt="Experience 2">
+        <div class="overlay">View Details</div>
+      </div>
+      <!-- Gallery Item 3: Tercera foto -->
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/165227_pcvpqw.jpg" alt="Experience 3">
+        <div class="overlay">View Details</div>
+      </div>
+      <!-- Gallery Item 4: Cuarta foto -->
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741653822/5b2e2879-1e46-4795-ad9d-37b23145efaf_tinvgb.jpg" alt="Experience 4">
+        <div class="overlay">View Details</div>
+      </div>
+      <!-- Gallery Item 5: Nueva imagen 1 -->
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355470/64673_z24lg6.jpg" alt="Experience 5">
+        <div class="overlay">View Details</div>
+      </div>
+      <!-- Gallery Item 6: Nueva imagen 2 -->
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/8d573680-924d-43c8-801f-d3c3bea3ea41_k7o5fq.jpg" alt="Experience 6">
+        <div class="overlay">View Details</div>
+      </div>
     </div>
-    <!-- Gallery Item 6: Nueva imagen 2 -->
-    <div class="gallery-item">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/8d573680-924d-43c8-801f-d3c3bea3ea41_k7o5fq.jpg" alt="Experience 6">
-      <div class="overlay">View Details</div>
+  </section>
+  
+  <!-- Reservation Section -->
+  <section class="reservation" id="reservation">
+    <h2>Book Your Adventure</h2>
+    <p>
+      <a href="mailto:info@pristinewaters.cl?subject=Contacto%20desde%20la%20web" class="cta-button">Contact Us</a>
+    </p>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Pristine Waters. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/56979559776" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="tel:+56979559776"><i class="fas fa-phone"></i></a>
     </div>
-  </div>
-</section>
+  </footer>
+</body>
+</html>
