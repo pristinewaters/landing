@@ -6,6 +6,8 @@
   <title>Pristine Waters</title>
   <!-- Import modern fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- Import Font Awesome for elegant icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHqT9N4W0GQvex1wvY9N9OaXZ+jZbLq+V0MZ5U4d2qZk7FPD6jI3X5fjJ3XV7J4UQv47O/Jw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Reset and basic styles */
     * {
@@ -25,7 +27,7 @@
       color: inherit;
     }
     
-    /* Header: Logo and Navigation */
+    /* Header */
     header {
       position: fixed;
       width: 100%;
@@ -37,10 +39,6 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
-    header .logo {
-      display: flex;
-      align-items: center;
-    }
     header .logo img {
       height: 50px;
     }
@@ -48,9 +46,6 @@
       list-style: none;
       display: flex;
       gap: 1.5rem;
-    }
-    nav li {
-      position: relative;
     }
     nav a {
       color: #333;
@@ -60,7 +55,6 @@
     nav a:hover {
       color: #ff6b6b;
     }
-    /* CTA Contact Button in Header */
     .contact-btn {
       padding: 0.5rem 1rem;
       background: #ff6b6b;
@@ -205,7 +199,6 @@
       object-fit: contain;
       border-radius: 8px;
     }
-    /* Overlay dinámico para detalles */
     .destination-overlay {
       position: absolute;
       top: 0;
@@ -277,7 +270,6 @@
       font-size: 1.5rem;
       color: #333;
     }
-    /* Flechas de navegación en Testimonials */
     .slider-nav {
       position: absolute;
       top: 50%;
@@ -301,7 +293,7 @@
       background: rgba(255,255,255,1);
     }
     
-    /* Contact Section (Sin formulario) */
+    /* Contact Section */
     .contact {
       padding: 4rem 2rem;
       background: #fff;
@@ -381,7 +373,7 @@
   </style>
 </head>
 <body>
-  <!-- Header: Logo and Navigation -->
+  <!-- Header -->
   <header>
     <div class="logo">
       <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Logo">
@@ -447,7 +439,6 @@
   <section id="testimonials" class="testimonials">
     <h2>Testimonials</h2>
     <div class="slider" id="slider">
-      <!-- Each slide shows one testimonial at a time -->
       <div class="slide active">
         <p>"An unforgettable experience – fly fishing in these landscapes is truly magical."</p>
         <h3>- Carlos G.</h3>
@@ -461,14 +452,13 @@
         <h3>- John P.</h3>
       </div>
     </div>
-    <!-- Navigation Arrows -->
     <div class="slider-nav">
       <button id="prev">&#10094;</button>
       <button id="next">&#10095;</button>
     </div>
   </section>
   
-  <!-- Contact Section (Without form) -->
+  <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <p>Click the button below to open your default mail client and send us an email.</p>
@@ -481,37 +471,29 @@
     <div class="social">
       <a href="https://facebook.com/pristinewaters" target="_blank">
         <div class="icon">
-          <!-- Facebook Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-            <path fill="#333" d="M279.14 288l14.22-92.66H198.86V117.8c0-25.35 12.42-50.06 52.24-50.06h40.6V6.26S257.42 0 225.36 0c-73.22 0-121.36 44.38-121.36 124.72V195.3H22.89V288h81.11v224h100.2V288z"/>
-          </svg>
+          <!-- Facebook Icon from Font Awesome Free -->
+          <i class="fab fa-facebook-f"></i>
         </div>
         <span>Facebook</span>
       </a>
       <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
         <div class="icon">
-          <!-- Instagram Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path fill="#333" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 189.6c-41.2 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zM398.8 388c-1.7-35.7-9.9-67.3-36.2-93.6s-57.9-34.5-93.6-36.2C293.7 32 262.1 32 224 32s-69.7 0-93.6 1.7c-35.7 1.7-67.3 9.9-93.6 36.2S32 114.3 30.3 150c-1.7 24-1.7 55.6-1.7 93.7s0 69.7 1.7 93.7c1.7 35.7 9.9 67.3 36.2 93.6s57.9 34.5 93.6 36.2C154.3 480 154.7 480 192.8 480s38.5 0 63.8-1.7c35.7-1.7 67.3-9.9 93.6-36.2s34.5-57.9 36.2-93.6c1.7-24 1.7-55.6 1.7-93.7s0-69.7-1.7-93.7z"/>
-          </svg>
+          <!-- Instagram Icon from Font Awesome Free -->
+          <i class="fab fa-instagram"></i>
         </div>
         <span>Instagram</span>
       </a>
       <a href="https://wa.me/56979559776" target="_blank">
         <div class="icon">
-          <!-- WhatsApp Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path fill="#333" d="M380.9 97.1C339-21.6 228.4-18.2 193.4 22.1c-30.9 32.7-39.5 81.8-22.2 122.5 3.3 7.4 5.7 15.1 5.7 22.9v7.2c-14.1 2.3-28.1 6.3-41.3 11.9-7.3 3.1-14.2 7.1-20.7 11.9C84.5 198.4 66.7 240 66.7 286.7c0 61.4 45.9 111.3 102.3 111.3h11.4c27.5 0 54.2-7.3 78.6-21.1 31.3-19.2 56.9-49.7 72.3-87.3 15.7-38.5 17.1-80.7 4.1-121.8-10.3-35.2-31.9-64.3-61.3-84.4zm-191.1 279.2c-26.5 0-48-21.5-48-48 0-26.5 21.5-48 48-48 26.5 0 48 21.5 48 48 0 26.6-21.5 48-48 48z"/>
-          </svg>
+          <!-- WhatsApp Icon from Font Awesome Free -->
+          <i class="fab fa-whatsapp"></i>
         </div>
         <span>WhatsApp</span>
       </a>
       <a href="tel:+56979559776" target="_blank">
         <div class="icon">
-          <!-- Phone Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path fill="#333" d="M511.7 387.1l-23.1-102.3c-3.2-14.2-15.3-24.7-29.8-26.2l-110.3-12.7c-15.3-1.8-29.7 7.3-34.3 21.1l-28.6 82.1c-40.6-21.7-73.2-54.3-94.9-94.9l82.1-28.6c13.8-4.6 22.9-19 21.1-34.3L215 61.2c-1.5-14.5-12-26.6-26.2-29.8L80.5 7.7C66.3 5.5 52.8 9.1 43.7 18.2l-39.7 39.7C-5.36 75.3-10.1 109.2 4.55 137.4c79.4 141.8 226.6 289 368.4 368.4 28.2 14.7 62.1 10 85.5-13.5l39.7-39.7c9.1-9.1 12.7-22.6 10.5-36.8z"/>
-          </svg>
+          <!-- Phone Icon from Font Awesome Free -->
+          <i class="fas fa-phone-alt"></i>
         </div>
         <span>Call Us</span>
       </a>
