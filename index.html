@@ -4,27 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pristine Waters - Fly Fishing in Patagonia</title>
-  <!-- Open Graph meta tags -->
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Pristine Waters - Fly Fishing in Patagonia">
   <meta property="og:description" content="Experience exclusive fly fishing adventures in the pristine waters of Patagonia.">
   <meta property="og:image" content="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto,w_800/DSC_0002_kq5rpw.jpg">
   <meta property="og:url" content="https://www.pristinewaters.cl">
   <meta property="og:type" content="website">
-  <!-- Meta description for SEO -->
+  <!-- Meta Description for SEO -->
   <meta name="description" content="Pristine Waters offers exclusive fly fishing adventures in Patagonia with breathtaking experiences and unmatched expertise.">
-  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <style>
-    /* Global Reset & Typography */
+    /* Fuerza un scroll estable y controla el overscroll */
+    html, body {
+      height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: none;
+      touch-action: pan-y;
+    }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* Altura del header */
+    }
+    
+    /* Reset y tipografía global */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Montserrat', sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     
-    /* Header */
+    /* Header fijo */
     header {
       position: fixed;
       top: 0;
@@ -56,19 +66,26 @@
     }
     nav a:hover { color: #f0a500; }
     
-    /* Sections */
+    /* Secciones generales */
     section { padding: 100px 2rem; }
     
-    /* Hero Section con imagen de fondo - Altura fija */
+    /* Hero Section */
     .hero {
       position: relative;
-      height: 800px; /* Altura fija para escritorio */
-      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      /* Altura fija en escritorio para evitar rebote */
+      height: 800px;
+      background: url('path_to_hero_image.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: #fff;
+      overflow: hidden;
+      overflow-anchor: none; /* Evita reposicionamiento automático */
+    }
+    /* Altura dinámica en móviles */
+    @media (max-width: 768px) {
+      .hero { height: calc(var(--vh, 1vh) * 100 - 80px); }
     }
     .hero .hero-content { z-index: 1; }
     .hero h1 {
@@ -93,10 +110,7 @@
       font-weight: 600;
       transition: transform 0.3s, background 0.3s;
     }
-    .cta-button:hover {
-      transform: scale(1.1);
-      background: #d48c00;
-    }
+    .cta-button:hover { transform: scale(1.1); background: #d48c00; }
     
     /* Experiences Section */
     .experiences { background: #fff; }
@@ -167,22 +181,6 @@
     }
     .about p { font-size: 1.1rem; }
     
-    /* Destinations Section */
-    .destinations { background: #fff; }
-    .destinations h2 {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-    .map-container { text-align: center; }
-    .map-container iframe {
-      width: 90%;
-      height: 450px;
-      border: 0;
-      border-radius: 8px;
-    }
-    
     /* Reservation Section */
     .reservation { background: #f4f4f4; }
     .reservation h2 {
@@ -230,15 +228,26 @@
     }
     footer .social-icons a:hover { color: #f0a500; }
     
-    /* Responsive adjustments */
+    /* Responsive ajustes */
     @media (max-width: 768px) {
       .nav-container { flex-direction: column; }
       nav a { margin: 0 10px; }
-      .hero { height: 600px; }
       .hero h1 { font-size: 2.5rem; }
       .hero p { font-size: 1rem; }
     }
   </style>
+  
+  <script>
+    // Actualiza la variable CSS --vh en móviles
+    function setVh() {
+      if(window.innerWidth <= 768) {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+    }
+    setVh();
+    window.addEventListener('resize', setVh);
+  </script>
 </head>
 <body>
   <!-- Header -->
@@ -251,7 +260,6 @@
         <a href="#hero">Home</a>
         <a href="#experiences">Experiences</a>
         <a href="#about">About Us</a>
-        <a href="#destinations">Destinations</a>
         <a href="#reservation">Reservation</a>
       </nav>
     </div>
@@ -307,14 +315,6 @@
     <div class="about-text">
       <h2>About Us</h2>
       <p>At Pristine Waters, we live and breathe adventure. With years of expertise in fly fishing, our team will guide you to the best destinations in Patagonia for an unforgettable experience in nature.</p>
-    </div>
-  </section>
-  
-  <!-- Destinations Section -->
-  <section class="destinations" id="destinations">
-    <h2>Destinations</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3891.507146972162!2d-71.54297628514885!3d-52.67368379917886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDQzJzI5LjAiUyA3McKwMzYnMjYuMiJX!5e0!3m2!1sen!2sus!4v1587749723187!5m2!1sen!2sus" allowfullscreen loading="lazy"></iframe>
     </div>
   </section>
   
