@@ -189,9 +189,11 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       background: #fff;
     }
+    /* Forzar el mismo alto y recorte de las imágenes */
     .destination-item img {
       width: 100%;
-      display: block;
+      height: 200px;
+      object-fit: cover;
       transition: transform 0.3s;
     }
     .destination-item:hover img {
@@ -218,6 +220,7 @@
     .testimonials {
       padding: 4rem 2rem;
       background: #f9f9f9;
+      position: relative;
     }
     .testimonials h2 {
       text-align: center;
@@ -227,23 +230,20 @@
       color: #333;
     }
     .slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 1rem;
-      padding-bottom: 1rem;
-    }
-    .slider::-webkit-scrollbar {
-      display: none;
+      overflow: hidden;
+      position: relative;
     }
     .slide {
-      flex: 0 0 80%;
-      scroll-snap-align: center;
+      display: none;
       background: #fff;
       border-radius: 8px;
       padding: 2rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       min-width: 300px;
+      text-align: center;
+    }
+    .slide.active {
+      display: block;
     }
     .slide p {
       font-style: italic;
@@ -253,8 +253,29 @@
     .slide h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.5rem;
-      text-align: right;
       color: #333;
+    }
+    /* Flechas de navegación en testimonials */
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .slider-nav button {
+      background: rgba(255,255,255,0.8);
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      pointer-events: all;
+      transition: background 0.3s;
+    }
+    .slider-nav button:hover {
+      background: rgba(255,255,255,1);
     }
     
     /* Contact Section (Sin formulario) */
@@ -313,12 +334,6 @@
       .about {
         flex-direction: column;
       }
-      .slider {
-        flex-direction: column;
-      }
-      .slide {
-        flex: 0 0 100%;
-      }
     }
   </style>
 </head>
@@ -326,7 +341,7 @@
   <!-- Header: Logo and Navigation -->
   <header>
     <div class="logo">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters Logo">
+      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Logo">
     </div>
     <nav>
       <ul>
@@ -386,21 +401,24 @@
   <section id="testimonials" class="testimonials">
     <h2>Testimonials</h2>
     <div class="slider" id="slider">
-      <!-- Testimonial 1 -->
-      <div class="slide">
+      <!-- Testimonial Slides -->
+      <div class="slide active">
         <p>"An unforgettable experience – fly fishing in these landscapes is truly magical."</p>
         <h3>- Carlos G.</h3>
       </div>
-      <!-- Testimonial 2 -->
       <div class="slide">
         <p>"The trip exceeded all my expectations. Professional, exciting, and full of adventure."</p>
         <h3>- Maria L.</h3>
       </div>
-      <!-- Testimonial 3 -->
       <div class="slide">
         <p>"I highly recommend Pristine Waters; every detail is carefully planned to offer the best experience."</p>
         <h3>- John P.</h3>
       </div>
+    </div>
+    <!-- Navigation Arrows -->
+    <div class="slider-nav">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
     </div>
   </section>
   
@@ -422,26 +440,29 @@
     </div>
   </footer>
   
-  <!-- JavaScript for Smooth Scroll and Slider AutoScroll -->
+  <!-- JavaScript for Smooth Scroll and Testimonials Navigation -->
   <script>
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
     
-    // Slider Autoscroll for Testimonials
-    const slider = document.getElementById('slider');
-    let slideIndex = 0;
-    const slides = slider.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+    // Testimonials Slider Navigation
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
     
-    function autoSlide() {
-      slideIndex = (slideIndex + 1) % totalSlides;
-      const slideWidth = slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginRight);
-      slider.scrollTo({ left: slideIndex * slideWidth, behavior: 'smooth' });
+    function showSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
     }
     
-    // Cambia slide cada 5 segundos (5000 ms)
-    setInterval(autoSlide, 5000);
+    document.getElementById('prev').addEventListener('click', function() {
+      showSlide(currentSlide - 1);
+    });
+    
+    document.getElementById('next').addEventListener('click', function() {
+      showSlide(currentSlide + 1);
+    });
   </script>
 </body>
 </html>
