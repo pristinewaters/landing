@@ -12,8 +12,8 @@
   <meta property="og:type" content="website">
   <!-- Meta Description for SEO -->
   <meta name="description" content="Pristine Waters offers exclusive fly fishing adventures in Patagonia with breathtaking experiences and unmatched expertise.">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Poppins (para títulos) y Montserrat para cuerpo -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
@@ -35,7 +35,7 @@
       color: #333; 
     }
     
-    /* Aplicar scroll-margin-top a cada sección para compensar el header fijo */
+    /* Secciones con scroll-margin para header fijo */
     section {
       padding: 100px 2rem;
       scroll-margin-top: 80px;
@@ -59,7 +59,6 @@
       justify-content: space-between;
       align-items: center;
     }
-    /* Aumentamos la altura del logo a 70px */
     .nav-container .logo {
       height: 70px;
       transition: transform 0.3s;
@@ -74,10 +73,10 @@
     }
     nav a:hover { color: #f0a500; }
     
-    /* Hero Section (Home) */
+    /* Hero Section con overlay */
     .hero {
       position: relative;
-      height: 800px; /* Altura fija en escritorio */
+      height: 800px;
       background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
       display: flex;
       align-items: center;
@@ -85,19 +84,33 @@
       text-align: center;
       color: #fff;
       overflow: hidden;
-      overflow-anchor: none;
     }
-    .hero .hero-content { z-index: 1; }
+    /* Overlay degradado en hero */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+      z-index: 0;
+    }
+    .hero .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
     .cta-button {
       display: inline-block;
@@ -130,7 +143,7 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .about h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
@@ -140,13 +153,13 @@
     .experiences { background: #fff; }
     .experiences h2 {
       text-align: center;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas por línea */
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       max-width: 1200px;
       margin: auto;
@@ -192,11 +205,10 @@
     /* Reservation Section */
     .reservation { background: #f4f4f4; text-align: center; }
     .reservation h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
-    /* Botón de contacto mailto */
     .reservation a.cta-button {
       margin: 20px auto;
       display: inline-block;
@@ -222,13 +234,10 @@
       nav a { margin: 0 10px; }
       .hero h1 { font-size: 2.5rem; }
       .hero p { font-size: 1rem; }
-      
-      /* Ajuste para el hero para que el contenido no quede tapado */
       .hero {
         padding-top: 80px;
         height: calc(100vh - 80px);
       }
-      
       .gallery {
         grid-template-columns: 1fr;
       }
@@ -239,7 +248,7 @@
   </style>
   
   <script>
-    // En móviles, actualiza la variable CSS --vh según la altura real del viewport
+    // Actualiza la variable CSS --vh en móviles
     function setVh() {
       if(window.innerWidth <= 768) {
         let vh = window.innerHeight * 0.01;
@@ -275,7 +284,7 @@
     </div>
   </section>
   
-  <!-- About Us Section (solo imagen) -->
+  <!-- About Us Section -->
   <section class="about" id="about">
     <div class="about-media">
       <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741281644/DSC_0526_elbqff.jpg" alt="Fly Fishing in Patagonia">
@@ -286,36 +295,36 @@
     </div>
   </section>
   
-  <!-- Destinations Section (antes Experiences) -->
+  <!-- Destinations Section -->
   <section class="experiences" id="experiences">
     <h2>Destinations</h2>
     <div class="gallery">
-      <!-- Gallery Item 1: Primera foto -->
+      <!-- Gallery Item 1 -->
       <div class="gallery-item">
         <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg" alt="Experience 1">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 2: Segunda foto -->
+      <!-- Gallery Item 2 -->
       <div class="gallery-item">
         <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355948/PHOTO-2023-03-27-21-17-02_1_nm7akz.jpg" alt="Experience 2">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 3: Tercera foto -->
+      <!-- Gallery Item 3 -->
       <div class="gallery-item">
         <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/165227_pcvpqw.jpg" alt="Experience 3">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 4: Cuarta foto -->
+      <!-- Gallery Item 4 -->
       <div class="gallery-item">
         <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741653822/5b2e2879-1e46-4795-ad9d-37b23145efaf_tinvgb.jpg" alt="Experience 4">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 5: Nueva imagen 1 -->
+      <!-- Gallery Item 5 -->
       <div class="gallery-item">
         <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355470/64673_z24lg6.jpg" alt="Experience 5">
         <div class="overlay">View Details</div>
       </div>
-      <!-- Gallery Item 6: Nueva imagen 2 -->
+      <!-- Gallery Item 6 -->
       <div class="gallery-item">
         <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355469/8d573680-924d-43c8-801f-d3c3bea3ea41_k7o5fq.jpg" alt="Experience 6">
         <div class="overlay">View Details</div>
