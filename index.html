@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pristine Waters - Fly Fishing Adventures</title>
+  <title>Fly Fishing Adventures</title>
   <!-- Import modern fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
@@ -17,6 +17,8 @@
       font-family: 'Open Sans', sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      background: #fff;
+      color: #333;
     }
     a {
       text-decoration: none;
@@ -27,11 +29,12 @@
     header {
       position: fixed;
       width: 100%;
-      background: rgba(0,0,0,0.7);
+      background: #fff;
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
     header .logo {
@@ -40,12 +43,6 @@
     }
     header .logo img {
       height: 50px;
-      margin-right: 0.5rem;
-    }
-    header .logo span {
-      font-family: 'Montserrat', sans-serif;
-      color: #fff;
-      font-size: 1.8rem;
     }
     nav ul {
       list-style: none;
@@ -56,7 +53,7 @@
       position: relative;
     }
     nav a {
-      color: #fff;
+      color: #333;
       font-size: 1rem;
       transition: color 0.3s;
     }
@@ -94,14 +91,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+      background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
       z-index: 1;
     }
     .hero-content {
       position: relative;
       z-index: 2;
       text-align: center;
-      color: #fff;
+      color: #333;
       max-width: 800px;
       padding: 2rem;
       animation: slideIn 1.5s ease-out;
@@ -140,11 +137,10 @@
       flex-wrap: wrap;
       gap: 2rem;
       align-items: center;
-      background: #f2f2f2;
+      background: #fff;
     }
     .about .about-img {
       flex: 1 1 300px;
-      position: relative;
       overflow: hidden;
       border-radius: 8px;
     }
@@ -163,6 +159,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #333;
     }
     .about .about-content p {
       line-height: 1.6;
@@ -178,6 +175,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 2rem;
+      color: #333;
     }
     .destinations-grid {
       display: grid;
@@ -188,7 +186,8 @@
       position: relative;
       overflow: hidden;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #fff;
     }
     .destination-item img {
       width: 100%;
@@ -204,8 +203,8 @@
       left: 0;
       width: 100%;
       padding: 1rem;
-      background: rgba(0,0,0,0.5);
-      color: #fff;
+      background: rgba(255,255,255,0.8);
+      color: #333;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.2rem;
       transform: translateY(100%);
@@ -218,13 +217,14 @@
     /* Testimonials Section */
     .testimonials {
       padding: 4rem 2rem;
-      background: #f8f8f8;
+      background: #f9f9f9;
     }
     .testimonials h2 {
       text-align: center;
       font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 2rem;
+      color: #333;
     }
     .slider {
       display: flex;
@@ -242,16 +242,18 @@
       background: #fff;
       border-radius: 8px;
       padding: 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     .slide p {
       font-style: italic;
       margin-bottom: 1rem;
+      color: #666;
     }
     .slide h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.5rem;
       text-align: right;
+      color: #333;
     }
     
     /* Contact Section (Sin formulario) */
@@ -264,10 +266,12 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #333;
     }
     .contact p {
       margin-bottom: 2rem;
       font-size: 1.2rem;
+      color: #666;
     }
     .contact .cta-button {
       padding: 1rem 2rem;
@@ -285,10 +289,11 @@
     
     /* Footer */
     footer {
-      background: #222;
-      color: #ddd;
+      background: #fff;
+      color: #666;
       padding: 2rem;
       text-align: center;
+      border-top: 1px solid #eee;
     }
     footer .social a {
       margin: 0 0.5rem;
@@ -321,7 +326,6 @@
   <header>
     <div class="logo">
       <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters Logo">
-      <span>Pristine Waters</span>
     </div>
     <nav>
       <ul>
@@ -347,7 +351,7 @@
   <!-- About Us Section -->
   <section id="about" class="about">
     <div class="about-img">
-      <img src="images/about_us.jpg" alt="About Us">
+      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741281644/DSC_0526_elbqff.jpg" alt="About Us">
     </div>
     <div class="about-content">
       <h2>About Us</h2>
@@ -359,22 +363,21 @@
   <section id="destinations" class="destinations">
     <h2>Our Destinations</h2>
     <div class="destinations-grid">
-      <!-- Destination 1 -->
+      <!-- Destination 1: Colorado River -->
       <div class="destination-item">
-        <img src="images/destination1.jpg" alt="Colorado River">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg" alt="Colorado River">
         <div class="destination-info">Colorado River</div>
       </div>
-      <!-- Destination 2 -->
+      <!-- Destination 2: Andean Lakes -->
       <div class="destination-item">
-        <img src="images/destination2.jpg" alt="Andean Lakes">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355488/86082_tt0fbq.jpg" alt="Andean Lakes">
         <div class="destination-info">Andean Lakes</div>
       </div>
-      <!-- Destination 3 -->
+      <!-- Destination 3: Northern Mountains -->
       <div class="destination-item">
-        <img src="images/destination3.jpg" alt="Northern Mountains">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355470/64673_z24lg6.jpg" alt="Northern Mountains">
         <div class="destination-info">Northern Mountains</div>
       </div>
-      <!-- Add more destinations as needed -->
     </div>
   </section>
   
@@ -409,7 +412,7 @@
   
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Pristine Waters - Fly Fishing Adventures</p>
+    <p>&copy; 2025 Fly Fishing Adventures</p>
     <div class="social">
       <a href="https://facebook.com/pristinewaters" target="_blank">Facebook</a> |
       <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">Instagram</a> |
