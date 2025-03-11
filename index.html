@@ -35,7 +35,7 @@
       color: #333; 
     }
     
-    /* Aplicar un scroll-margin-top a cada sección para compensar el header fijo */
+    /* Aplicar scroll-margin-top a cada sección para compensar el header fijo */
     section {
       padding: 100px 2rem;
       scroll-margin-top: 80px;
@@ -86,9 +86,6 @@
       color: #fff;
       overflow: hidden;
       overflow-anchor: none;
-    }
-    @media (max-width: 768px) {
-      .hero { height: calc(var(--vh, 1vh) * 100 - 80px); }
     }
     .hero .hero-content { z-index: 1; }
     .hero h1 {
@@ -225,6 +222,12 @@
       nav a { margin: 0 10px; }
       .hero h1 { font-size: 2.5rem; }
       .hero p { font-size: 1rem; }
+      
+      /* Ajuste para que el hero no quede tapado: espacio adicional arriba */
+      .hero {
+        padding-top: 80px;
+        height: calc(100vh - 80px);
+      }
       
       .gallery {
         grid-template-columns: 1fr;
