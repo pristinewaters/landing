@@ -81,8 +81,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 0;
     }
-    /* Pseudo-element para la imagen de fondo en blanco y negro */
     .hero::after {
       content: "";
       position: absolute;
@@ -92,9 +92,8 @@
       height: 100%;
       background: url('https://res.cloudinary.com/dypiqewb8/image/upload/v1742051470/DSC_0706_utjhnz.jpg') no-repeat center center/cover;
       filter: grayscale(100%);
-      z-index: -2; /* Coloca la imagen detrás del contenido */
+      z-index: 1;
     }
-    /* Pseudo-element para el overlay (gradiente) */
     .hero::before {
       content: "";
       position: absolute;
@@ -103,11 +102,11 @@
       width: 100%; 
       height: 100%;
       background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
-      z-index: -1; /* Capa intermedia para el overlay */
+      z-index: 2;
     }
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       text-align: center;
       color: #333;
       max-width: 800px;
