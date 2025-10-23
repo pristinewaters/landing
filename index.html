@@ -10,6 +10,9 @@
   <style>
     body{font-family:'Lora',serif;color:#111;margin:0;padding:0;overflow-x:hidden;background:#fff;scroll-behavior:smooth;}
 
+    /* Ensure anchor jump doesn't hide under fixed header */
+    section[id]{scroll-margin-top:100px;}
+
     /* Header */
     header{position:fixed;top:0;left:0;width:100%;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;box-shadow:0 2px 8px rgba(0,0,0,0.1);z-index:1000;}
     .logo img{height:58px;width:auto;object-fit:contain;transition:all 0.3s ease;}
@@ -66,6 +69,12 @@
     .arrow.right{right:30px;}
     .close{position:absolute;top:20px;right:30px;font-size:36px;color:#fff;cursor:pointer;}
 
+    /* Contact */
+    #contact{background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee;}
+    .social-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:18px;}
+    .social-links a{display:flex;align-items:center;gap:8px;font-weight:600;border:1px solid #ddd;padding:9px 14px;border-radius:999px;transition:background .25s;}
+    .social-links a:hover{background:#f4f4f4;}
+
     /* Footer */
     footer{text-align:center;padding:40px 20px;color:#777;border-top:1px solid #eee;background:#fff;animation:fadeUp 1.2s ease-in-out;}
 
@@ -118,7 +127,36 @@
       </div>
       <div class="gallery-grid" id="galleryGrid">
         <!-- 20 Images -->
-        <!-- Gallery content unchanged -->
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+1" alt="Gallery 1"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+2" alt="Gallery 2"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+3" alt="Gallery 3"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+4" alt="Gallery 4"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+5" alt="Gallery 5"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+6" alt="Gallery 6"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+7" alt="Gallery 7"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+8" alt="Gallery 8"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+9" alt="Gallery 9"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+10" alt="Gallery 10"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+11" alt="Gallery 11"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+12" alt="Gallery 12"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+13" alt="Gallery 13"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+14" alt="Gallery 14"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+15" alt="Gallery 15"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+16" alt="Gallery 16"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+17" alt="Gallery 17"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+18" alt="Gallery 18"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+19" alt="Gallery 19"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+20" alt="Gallery 20"></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Reach us through the channels below — we’ll get back to you right away.</p>
+      <div class="social-links">
+        <a href="mailto:info@pristinewaters.cl"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
       </div>
     </section>
   </main>
@@ -139,14 +177,18 @@
   </div>
 
   <script>
+    // Mobile menu toggle & close on click
     const menuToggle=document.getElementById('menuToggle');
     const mobileNav=document.getElementById('mobileNav');
     menuToggle.addEventListener('click',()=>mobileNav.classList.toggle('active'));
+    mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileNav.classList.remove('active')));
 
+    // Reveal on scroll
     const sections=document.querySelectorAll('section');
     const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.2});
     sections.forEach(sec=>observer.observe(sec));
 
+    // Gallery open/close
     const galleryPreview=document.getElementById('galleryPreview');
     const galleryGrid=document.getElementById('galleryGrid');
     galleryPreview.addEventListener('click',()=>{
@@ -154,6 +196,7 @@
       galleryPreview.style.display='none';
     });
 
+    // Lightbox
     const lightbox=document.getElementById('lightbox');
     const lbImg=document.getElementById('lbImg');
     const lbClose=document.getElementById('lbClose');
