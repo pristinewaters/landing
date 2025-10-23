@@ -31,37 +31,57 @@
 
     .spacer{height:90px;}
 
+    /* HERO */
     .hero{
-      height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;
+      position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#fff;text-align:center;
     }
 
     .hero::before{
       content:'';position:absolute;inset:0;
-      background:url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741355470/64673_z24lg6.jpg') center center/cover no-repeat;
+      background:url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741355470/64673_z24lg6.jpg') center 40%/cover no-repeat;
       z-index:-2;filter:brightness(0.85);
     }
 
-    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:-1;}
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.3);z-index:-1;}
 
-    .hero-content{max-width:900px;padding:20px;position:relative;top:-10%;}
-    .hero-content h1{font-family:'Montserrat',sans-serif;font-size:clamp(38px,6vw,64px);margin:0 0 18px;letter-spacing:1px;}
+    .hero-content{
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      text-align:center;max-width:900px;padding:20px;
+      animation:fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn{from{opacity:0;transform:translate(-50%,-45%);}to{opacity:1;transform:translate(-50%,-50%);}}
+
+    .hero-content h1{font-family:'Montserrat',sans-serif;font-size:clamp(42px,6vw,68px);margin-bottom:18px;letter-spacing:1px;}
     .hero-content p{font-size:22px;opacity:0.95;margin-bottom:28px;}
 
     .btn{display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;background:#0ea5e9;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;box-shadow:0 3px 6px rgba(0,0,0,0.15);transition:all .3s;}
     .btn:hover{background:#0284c7;transform:translateY(-2px);}
 
+    /* FADE SCROLL EFFECT */
+    .fade-out{opacity:0;transition:opacity 1s ease-out;}
+
     section{padding:80px 20px;max-width:1400px;margin:auto;}
 
+    /* ABOUT */
+    #about{text-align:center;}
+    #about h2{font-family:'Montserrat',sans-serif;margin-bottom:40px;}
+    #about p{max-width:800px;margin:auto;}
+
+    /* DESTINATIONS */
+    #destinations{text-align:center;}
     .mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;text-align:center;margin-top:40px;}
     .mini-card{background:#fff;border:1px solid #eee;border-radius:16px;padding:40px 24px;box-shadow:0 8px 20px rgba(0,0,0,0.05);transition:transform .3s, box-shadow .3s;}
     .mini-card:hover{transform:translateY(-6px);box-shadow:0 10px 26px rgba(0,0,0,0.08);}
     .mini-card i{font-size:32px;color:#fff;background:#0ea5e9;padding:14px;border-radius:50%;margin-bottom:14px;}
     .mini-card h3{font-family:'Montserrat',sans-serif;margin:10px 0;font-size:18px;}
 
+    /* GALLERY */
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:22px;padding:0 60px;}
     .gallery-item{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.15);cursor:pointer;transition:transform .3s, box-shadow .3s;}
     .gallery-item:hover{transform:scale(1.04);box-shadow:0 12px 30px rgba(0,0,0,0.25);}
 
+    /* LIGHTBOX */
     .lightbox{display:none;position:fixed;z-index:100;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);align-items:center;justify-content:center;transition:opacity 0.4s ease;}
     .lightbox.active{display:flex;}
     .lightbox img{max-width:90%;max-height:80%;border-radius:10px;opacity:0;transition:opacity 0.4s ease;}
@@ -71,6 +91,7 @@
     .lightbox .arrow.right{right:30px;}
     .lightbox .close{position:absolute;top:20px;right:30px;font-size:36px;color:#fff;cursor:pointer;}
 
+    /* CONTACT */
     .contact{background:#fafafa;text-align:center;padding:80px 20px;}
     .contact h2{font-family:'Montserrat',sans-serif;margin-bottom:10px;}
     .contact p{color:#555;margin-bottom:20px;}
@@ -78,6 +99,7 @@
     .social-links a{display:flex;align-items:center;gap:8px;font-weight:600;border:1px solid #ddd;padding:10px 16px;border-radius:999px;transition:background .3s;}
     .social-links a:hover{background:#f0f0f0;}
 
+    /* FOOTER */
     footer{text-align:center;padding:30px;color:#777;border-top:1px solid #eee;}
 
     .whatsapp{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;font-family:'Montserrat',sans-serif;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.2);}
@@ -97,24 +119,23 @@
       <a href="#contact" class="cta">Contact</a>
     </div>
   </header>
-  <div id="top" class="spacer"></div>
 
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="hero-content">
       <h1>Pristine Waters</h1>
       <p>Experience unforgettable fly fishing adventures in exotic and remote destinations.</p>
-      <a href="#destinations" class="btn">Discover More</a>
+      <a href="#about" class="btn">Discover More</a>
     </div>
   </section>
 
   <section id="about">
-    <h2 style="text-align:center;font-family:'Montserrat',sans-serif;margin-bottom:40px;">About Us</h2>
-    <p style="max-width:800px;margin:auto;text-align:center;">Pristine Waters unlocks unforgettable fly fishing adventures in Patagonia. Our dedicated team crafts personalized trips that blend world-class fishing with breathtaking, untouched landscapes. Enjoy top-quality equipment, expert guidance, and sustainable practices for an immersive, one-of-a-kind experience.</p>
+    <h2>About Us</h2>
+    <p>Pristine Waters unlocks unforgettable fly fishing adventures in Patagonia. Our dedicated team crafts personalized trips that blend world-class fishing with breathtaking, untouched landscapes. Enjoy top-quality equipment, expert guidance, and sustainable practices for an immersive, one-of-a-kind experience.</p>
   </section>
 
   <section id="destinations">
-    <h2 style="text-align:center;font-family:'Montserrat',sans-serif;margin-bottom:40px;">Destinations</h2>
-    <p style="max-width:900px;margin:auto;text-align:center;margin-bottom:40px;">Our excursions include transportation in 4x4 vehicles, professional guiding, top-quality fly fishing gear, riverside lunch with wine and snacks, and personalized assistance to ensure an unforgettable day in Patagonia’s pristine landscapes.</p>
+    <h2>Destinations</h2>
+    <p>Our excursions include transportation in 4x4 vehicles, professional guiding, top-quality fly fishing gear, riverside lunch with wine and snacks, and personalized assistance to ensure an unforgettable day in Patagonia’s pristine landscapes.</p>
     <div class="mini-cards">
       <div class="mini-card"><i class="fa-solid fa-car"></i><h3>4x4 Transportation</h3><p>Comfortable off-road vehicles for access to remote rivers and lakes.</p></div>
       <div class="mini-card"><i class="fa-solid fa-fish"></i><h3>Fishing Equipment</h3><p>High-quality rods, reels, waders, and flies included for every guest.</p></div>
@@ -123,18 +144,13 @@
   </section>
 
   <section id="gallery">
-    <h2 style="text-align:center;font-family:'Montserrat',sans-serif;margin-bottom:40px;">Gallery</h2>
+    <h2>Gallery</h2>
     <div class="gallery-grid">
       <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+1" alt="Gallery photo 1"></div>
       <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+2" alt="Gallery photo 2"></div>
       <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+3" alt="Gallery photo 3"></div>
       <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+4" alt="Gallery photo 4"></div>
       <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+5" alt="Gallery photo 5"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+6" alt="Gallery photo 6"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+7" alt="Gallery photo 7"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+8" alt="Gallery photo 8"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+9" alt="Gallery photo 9"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+10" alt="Gallery photo 10"></div>
     </div>
   </section>
 
@@ -162,16 +178,25 @@
   <a class="whatsapp" href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat with us</a>
 
   <script>
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    const closeBtn = document.querySelector('.lightbox .close');
-    const nextBtn = document.querySelector('.lightbox .arrow.right');
-    const prevBtn = document.querySelector('.lightbox .arrow.left');
-    let currentIndex = 0;
+    // Fade out hero on scroll
+    window.addEventListener('scroll',()=>{
+      const hero=document.querySelector('.hero');
+      const scrollPos=window.scrollY;
+      if(scrollPos>150){hero.classList.add('fade-out');}
+      else{hero.classList.remove('fade-out');}
+    });
+
+    // Lightbox functionality
+    const lightbox=document.querySelector('.lightbox');
+    const lightboxImg=lightbox.querySelector('img');
+    const galleryItems=document.querySelectorAll('.gallery-item img');
+    const closeBtn=document.querySelector('.lightbox .close');
+    const nextBtn=document.querySelector('.lightbox .arrow.right');
+    const prevBtn=document.querySelector('.lightbox .arrow.left');
+    let currentIndex=0;
 
     function showImage(index){
-      lightboxImg.src = galleryItems[index].src;
+      lightboxImg.src=galleryItems[index].src;
       lightbox.classList.add('active');
       setTimeout(()=>lightbox.classList.add('show'),10);
     }
