@@ -29,8 +29,6 @@
     .nav a:hover{color:#0ea5e9;}
     .nav .cta{padding:8px 20px;background:#0ea5e9;color:#fff;border-radius:999px;}
 
-    .spacer{height:90px;}
-
     /* HERO */
     .hero{
       position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#fff;text-align:center;
@@ -39,15 +37,28 @@
     .hero::before{
       content:'';position:absolute;inset:0;
       background:url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741355470/64673_z24lg6.jpg') center 40%/cover no-repeat;
-      z-index:-2;filter:brightness(0.85);
+      z-index:-2;filter:brightness(0.85);background-attachment:fixed;
+      transform:translateZ(0);
     }
 
-    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.3);z-index:-1;}
+    /* Parallax effect */
+    window.addEventListener('scroll', function() {
+      const heroBg = document.querySelector('.hero::before');
+      let offset = window.pageYOffset;
+      heroBg.style.backgroundPositionY = 40 - offset * 0.3 + '%';
+    });
+
+    /* Gradient transition to blend hero with next section */
+    .hero::after{
+      content:'';position:absolute;bottom:0;left:0;width:100%;height:180px;
+      background:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(255,255,255,1) 100%);
+      z-index:-1;
+    }
 
     .hero-content{
       position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
       text-align:center;max-width:900px;padding:20px;
-      animation:fadeIn 2s ease-out;
+      animation:fadeIn 2s ease-out;z-index:1;
     }
 
     @keyframes fadeIn{from{opacity:0;transform:translate(-50%,-45%);}to{opacity:1;transform:translate(-50%,-50%);}}
@@ -58,30 +69,24 @@
     .btn{display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;background:#0ea5e9;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;box-shadow:0 3px 6px rgba(0,0,0,0.15);transition:all .3s;}
     .btn:hover{background:#0284c7;transform:translateY(-2px);}
 
-    /* FADE SCROLL EFFECT */
-    .fade-out{opacity:0;transition:opacity 1s ease-out;}
+    section{padding:80px 20px;max-width:1400px;margin:auto;position:relative;z-index:2;}
 
-    section{padding:80px 20px;max-width:1400px;margin:auto;}
+    #about,#destinations,#gallery,#contact{background:#fff;}
 
-    /* ABOUT */
-    #about{text-align:center;}
-    #about h2{font-family:'Montserrat',sans-serif;margin-bottom:40px;}
-    #about p{max-width:800px;margin:auto;}
+    #about h2,#destinations h2,#gallery h2,#contact h2{font-family:'Montserrat',sans-serif;text-align:center;margin-bottom:40px;}
 
-    /* DESTINATIONS */
-    #destinations{text-align:center;}
+    #about p{max-width:800px;margin:auto;text-align:center;}
+
     .mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;text-align:center;margin-top:40px;}
     .mini-card{background:#fff;border:1px solid #eee;border-radius:16px;padding:40px 24px;box-shadow:0 8px 20px rgba(0,0,0,0.05);transition:transform .3s, box-shadow .3s;}
     .mini-card:hover{transform:translateY(-6px);box-shadow:0 10px 26px rgba(0,0,0,0.08);}
     .mini-card i{font-size:32px;color:#fff;background:#0ea5e9;padding:14px;border-radius:50%;margin-bottom:14px;}
     .mini-card h3{font-family:'Montserrat',sans-serif;margin:10px 0;font-size:18px;}
 
-    /* GALLERY */
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:22px;padding:0 60px;}
     .gallery-item{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.15);cursor:pointer;transition:transform .3s, box-shadow .3s;}
     .gallery-item:hover{transform:scale(1.04);box-shadow:0 12px 30px rgba(0,0,0,0.25);}
 
-    /* LIGHTBOX */
     .lightbox{display:none;position:fixed;z-index:100;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);align-items:center;justify-content:center;transition:opacity 0.4s ease;}
     .lightbox.active{display:flex;}
     .lightbox img{max-width:90%;max-height:80%;border-radius:10px;opacity:0;transition:opacity 0.4s ease;}
@@ -91,15 +96,12 @@
     .lightbox .arrow.right{right:30px;}
     .lightbox .close{position:absolute;top:20px;right:30px;font-size:36px;color:#fff;cursor:pointer;}
 
-    /* CONTACT */
     .contact{background:#fafafa;text-align:center;padding:80px 20px;}
-    .contact h2{font-family:'Montserrat',sans-serif;margin-bottom:10px;}
     .contact p{color:#555;margin-bottom:20px;}
     .social-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
     .social-links a{display:flex;align-items:center;gap:8px;font-weight:600;border:1px solid #ddd;padding:10px 16px;border-radius:999px;transition:background .3s;}
     .social-links a:hover{background:#f0f0f0;}
 
-    /* FOOTER */
     footer{text-align:center;padding:30px;color:#777;border-top:1px solid #eee;}
 
     .whatsapp{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;font-family:'Montserrat',sans-serif;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.2);}
@@ -178,14 +180,6 @@
   <a class="whatsapp" href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat with us</a>
 
   <script>
-    // Fade out hero on scroll
-    window.addEventListener('scroll',()=>{
-      const hero=document.querySelector('.hero');
-      const scrollPos=window.scrollY;
-      if(scrollPos>150){hero.classList.add('fade-out');}
-      else{hero.classList.remove('fade-out');}
-    });
-
     // Lightbox functionality
     const lightbox=document.querySelector('.lightbox');
     const lightboxImg=lightbox.querySelector('img');
@@ -228,6 +222,13 @@
         lightbox.classList.remove('show');
         setTimeout(()=>lightbox.classList.remove('active'),400);
       }
+    });
+
+    // Parallax hero background
+    window.addEventListener('scroll', function() {
+      const hero = document.querySelector('.hero');
+      let offset = window.pageYOffset;
+      hero.style.backgroundPositionY = offset * 0.4 + 'px';
     });
   </script>
 </body>
