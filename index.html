@@ -9,78 +9,46 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
   <style>
     body{font-family:'Lora',serif;color:#111;margin:0;padding:0;overflow-x:hidden;background:#fff;scroll-behavior:smooth;}
-
-    /* Ensure anchor jump doesn't hide under fixed header */
-    section[id]{scroll-margin-top:100px;}
+    section[id]{scroll-margin-top:110px;}
 
     /* Header */
-    header{position:fixed;top:0;left:0;width:100%;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;box-shadow:0 2px 8px rgba(0,0,0,0.1);z-index:1000;}
-    .logo img{height:58px;width:auto;object-fit:contain;transition:all 0.3s ease;}
-    .nav{display:flex;gap:28px;align-items:center;}
+    header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:14px 40px;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:1000;animation:fadeDown 0.8s ease-in-out;}
+    .logo img{height:70px;width:auto;object-fit:contain;}
+    .nav{display:flex;gap:28px;align-items:center;margin-left:20px;}
     .nav a{text-decoration:none;color:#111;font-family:'Montserrat',sans-serif;font-weight:600;transition:color .3s;}
     .nav a:hover{color:#0ea5e9;}
-    .nav .cta{background:#0ea5e9;color:#fff;padding:10px 16px;border-radius:999px;}
+    .nav .cta{background:#0ea5e9;color:#fff;padding:10px 18px;border-radius:999px;}
     .hamburger{display:none;font-size:28px;cursor:pointer;}
-    @media(max-width:768px){.nav{display:none;flex-direction:column;position:absolute;top:70px;right:0;width:100%;background:white;text-align:center;}.nav.active{display:flex;animation:slideDown .3s ease-out;}.hamburger{display:block;color:#111;}}
-
-    @keyframes fadeDown {from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);}}
+    @keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+    @media(max-width:768px){.nav{display:none;flex-direction:column;position:absolute;top:80px;right:0;width:100%;background:white;text-align:center;}.nav.active{display:flex;animation:fadeDown .4s ease-out;}.hamburger{display:block;color:#111;}}
 
     /* Hero */
     .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;overflow:hidden;}
-    .hero::before{content:'';position:absolute;inset:0;background:url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741355470/64673_z24lg6.jpg') center 35%/cover no-repeat;z-index:-1;filter:brightness(0.9);}
+    .hero::before{content:'';position:absolute;inset:0;background:url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741355470/64673_z24lg6.jpg') center center/cover no-repeat;z-index:-1;filter:brightness(0.9);}
     .hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:900px;padding:20px;text-align:center;z-index:2;animation:fadeUp 1.2s ease-in-out;}
-    .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(40px,6vw,64px);margin-bottom:14px;}
-    .hero p{font-size:20px;margin-bottom:22px;}
-    .btn{display:inline-block;padding:12px 24px;border-radius:999px;background:#0ea5e9;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;transition:transform .3s, background .3s;}
+    .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(42px,6vw,68px);margin-bottom:16px;}
+    .hero p{font-size:22px;margin-bottom:24px;}
+    .btn{display:inline-block;padding:14px 28px;border-radius:999px;background:#0ea5e9;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;transition:transform .3s, background .3s;}
     .btn:hover{transform:scale(1.05);background:#0894d1;}
 
-    main{padding-top:90px;}
-    section{padding:80px 20px;max-width:1200px;margin:auto;text-align:center;opacity:0;transform:translateY(40px);transition:opacity .8s ease-out, transform .8s ease-out;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+
+    main{padding-top:110px;}
+    section{padding:90px 20px;max-width:1200px;margin:auto;text-align:center;opacity:0;transform:translateY(40px);transition:opacity .8s ease-out, transform .8s ease-out;}
     section.visible{opacity:1;transform:translateY(0);}
     h2{font-family:'Montserrat',sans-serif;text-align:center;margin-bottom:32px;color:#111;}
     p{max-width:900px;margin:auto;}
 
-    /* Destinations */
-    #destinations{background:#f8f8f8;border-top:1px solid #eee;border-bottom:1px solid #eee;}
-    .mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;text-align:center;margin-top:32px;}
-    .mini-card{background:#fff;border-radius:16px;padding:30px 20px;box-shadow:0 8px 20px rgba(0,0,0,0.05);transition:transform .4s ease, box-shadow .4s ease;}
-    .mini-card:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,0,0,0.1);}
-    .mini-card i{font-size:28px;color:#fff;background:#0ea5e9;padding:12px;border-radius:50%;margin-bottom:12px;}
-
-    /* Gallery */
-    #gallery{background:#fff;}
-    .gallery-preview{text-align:center;cursor:pointer;animation:pulse 2.2s infinite ease-in-out;}
-    .gallery-preview img{width:80%;max-width:600px;border-radius:12px;transition:transform .4s, box-shadow .4s;}
-    .gallery-preview:hover img{transform:scale(1.05);box-shadow:0 0 20px rgba(14,165,233,0.3);}
-    .gallery-grid{display:none;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding:20px;}
-    .gallery-grid.active{display:grid;animation:fadeIn .8s ease-in-out;}
-    .gallery-item img{width:100%;height:100%;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .3s;}
-    .gallery-item:hover img{transform:scale(1.05);}
-
-    @keyframes pulse {0%, 100% {transform: scale(1);} 50% {transform: scale(1.04);} }
-    @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
-
-    /* Lightbox */
-    .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;z-index:2000;animation:fadeIn .6s ease-in-out;}
-    .lightbox.active{display:flex;}
-    .lightbox img{max-width:90%;max-height:80%;border-radius:10px;}
-    .arrow{position:absolute;top:50%;transform:translateY(-50%);font-size:40px;color:#fff;cursor:pointer;}
-    .arrow.left{left:30px;}
-    .arrow.right{right:30px;}
-    .close{position:absolute;top:20px;right:30px;font-size:36px;color:#fff;cursor:pointer;}
-
-    /* Contact */
-    #contact{background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee;}
-    .social-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:18px;}
-    .social-links a{display:flex;align-items:center;gap:8px;font-weight:600;border:1px solid #ddd;padding:9px 14px;border-radius:999px;transition:background .25s;}
-    .social-links a:hover{background:#f4f4f4;}
-
     /* Footer */
-    footer{text-align:center;padding:40px 20px;color:#777;border-top:1px solid #eee;background:#fff;animation:fadeUp 1.2s ease-in-out;}
+    footer{background:#0f172a;color:#e2e8f0;text-align:center;padding:60px 20px;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:'Montserrat',sans-serif;letter-spacing:0.5px;}
+    footer p{margin:0;font-size:15px;}
+    footer a{color:#38bdf8;text-decoration:none;}
 
-    /* WhatsApp Button */
-    .whatsapp-btn{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 10px rgba(0,0,0,0.3);cursor:pointer;z-index:1500;transition:transform .3s ease;}
+    /* WhatsApp */
+    .whatsapp-btn{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;border-radius:50%;width:62px;height:62px;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 4px 10px rgba(0,0,0,0.3);cursor:pointer;z-index:1500;transition:transform .3s ease;}
     .whatsapp-btn:hover{transform:scale(1.1);}
+    .whatsapp-btn::after{content:'Chat with us';position:absolute;right:70px;background:#25D366;color:white;font-size:14px;padding:6px 10px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .3s;}
+    .whatsapp-btn:hover::after{opacity:1;}
   </style>
 </head>
 <body>
@@ -91,7 +59,7 @@
       <a href="#about">About Us</a>
       <a href="#destinations">Destinations</a>
       <a href="#gallery">Gallery</a>
-      <a href="#contact" class="cta">Contact</a>
+      <a href="#contact" class="cta">Contact Us</a>
     </nav>
   </header>
 
@@ -103,115 +71,20 @@
     </div>
   </section>
 
-  <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Pristine Waters unlocks unforgettable fly fishing adventures in Patagonia. Personalized trips that blend world-class fishing, expert guidance, and sustainability.</p>
-    </section>
-
-    <section id="destinations">
-      <h2>Destinations</h2>
-      <p>Our excursions include transportation in 4x4 vehicles, professional guiding, top-quality fly fishing gear, riverside lunch with wine and snacks, and personalized assistance to ensure an unforgettable day in Patagonia’s pristine landscapes.</p>
-      <div class="mini-cards">
-        <div class="mini-card"><i class="fa-solid fa-car"></i><h3>4x4 Transportation</h3><p>Comfortable off-road vehicles for access to remote rivers and lakes.</p></div>
-        <div class="mini-card"><i class="fa-solid fa-fish"></i><h3>Fishing Equipment</h3><p>High-quality rods, reels, waders, and flies included for every guest.</p></div>
-        <div class="mini-card"><i class="fa-solid fa-utensils"></i><h3>Riverside Lunch</h3><p>Delicious meals with wine and snacks in breathtaking outdoor settings.</p></div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <div class="gallery-preview" id="galleryPreview">
-        <img src="https://via.placeholder.com/600x400?text=Open+Gallery" alt="Open Gallery">
-        <p>Click to view full gallery</p>
-      </div>
-      <div class="gallery-grid" id="galleryGrid">
-        <!-- 20 Images -->
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+1" alt="Gallery 1"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+2" alt="Gallery 2"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+3" alt="Gallery 3"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+4" alt="Gallery 4"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+5" alt="Gallery 5"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+6" alt="Gallery 6"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+7" alt="Gallery 7"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+8" alt="Gallery 8"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+9" alt="Gallery 9"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+10" alt="Gallery 10"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+11" alt="Gallery 11"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+12" alt="Gallery 12"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+13" alt="Gallery 13"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+14" alt="Gallery 14"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+15" alt="Gallery 15"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+16" alt="Gallery 16"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+17" alt="Gallery 17"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+18" alt="Gallery 18"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+19" alt="Gallery 19"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+20" alt="Gallery 20"></div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Reach us through the channels below — we’ll get back to you right away.</p>
-      <div class="social-links">
-        <a href="mailto:info@pristinewaters.cl"><i class="fa-solid fa-envelope"></i> Email</a>
-        <a href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
-      </div>
-    </section>
-  </main>
-
   <footer>
-    <p>© 2025 Pristine Waters Fly Fishing Patagonia</p>
+    <p>© 2025 Pristine Waters Fly Fishing Patagonia — Designed with passion in Patagonia.</p>
+    <p>Follow us on <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">Instagram</a></p>
   </footer>
 
   <div class="whatsapp-btn" onclick="window.open('https://wa.me/56979559776','_blank')">
     <i class="fab fa-whatsapp"></i>
   </div>
 
-  <div class="lightbox" id="lightbox">
-    <span class="close" id="lbClose">&times;</span>
-    <span class="arrow left" id="lbPrev"><i class="fa-solid fa-chevron-left"></i></span>
-    <img src="" alt="Expanded image" id="lbImg">
-    <span class="arrow right" id="lbNext"><i class="fa-solid fa-chevron-right"></i></span>
-  </div>
-
   <script>
-    // Mobile menu toggle & close on click
     const menuToggle=document.getElementById('menuToggle');
     const mobileNav=document.getElementById('mobileNav');
     menuToggle.addEventListener('click',()=>mobileNav.classList.toggle('active'));
     mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileNav.classList.remove('active')));
-
-    // Reveal on scroll
-    const sections=document.querySelectorAll('section');
-    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.2});
-    sections.forEach(sec=>observer.observe(sec));
-
-    // Gallery open/close
-    const galleryPreview=document.getElementById('galleryPreview');
-    const galleryGrid=document.getElementById('galleryGrid');
-    galleryPreview.addEventListener('click',()=>{
-      galleryGrid.classList.add('active');
-      galleryPreview.style.display='none';
-    });
-
-    // Lightbox
-    const lightbox=document.getElementById('lightbox');
-    const lbImg=document.getElementById('lbImg');
-    const lbClose=document.getElementById('lbClose');
-    const lbPrev=document.getElementById('lbPrev');
-    const lbNext=document.getElementById('lbNext');
-    const images=Array.from(document.querySelectorAll('.gallery-item img'));
-    let currentIndex=0;
-
-    function openLightbox(index){currentIndex=index;lbImg.src=images[index].src;lightbox.classList.add('active');}
-    function showImage(index){currentIndex=(index+images.length)%images.length;lbImg.src=images[currentIndex].src;}
-
-    images.forEach((img,i)=>img.addEventListener('click',()=>openLightbox(i)));
-    lbClose.addEventListener('click',()=>{lightbox.classList.remove('active');galleryGrid.classList.remove('active');galleryPreview.style.display='block';});
-    lbNext.addEventListener('click',()=>showImage(currentIndex+1));
-    lbPrev.addEventListener('click',()=>showImage(currentIndex-1));
   </script>
 </body>
 </html>
