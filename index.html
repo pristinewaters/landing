@@ -10,7 +10,7 @@
   <style>
     :root{--brand:#0ea5e9;}
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Lora',serif;color:#111;background:#fff;line-height:1.6;overflow-x:hidden;}
+    body{font-family:'Lora',serif;color:#111;background:#fff;line-height:1.6;overflow-x:hidden;scroll-behavior:smooth;}
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%;height:auto;}
 
@@ -28,8 +28,9 @@
     .hamburger{display:none;font-size:26px;cursor:pointer;}
     @media(max-width:768px){
       .nav{display:none;flex-direction:column;position:absolute;top:70px;right:0;width:100%;background:white;text-align:center;border-top:1px solid #eee;}
-      .nav.active{display:flex;}
+      .nav.active{display:flex;animation:slideDown .3s ease-out;}
       .hamburger{display:block;color:#111;}
+      @keyframes slideDown{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
     }
 
     /* HERO */
@@ -47,17 +48,28 @@
     #about p{max-width:800px;margin:auto;text-align:center;}
 
     /* MINI CARDS */
+    #destinations p{max-width:900px;margin:auto;text-align:center;margin-bottom:32px;}
     .mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;text-align:center;margin-top:32px;}
     .mini-card{background:#fff;border:1px solid #eee;border-radius:16px;padding:30px 20px;box-shadow:0 8px 20px rgba(0,0,0,0.05);}
     .mini-card i{font-size:28px;color:#fff;background:var(--brand);padding:12px;border-radius:50%;margin-bottom:12px;}
 
     /* GALLERY */
     .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:0 30px;}
-    .gallery-item{position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:1/1;}
+    .gallery-item{position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:1/1;transition:transform .3s;}
+    .gallery-item:hover{transform:scale(1.03);}
     .gallery-item img{width:100%;height:100%;object-fit:cover;}
     @media(max-width:768px){
-      .gallery-grid{grid-template-columns:repeat(2,1fr);}
+      .gallery-grid{grid-template-columns:repeat(3,1fr);}
     }
+
+    /* LIGHTBOX */
+    .lightbox{display:none;position:fixed;z-index:2000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;}
+    .lightbox.active{display:flex;}
+    .lightbox img{max-width:90%;max-height:80%;border-radius:10px;}
+    .lightbox .arrow{position:absolute;top:50%;transform:translateY(-50%);font-size:40px;color:#fff;cursor:pointer;padding:10px;}
+    .lightbox .arrow.left{left:30px;}
+    .lightbox .arrow.right{right:30px;}
+    .lightbox .close{position:absolute;top:20px;right:30px;font-size:36px;color:#fff;cursor:pointer;}
 
     /* CONTACT & FOOTER */
     .contact{text-align:center;background:#fafafa;padding:72px 20px;}
@@ -97,10 +109,11 @@
 
     <section id="destinations">
       <h2>Destinations</h2>
+      <p>Our excursions include transportation in 4x4 vehicles, professional guiding, top-quality fly fishing gear, riverside lunch with wine and snacks, and personalized assistance to ensure an unforgettable day in Patagonia’s pristine landscapes.</p>
       <div class="mini-cards">
-        <div class="mini-card"><i class="fa-solid fa-car"></i><h3>4x4 Transportation</h3></div>
-        <div class="mini-card"><i class="fa-solid fa-fish"></i><h3>Fishing Equipment</h3></div>
-        <div class="mini-card"><i class="fa-solid fa-utensils"></i><h3>Riverside Lunch</h3></div>
+        <div class="mini-card"><i class="fa-solid fa-car"></i><h3>4x4 Transportation</h3><p>Comfortable off-road vehicles for access to remote rivers and lakes.</p></div>
+        <div class="mini-card"><i class="fa-solid fa-fish"></i><h3>Fishing Equipment</h3><p>High-quality rods, reels, waders, and flies included for every guest.</p></div>
+        <div class="mini-card"><i class="fa-solid fa-utensils"></i><h3>Riverside Lunch</h3><p>Delicious meals with wine and snacks in breathtaking outdoor settings.</p></div>
       </div>
     </section>
 
@@ -111,6 +124,22 @@
         <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+2" alt="Gallery 2"></div>
         <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+3" alt="Gallery 3"></div>
         <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+4" alt="Gallery 4"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+5" alt="Gallery 5"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+6" alt="Gallery 6"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+7" alt="Gallery 7"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+8" alt="Gallery 8"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+9" alt="Gallery 9"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+10" alt="Gallery 10"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+11" alt="Gallery 11"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+12" alt="Gallery 12"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+13" alt="Gallery 13"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+14" alt="Gallery 14"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+15" alt="Gallery 15"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+16" alt="Gallery 16"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+17" alt="Gallery 17"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+18" alt="Gallery 18"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+19" alt="Gallery 19"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+20" alt="Gallery 20"></div>
       </div>
     </section>
 
@@ -130,10 +159,44 @@
 
   <a class="whatsapp" href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat with us</a>
 
+  <div class="lightbox" id="lightbox">
+    <span class="close" id="lbClose">&times;</span>
+    <span class="arrow left" id="lbPrev"><i class="fa-solid fa-chevron-left"></i></span>
+    <img src="" alt="Expanded image" id="lbImg">
+    <span class="arrow right" id="lbNext"><i class="fa-solid fa-chevron-right"></i></span>
+  </div>
+
   <script>
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
     menuToggle.addEventListener('click',()=> mobileNav.classList.toggle('active'));
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbClose = document.getElementById('lbClose');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+    const images = Array.from(document.querySelectorAll('.gallery-item img'));
+    let currentIndex = 0;
+
+    function openLightbox(index){
+      currentIndex = index;
+      lbImg.src = images[index].src;
+      lightbox.classList.add('active');
+    }
+
+    function showImage(index){
+      currentIndex = (index + images.length) % images.length;
+      lbImg.src = images[currentIndex].src;
+    }
+
+    images.forEach((img,i)=> img.addEventListener('click',()=> openLightbox(i)));
+    lbClose.addEventListener('click',()=> lightbox.classList.remove('active'));
+    lbNext.addEventListener('click',()=> showImage(currentIndex + 1));
+    lbPrev.addEventListener('click',()=> showImage(currentIndex - 1));
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('active');});
   </script>
 </body>
 </html>
