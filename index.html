@@ -3,134 +3,566 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pristine Waters — Fly Fishing Patagonia</title>
-  <meta name="description" content="Experience unforgettable fly fishing adventures in exotic and remote destinations with Pristine Waters." />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
+  <title>Pristine Waters</title>
+  <!-- Import modern fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <!-- Import Font Awesome for elegant icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHqT9N4W0GQvex1wvY9N9OaXZ+jZbLq+V0MZ5U4d2qZk7FPD6jI3X5fjJ3XV7J4UQv47O/Jw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    body{margin:0;padding:0;font-family:'Lora',serif;color:#111;background:#fff;line-height:1.6;}
-    a{text-decoration:none;color:inherit}
-    img{width:100%;height:100%;object-fit:cover;display:block;}
-
-    header{position:fixed;top:0;width:100%;z-index:10;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:space-between;padding:6px 18px;border-bottom:1px solid #eee;}
-    .logo img{height:20px;border-radius:6px;cursor:pointer;}
-    .nav{display:flex;align-items:center;gap:20px;}
-    .nav a{font-family:'Montserrat',sans-serif;font-weight:600;}
-    .nav .cta{padding:8px 14px;background:#0ea5e9;color:#fff;border-radius:999px;}
-    .spacer{height:70px;}
-
-    .hero{height:80vh;position:relative;display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden;text-align:center;}
-    .hero::before{content:'';position:absolute;inset:0;background:url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741355470/64673_z24lg6.jpg') center/cover no-repeat;z-index:-2;}
-    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.4);z-index:-1;}
-    .hero-content{max-width:800px;padding:20px;}
-    .hero-content h1{font-family:'Montserrat',sans-serif;font-size:clamp(36px,6vw,56px);margin:0 0 10px;letter-spacing:1px;}
-    .hero-content p{font-size:18px;opacity:0.9;margin-bottom:20px;}
-    .btn{display:inline-block;margin:6px;padding:12px 20px;border-radius:999px;background:#0ea5e9;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;box-shadow:0 3px 6px rgba(0,0,0,0.15);transition:all .3s;}
-    .btn:hover{background:#0284c7;transform:translateY(-2px);}
-
-    section{padding:80px 20px;max-width:1200px;margin:auto;}
-
-    .mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;text-align:center;margin-top:40px;}
-    .mini-card{background:#fff;border:1px solid #eee;border-radius:16px;padding:40px 24px;box-shadow:0 8px 20px rgba(0,0,0,0.05);transition:transform .3s, box-shadow .3s;}
-    .mini-card:hover{transform:translateY(-6px);box-shadow:0 10px 26px rgba(0,0,0,0.08);}
-    .mini-card i{font-size:32px;color:#fff;background:#0ea5e9;padding:14px;border-radius:50%;margin-bottom:14px;}
-    .mini-card h3{font-family:'Montserrat',sans-serif;margin:10px 0;font-size:18px;}
-
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;}
-    .gallery-item{position:relative;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);cursor:pointer;transition:transform .3s;}
-    .gallery-item:hover{transform:scale(1.02);}
-
-    .contact{background:#fafafa;text-align:center;padding:80px 20px;}
-    .contact h2{font-family:'Montserrat',sans-serif;margin-bottom:10px;}
-    .contact p{color:#555;margin-bottom:20px;}
-    .social-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
-    .social-links a{display:flex;align-items:center;gap:8px;font-weight:600;border:1px solid #ddd;padding:10px 16px;border-radius:999px;transition:background .3s;}
-    .social-links a:hover{background:#f0f0f0;}
-
-    footer{text-align:center;padding:30px;color:#777;border-top:1px solid #eee;}
-
-    .whatsapp{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;font-family:'Montserrat',sans-serif;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.2);}
-    .whatsapp:hover{filter:brightness(0.95);}
-
-    @media(max-width:600px){header{padding:10px 14px;}section{padding:60px 14px;}}
+    /* Reset and basic styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      font-family: 'Open Sans', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background: #fff;
+      color: #333;
+    }
+    a { text-decoration: none; color: inherit; }
+    
+    /* Header */
+    header {
+      position: fixed;
+      width: 100%;
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    header .logo img { height: 50px; cursor: pointer; }
+    nav { display: flex; align-items: center; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav li { position: relative; }
+    nav a { color: #333; font-size: 1rem; transition: color 0.3s; }
+    nav a:hover { color: #ff6b6b; }
+    .contact-btn {
+      padding: 0.5rem 1rem;
+      background: #ff6b6b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+    .contact-btn:hover { background: #ff4757; }
+    /* Hamburger Menu (Mobile) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger span { width: 25px; height: 3px; background: #333; transition: background 0.3s; }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: #fff;
+        padding: 1rem;
+        transition: left 0.3s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      nav ul.active { left: 0; }
+      .hamburger { display: flex; }
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('images/hero.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #333;
+      max-width: 800px;
+      padding: 2rem;
+      animation: slideIn 1.5s ease-out;
+    }
+    .hero-content h1 { font-family: 'Montserrat', sans-serif; font-size: 4rem; margin-bottom: 1rem; }
+    .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .cta-button {
+      padding: 1rem 2rem;
+      background: #ff6b6b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+    .cta-button:hover { background: #ff4757; }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* About Us Section */
+    .about {
+      padding: 6rem 2rem 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      background: #fff;
+    }
+    .about .about-img { flex: 1 1 300px; overflow: hidden; border-radius: 8px; }
+    .about .about-img img { width: 100%; display: block; transition: transform 0.3s; }
+    .about .about-img:hover img { transform: scale(1.05); }
+    .about .about-content { flex: 1 1 300px; }
+    .about .about-content h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: #333; }
+    .about .about-content p {
+      line-height: 1.6;
+      text-align: justify;
+    }
+    
+    /* Destinations Section */
+    .destinations {
+      padding: 4rem 2rem;
+      background: #fff;
+    }
+    /* Cambio de "Our Destinations" a "Destinations" */
+    .destinations h2 { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #333; }
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .destination-item {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      background: #fff;
+      padding: 0.5rem;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .destination-item:hover { transform: scale(1.02); }
+    .destination-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .destination-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+    }
+    .destination-item:hover .destination-overlay { opacity: 1; }
+    .destination-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0.5rem;
+      background: rgba(255,255,255,0.9);
+      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      text-align: center;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      padding: 4rem 2rem;
+      background: #f9f9f9;
+      position: relative;
+    }
+    .testimonials h2 {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+    .slider { position: relative; overflow: hidden; }
+    .slide {
+      display: none;
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      min-width: 300px;
+      text-align: center;
+    }
+    .slide.active { display: block; }
+    .slide p { font-style: italic; margin-bottom: 1rem; color: #666; }
+    .slide h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #333; }
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .slider-nav button {
+      background: rgba(255,255,255,0.8);
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      pointer-events: all;
+      transition: background 0.3s;
+    }
+    .slider-nav button:hover { background: rgba(255,255,255,1); }
+    
+    /* Contact Section */
+    .contact {
+      padding: 4rem 2rem;
+      background: #fff;
+      text-align: center;
+    }
+    .contact h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: #333; }
+    .contact p { margin-bottom: 2rem; font-size: 1.2rem; color: #666; }
+    .contact .cta-button {
+      padding: 1rem 2rem;
+      background: #ff6b6b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+    .contact .cta-button:hover { background: #ff4757; }
+    
+    /* Footer */
+    footer {
+      background: #fff;
+      color: #333;
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid #eee;
+    }
+    footer p { margin-bottom: 1rem; font-size: 0.9rem; }
+    footer .social {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    footer .social a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+      transition: color 0.3s;
+    }
+    footer .social a:hover { color: #ff6b6b; }
+    footer .social a .icon { font-size: 24px; margin-bottom: 0.3rem; }
+    footer .social a span { font-size: 0.9rem; }
+    
+    /* Responsive: Hamburger Menu for Mobile */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: #fff;
+        padding: 1rem;
+        transition: left 0.3s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      nav ul.active { left: 0; }
+      .hamburger { display: flex; }
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+    .modal-content p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .close-button {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <a href="#top" class="logo"><img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters logo"></a>
-    <div class="nav">
-      <a href="#about">About Us</a>
-      <a href="#destinations">Destinations</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact" class="cta">Contact</a>
+    <div class="logo">
+      <!-- Al hacer clic en el logo se redirige al Home (#hero) -->
+      <a href="#hero"><img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Logo" /></a>
     </div>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Hamburger icon for mobile -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <button class="contact-btn" onclick="scrollToSection('contact')">Contact</button>
   </header>
-  <div id="top" class="spacer"></div>
-
-  <section class="hero">
+  
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
     <div class="hero-content">
       <h1>Pristine Waters</h1>
       <p>Experience unforgettable fly fishing adventures in exotic and remote destinations.</p>
-      <a href="#destinations" class="btn">Discover More</a>
+      <button class="cta-button" onclick="scrollToSection('destinations')">Discover More</button>
     </div>
   </section>
-
-  <section id="about">
-    <h2 style="text-align:center;font-family:'Montserrat',sans-serif;margin-bottom:40px;">About Us</h2>
-    <p style="max-width:800px;margin:auto;text-align:center;">Pristine Waters unlocks unforgettable fly fishing adventures in Patagonia. Our dedicated team crafts personalized trips that blend world-class fishing with breathtaking, untouched landscapes. Enjoy top-quality equipment, expert guidance, and sustainable practices for an immersive, one-of-a-kind experience.</p>
-  </section>
-
-  <section id="destinations">
-    <h2 style="text-align:center;font-family:'Montserrat',sans-serif;margin-bottom:40px;">Destinations</h2>
-    <p style="max-width:900px;margin:auto;text-align:center;margin-bottom:40px;">Our excursions include transportation in 4x4 vehicles, professional guiding, top-quality fly fishing gear, riverside lunch with wine and snacks, and personalized assistance to ensure an unforgettable day in Patagonia’s pristine landscapes.</p>
-    <div class="mini-cards">
-      <div class="mini-card"><i class="fa-solid fa-car"></i><h3>4x4 Transportation</h3><p>Comfortable off-road vehicles for access to remote rivers and lakes.</p></div>
-      <div class="mini-card"><i class="fa-solid fa-fish"></i><h3>Fishing Equipment</h3><p>High-quality rods, reels, waders, and flies included for every guest.</p></div>
-      <div class="mini-card"><i class="fa-solid fa-utensils"></i><h3>Riverside Lunch</h3><p>Delicious meals with wine and snacks in breathtaking outdoor settings.</p></div>
+  
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <div class="about-img">
+      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741281644/DSC_0526_elbqff.jpg" alt="About Us" />
+    </div>
+    <div class="about-content">
+      <h2>About Us</h2>
+      <p>
+        Pristine Waters unlocks unforgettable fly fishing adventures in Patagonia. Our dedicated team crafts personalized trips that blend world-class fishing with breathtaking, untouched landscapes. Enjoy top-quality equipment, expert support from our highly experienced guides—who are passionate, knowledgeable, and deeply committed to sharing the magic of Patagonia—and sustainable practices, all designed to deliver an immersive, one-of-a-kind experience.
+      </p>
     </div>
   </section>
-
-  <section id="gallery">
-    <h2 style="text-align:center;font-family:'Montserrat',sans-serif;margin-bottom:40px;">Gallery</h2>
-    <div class="gallery-grid">
-      <!-- Placeholder images (20 slots) -->
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+1" alt="Gallery photo 1"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+2" alt="Gallery photo 2"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+3" alt="Gallery photo 3"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+4" alt="Gallery photo 4"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+5" alt="Gallery photo 5"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+6" alt="Gallery photo 6"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+7" alt="Gallery photo 7"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+8" alt="Gallery photo 8"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+9" alt="Gallery photo 9"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+10" alt="Gallery photo 10"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+11" alt="Gallery photo 11"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+12" alt="Gallery photo 12"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+13" alt="Gallery photo 13"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+14" alt="Gallery photo 14"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+15" alt="Gallery photo 15"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+16" alt="Gallery photo 16"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+17" alt="Gallery photo 17"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+18" alt="Gallery photo 18"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+19" alt="Gallery photo 19"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/600x400?text=Photo+20" alt="Gallery photo 20"></div>
+  
+  <!-- Destinations Section -->
+  <section id="destinations" class="destinations">
+    <h2>Destinations</h2>
+    <div class="destinations-grid">
+      <!-- Destination 1: Serrano River -->
+      <div class="destination-item" onclick="openModal('Serrano River', 'A privileged vantage point for enjoying a breathtaking postcard of the Torres del Paine massif, this river is home to the great Chinook—a worthy opponent for any angler eager to challenge their prowess against nature. Its waters, interconnected with lakes and other rivers, carry the purity of glaciers that embody the very essence of Patagonia, while the local flora and fauna offer spectacles such as a black eagle soaring through the noble branches of the Magellanic forest.')">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355474/IMG_4619_pwim81.jpg" alt="Serrano River" />
+        <div class="destination-overlay">View Details</div>
+        <div class="destination-info">Serrano River</div>
+      </div>
+      <!-- Destination 2: Penitente River -->
+      <div class="destination-item" onclick="openModal('Penitente River', 'In the heart of Patagonia, surrounded by rolling plains and wind-swept birds, lies this abundant river that unfolds in long, straight stretches and winding sections, giving way to pools filled with splendor and life. It is home to trout that strike a delicate balance between struggle, glory, and the bittersweet challenge faced by anglers worldwide testing their skills in Patagonia’s pristine waters.')">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355488/86082_tt0fbq.jpg" alt="Penitente River" />
+        <div class="destination-overlay">View Details</div>
+        <div class="destination-info">Penitente River</div>
+      </div>
+      <!-- Destination 3: Tierra del Fuego -->
+      <div class="destination-item" onclick="openModal('Tierra del Fuego', 'Untamed, awe-inspiring, challenging, unique. The territory of this island, rich in history and natural beauty, makes fishing an unparalleled pleasure, evoking an indescribable sensation of being at the edge of the world. Its rivers, forests, lakes, roads, plains, and wildlife speak of mysteries that man both fails to understand and deeply longs for—a perfect symphony orchestrated by nature and its relentless heartbeat. Only those who venture into the heart of these lands can glimpse such breathtaking beauty.')">
+        <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741355470/64673_z24lg6.jpg" alt="Tierra del Fuego" />
+        <div class="destination-overlay">View Details</div>
+        <div class="destination-info">Tierra del Fuego</div>
+      </div>
     </div>
   </section>
-
+  
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="slider" id="slider">
+      <div class="slide active">
+        <p>"An unforgettable experience – fly fishing in these landscapes is truly magical."</p>
+        <h3>- Carlos G.</h3>
+      </div>
+      <div class="slide">
+        <p>"The trip exceeded all my expectations. Professional, exciting, and full of adventure."</p>
+        <h3>- Maria L.</h3>
+      </div>
+      <div class="slide">
+        <p>"I highly recommend Pristine Waters; every detail is carefully planned to offer the best experience."</p>
+        <h3>- John P.</h3>
+      </div>
+    </div>
+    <div class="slider-nav">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
   <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Plan your next fishing adventure.</p>
-    <div class="social-links">
-      <a href="mailto:info@pristinewaters.cl"><i class="fa-solid fa-envelope"></i> Email</a>
-      <a href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-      <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
-    </div>
+    <h2>Contact Us</h2>
+    <p>Click the button below to open your default mail client and send us an email.</p>
+    <a class="cta-button" href="mailto:info@pristinewaters.cl?subject=Inquiry from Website" target="_blank">Contact Us</a>
   </section>
-
+  
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Pristine Waters Fly Fishing Patagonia</p>
+    <p>&copy; 2025 Pristine Waters Fly Fishing Destinations</p>
+    <div class="social">
+      <a href="https://es-la.facebook.com/pristine.waters.patagonia/" target="_blank">
+        <div class="icon"><i class="fab fa-facebook-f"></i></div>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank">
+        <div class="icon"><i class="fab fa-instagram"></i></div>
+        <span>Instagram</span>
+      </a>
+      <a href="https://wa.me/56979559776" target="_blank">
+        <div class="icon"><i class="fab fa-whatsapp"></i></div>
+        <span>WhatsApp</span>
+      </a>
+      <a href="tel:+56979559776" target="_blank">
+        <div class="icon"><i class="fas fa-phone-alt"></i></div>
+        <span>Call Us</span>
+      </a>
+    </div>
   </footer>
-
-  <a class="whatsapp" href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat with us</a>
+  
+  <!-- Modal for Destination Details -->
+  <div id="destinationModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2 id="modalTitle">Destination Title</h2>
+      <p id="modalDescription">Detailed information about the destination goes here. You can include extra text, images, or even a small gallery.</p>
+    </div>
+  </div>
+  
+  <!-- JavaScript for Smooth Scroll, Mobile Menu Toggle, Testimonials Navigation & Modal -->
+  <script>
+    // Smooth scroll for internal links
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Mobile hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+    
+    // Testimonials Slider Navigation
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    function showSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    document.getElementById('prev').addEventListener('click', function () {
+      showSlide(currentSlide - 1);
+    });
+    document.getElementById('next').addEventListener('click', function () {
+      showSlide(currentSlide + 1);
+    });
+    
+    // Modal functionality for Destination Details
+    const modal = document.getElementById("destinationModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDescription = document.getElementById("modalDescription");
+    const closeButton = document.querySelector(".close-button");
+    
+    function openModal(title, description) {
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      modal.style.display = "block";
+    }
+    
+    closeButton.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+    
+    window.addEventListener("click", (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+  
+  <!-- Modal Styles -->
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+    .modal-content p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .close-button {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
 </body>
 </html>
