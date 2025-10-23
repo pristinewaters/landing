@@ -12,69 +12,25 @@
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%;height:auto;}
 
-    header{
-      position:fixed;top:0;left:0;width:100%;z-index:10;
-      background:rgba(255,255,255,0.95);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid #eee;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:6px 60px;
-      box-sizing:border-box;
-    }
-
+    header{position:fixed;top:0;left:0;width:100%;z-index:10;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:6px 60px;box-sizing:border-box;}
     .logo img{height:60px;width:auto;cursor:pointer;object-fit:contain;}
-
     .nav{display:flex;align-items:center;gap:36px;}
     .nav a{font-family:'Montserrat',sans-serif;font-weight:600;color:#111;white-space:nowrap;transition:color .3s;font-size:1rem;}
     .nav a:hover{color:#0ea5e9;}
     .nav .cta{padding:8px 20px;background:#0ea5e9;color:#fff;border-radius:999px;}
 
-    /* HERO */
-    .hero{
-      position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#fff;text-align:center;
-    }
-
-    .hero::before{
-      content:'';position:absolute;inset:0;
-      background:url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741355470/64673_z24lg6.jpg') center 40%/cover no-repeat;
-      z-index:-2;filter:brightness(0.85);background-attachment:fixed;
-      transform:translateZ(0);
-    }
-
-    /* Parallax effect */
-    window.addEventListener('scroll', function() {
-      const heroBg = document.querySelector('.hero::before');
-      let offset = window.pageYOffset;
-      heroBg.style.backgroundPositionY = 40 - offset * 0.3 + '%';
-    });
-
-    /* Gradient transition to blend hero with next section */
-    .hero::after{
-      content:'';position:absolute;bottom:0;left:0;width:100%;height:180px;
-      background:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(255,255,255,1) 100%);
-      z-index:-1;
-    }
-
-    .hero-content{
-      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-      text-align:center;max-width:900px;padding:20px;
-      animation:fadeIn 2s ease-out;z-index:1;
-    }
-
+    .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#fff;text-align:center;}
+    .hero::before{content:'';position:absolute;inset:0;background:url('https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741355470/64673_z24lg6.jpg') center center/cover no-repeat;z-index:-2;filter:brightness(0.85);}
+    .hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;max-width:900px;padding:20px;animation:fadeIn 2s ease-out;z-index:1;}
     @keyframes fadeIn{from{opacity:0;transform:translate(-50%,-45%);}to{opacity:1;transform:translate(-50%,-50%);}}
-
     .hero-content h1{font-family:'Montserrat',sans-serif;font-size:clamp(42px,6vw,68px);margin-bottom:18px;letter-spacing:1px;}
     .hero-content p{font-size:22px;opacity:0.95;margin-bottom:28px;}
-
     .btn{display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;background:#0ea5e9;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;box-shadow:0 3px 6px rgba(0,0,0,0.15);transition:all .3s;}
     .btn:hover{background:#0284c7;transform:translateY(-2px);}
 
     section{padding:80px 20px;max-width:1400px;margin:auto;position:relative;z-index:2;}
-
     #about,#destinations,#gallery,#contact{background:#fff;}
-
     #about h2,#destinations h2,#gallery h2,#contact h2{font-family:'Montserrat',sans-serif;text-align:center;margin-bottom:40px;}
-
     #about p{max-width:800px;margin:auto;text-align:center;}
 
     .mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;text-align:center;margin-top:40px;}
@@ -83,14 +39,15 @@
     .mini-card i{font-size:32px;color:#fff;background:#0ea5e9;padding:14px;border-radius:50%;margin-bottom:14px;}
     .mini-card h3{font-family:'Montserrat',sans-serif;margin:10px 0;font-size:18px;}
 
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:22px;padding:0 60px;}
-    .gallery-item{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.15);cursor:pointer;transition:transform .3s, box-shadow .3s;}
-    .gallery-item:hover{transform:scale(1.04);box-shadow:0 12px 30px rgba(0,0,0,0.25);}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 60px;}
+    .gallery-item{position:relative;border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.15);cursor:pointer;aspect-ratio:1/1;opacity:0;transform:translateY(30px);transition:transform .6s ease, opacity .6s ease;}
+    .gallery-item.visible{opacity:1;transform:translateY(0);}
+    .gallery-item:hover{transform:scale(1.04);box-shadow:0 10px 26px rgba(0,0,0,0.25);}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;}
 
-    .lightbox{display:none;position:fixed;z-index:100;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);align-items:center;justify-content:center;transition:opacity 0.4s ease;}
+    .lightbox{display:none;position:fixed;z-index:100;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);align-items:center;justify-content:center;}
     .lightbox.active{display:flex;}
-    .lightbox img{max-width:90%;max-height:80%;border-radius:10px;opacity:0;transition:opacity 0.4s ease;}
-    .lightbox.show img{opacity:1;}
+    .lightbox img{max-width:90%;max-height:80%;border-radius:10px;}
     .lightbox .arrow{position:absolute;top:50%;transform:translateY(-50%);font-size:40px;color:#fff;cursor:pointer;padding:10px;user-select:none;}
     .lightbox .arrow.left{left:30px;}
     .lightbox .arrow.right{right:30px;}
@@ -103,12 +60,12 @@
     .social-links a:hover{background:#f0f0f0;}
 
     footer{text-align:center;padding:30px;color:#777;border-top:1px solid #eee;}
-
     .whatsapp{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;font-family:'Montserrat',sans-serif;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.2);}
     .whatsapp:hover{filter:brightness(0.95);}
 
-    @media(max-width:1024px){header{padding:8px 30px;}.logo img{height:54px;}}
-    @media(max-width:768px){header{flex-direction:column;align-items:center;justify-content:center;padding:10px 16px;}.nav{flex-wrap:wrap;gap:16px;margin-top:6px;}.logo img{height:50px;}.gallery-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));padding:0 20px;}}
+    @media(max-width:1200px){.gallery-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:600px){.gallery-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}}
   </style>
 </head>
 <body>
@@ -148,11 +105,28 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+1" alt="Gallery photo 1"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+2" alt="Gallery photo 2"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+3" alt="Gallery photo 3"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+4" alt="Gallery photo 4"></div>
-      <div class="gallery-item"><img src="https://via.placeholder.com/800x550?text=Photo+5" alt="Gallery photo 5"></div>
+      <!-- 21 Placeholder images -->
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+1" alt="Gallery photo 1"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+2" alt="Gallery photo 2"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+3" alt="Gallery photo 3"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+4" alt="Gallery photo 4"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+5" alt="Gallery photo 5"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+6" alt="Gallery photo 6"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+7" alt="Gallery photo 7"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+8" alt="Gallery photo 8"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+9" alt="Gallery photo 9"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+10" alt="Gallery photo 10"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+11" alt="Gallery photo 11"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+12" alt="Gallery photo 12"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+13" alt="Gallery photo 13"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+14" alt="Gallery photo 14"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+15" alt="Gallery photo 15"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+16" alt="Gallery photo 16"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+17" alt="Gallery photo 17"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+18" alt="Gallery photo 18"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+19" alt="Gallery photo 19"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+20" alt="Gallery photo 20"></div>
+      <div class="gallery-item"><img src="https://via.placeholder.com/400x400?text=Photo+21" alt="Gallery photo 21"></div>
     </div>
   </section>
 
@@ -180,7 +154,6 @@
   <a class="whatsapp" href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat with us</a>
 
   <script>
-    // Lightbox functionality
     const lightbox=document.querySelector('.lightbox');
     const lightboxImg=lightbox.querySelector('img');
     const galleryItems=document.querySelectorAll('.gallery-item img');
@@ -189,47 +162,15 @@
     const prevBtn=document.querySelector('.lightbox .arrow.left');
     let currentIndex=0;
 
-    function showImage(index){
-      lightboxImg.src=galleryItems[index].src;
-      lightbox.classList.add('active');
-      setTimeout(()=>lightbox.classList.add('show'),10);
-    }
+    function showImage(index){lightboxImg.src=galleryItems[index].src;lightbox.classList.add('active');}
+    galleryItems.forEach((item,index)=>{item.addEventListener('click',()=>{currentIndex=index;showImage(index);});});
+    closeBtn.addEventListener('click',()=>{lightbox.classList.remove('active');});
+    nextBtn.addEventListener('click',()=>{currentIndex=(currentIndex+1)%galleryItems.length;showImage(currentIndex);});
+    prevBtn.addEventListener('click',()=>{currentIndex=(currentIndex-1+galleryItems.length)%galleryItems.length;showImage(currentIndex);});
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('active');});
 
-    galleryItems.forEach((item,index)=>{
-      item.addEventListener('click',()=>{
-        currentIndex=index;
-        showImage(index);
-      });
-    });
-
-    closeBtn.addEventListener('click',()=>{
-      lightbox.classList.remove('show');
-      setTimeout(()=>lightbox.classList.remove('active'),400);
-    });
-
-    nextBtn.addEventListener('click',()=>{
-      currentIndex=(currentIndex+1)%galleryItems.length;
-      showImage(currentIndex);
-    });
-
-    prevBtn.addEventListener('click',()=>{
-      currentIndex=(currentIndex-1+galleryItems.length)%galleryItems.length;
-      showImage(currentIndex);
-    });
-
-    lightbox.addEventListener('click',e=>{
-      if(e.target===lightbox){
-        lightbox.classList.remove('show');
-        setTimeout(()=>lightbox.classList.remove('active'),400);
-      }
-    });
-
-    // Parallax hero background
-    window.addEventListener('scroll', function() {
-      const hero = document.querySelector('.hero');
-      let offset = window.pageYOffset;
-      hero.style.backgroundPositionY = offset * 0.4 + 'px';
-    });
+    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.2});
+    document.querySelectorAll('.gallery-item').forEach(item=>observer.observe(item));
   </script>
 </body>
 </html>
