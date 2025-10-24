@@ -130,38 +130,18 @@
     const lightbox=document.querySelector('.lightbox');
     const lightboxImg=lightbox.querySelector('img');
     const closeBtn=document.querySelector('.lightbox .close');
-    const nextBtn=document.querySelector('.lightbox .arrow.right');
-    const prevBtn=document.querySelector('.lightbox .arrow.left');
 
     const galleryImages=[
-      'https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267071/trout-fly-fishing-punta-arenas-11_bkjqgw.heic',
-      'https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267070/trout-fly-fishing-punta-arenas-2_i55yq3.jpg',
-      'https://via.placeholder.com/1200x600?text=Gallery+3',
-      'https://via.placeholder.com/1200x600?text=Gallery+4',
-      'https://via.placeholder.com/1200x600?text=Gallery+5'
+      'https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267070/trout-fly-fishing-punta-arenas-2_i55yq3.jpg'
     ];
 
-    let currentIndex=0;
-
-    function showImage(index){
-      lightboxImg.src=galleryImages[index];
+    function showImage(){
+      lightboxImg.src=galleryImages[0];
       lightbox.classList.add('active');
     }
 
-    document.getElementById('mainImage').addEventListener('click',()=>{
-      currentIndex=0;
-      showImage(currentIndex);
-    });
-
+    document.getElementById('mainImage').addEventListener('click',showImage);
     closeBtn.addEventListener('click',()=>lightbox.classList.remove('active'));
-    nextBtn.addEventListener('click',()=>{
-      currentIndex=(currentIndex+1)%galleryImages.length;
-      showImage(currentIndex);
-    });
-    prevBtn.addEventListener('click',()=>{
-      currentIndex=(currentIndex-1+galleryImages.length)%galleryImages.length;
-      showImage(currentIndex);
-    });
     lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('active');});
   </script>
 </body>
