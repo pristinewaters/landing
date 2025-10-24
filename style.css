@@ -1,0 +1,100 @@
+/* ===== BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  color: #4f5d75;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+h1, h2, h3 { color: #1b4965; }
+a { text-decoration: none; color: inherit; }
+
+/* ===== NAVBAR ===== */
+header {
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 0; width: 90%; max-width: 1100px; margin: auto;
+}
+.logo img { height: 50px; }
+nav ul { display: flex; gap: 20px; }
+nav a { font-weight: 600; color: #1b4965; transition: color 0.3s; }
+nav a:hover { color: #c44536; }
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  background: url('https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg') center/cover no-repeat;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; text-align: center;
+}
+.overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(27,73,101,0.5);
+}
+.hero-content { position: relative; z-index: 2; color: #fff; padding: 20px; animation: fadeIn 2s ease; }
+.hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 600; }
+.hero p { font-size: 1.2rem; margin-bottom: 25px; }
+.btn-primary {
+  background: #c44536; color: #fff; padding: 12px 25px;
+  border-radius: 4px; font-weight: 600; transition: background 0.3s;
+}
+.btn-primary:hover { background: #1b4965; }
+
+/* ===== SECTIONS ===== */
+.section { padding: 80px 0; width: 90%; max-width: 1100px; margin: auto; text-align: center; }
+.section h2 { font-size: 2rem; margin-bottom: 30px; }
+.section p { color: #4f5d75; max-width: 800px; margin: auto; }
+
+/* ===== DESTINATIONS ===== */
+.cards {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 25px; margin-top: 40px;
+}
+.card {
+  background: #fff; border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow: hidden; transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+.card img { width: 100%; height: 220px; object-fit: cover; }
+.card h3 { color: #1b4965; margin: 15px; }
+.card p { margin: 0 15px 20px; font-size: 0.95rem; }
+
+/* ===== GALLERY ===== */
+.carousel {
+  display: flex; gap: 15px; overflow-x: auto;
+  scroll-snap-type: x mandatory; margin-top: 20px;
+}
+.carousel img {
+  width: 300px; height: 200px;
+  border-radius: 6px; object-fit: cover; scroll-snap-align: center;
+}
+
+/* ===== CONTACT ===== */
+.contact-links {
+  display: flex; gap: 15px; justify-content: center;
+  flex-wrap: wrap; margin-top: 20px;
+}
+.btn-secondary {
+  background: #1b4965; color: #fff; padding: 10px 20px;
+  border-radius: 4px; transition: background 0.3s;
+}
+.btn-secondary:hover { background: #c44536; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #1b4965; color: #fff; text-align: center;
+  padding: 20px 0; font-size: 0.9rem;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+.fade-section { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+.fade-section.visible { opacity: 1; transform: translateY(0); }
