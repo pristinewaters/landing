@@ -15,10 +15,9 @@
   <meta name="theme-color" content="#1b4965" />
   <link rel="canonical" href="https://www.pristinewaters.cl/" />
 
-  <!-- ✅ FAVICON + APP ICONS -->
-  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761330111/favicon_pristine.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761330111/favicon_pristine.png">
-  <link rel="shortcut icon" href="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761330111/favicon_pristine.png" type="image/png">
+  <!-- ✅ FAVICON (local, en raíz del repositorio) -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
 
   <!-- ✅ Open Graph / Social -->
   <meta property="og:title" content="Pristine Waters Patagonia | Fly Fishing Chile" />
@@ -55,7 +54,9 @@
       </nav>
 
       <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </div>
     </div>
   </header>
@@ -144,6 +145,7 @@
 
   <!-- ✨ JS -->
   <script>
+    // Fade animation
     const fadeSections = document.querySelectorAll('.fade-section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -152,6 +154,7 @@
     }, { threshold: 0.2 });
     fadeSections.forEach(section => observer.observe(section));
 
+    // Menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navbar = document.getElementById('navbar');
     menuToggle.addEventListener('click', () => {
