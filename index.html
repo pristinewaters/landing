@@ -4,326 +4,95 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pristine Waters — Fly Fishing Patagonia</title>
-  <meta name="description" content="Experience unforgettable fly fishing adventures in exotic and remote destinations with Pristine Waters." />
+  <meta name="description" content="Guided fly fishing adventures in the pristine rivers and lakes of Patagonia. Experience world-class angling, local expertise, and sustainability with Pristine Waters Fly Fishing." />
+  <meta name="keywords" content="fly fishing Patagonia, fishing Chile, sea-run brown trout, trout fishing Tierra del Fuego, fly fishing guides Chile" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Pristine Waters — Fly Fishing Patagonia" />
+  <meta property="og:description" content="Exclusive fly fishing trips across Patagonia. Expert guides, untouched rivers, and authentic Chilean adventure." />
+  <meta property="og:image" content="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.pristinewaters.cl/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pristine Waters — Fly Fishing Patagonia" />
+  <meta name="twitter:description" content="Exclusive fly fishing trips across Patagonia. Expert guides, untouched rivers, and authentic Chilean adventure." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg">
+  <link rel="icon" href="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741276492/logo_oemeer.jpg" type="image/jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Lora', serif;
-      color: #111;
-      background: #fff;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; height: auto; }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 60px;
-      box-sizing: border-box;
-    }
-
-    .logo img {
-      height: 60px;
-      width: auto;
-      cursor: pointer;
-      object-fit: contain;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-    }
-
-    .nav a {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      color: #111;
-      white-space: nowrap;
-      transition: color .3s;
-      font-size: 1rem;
-    }
-
-    .nav a:hover { color: #0ea5e9; }
-
-    .nav .cta {
-      padding: 8px 20px;
-      background: #0ea5e9;
-      color: #fff;
-      border-radius: 999px;
-    }
-
-    .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      color: #fff;
-      text-align: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg') center center/cover no-repeat;
-      z-index: -2;
-      filter: brightness(0.85);
-    }
-
-    .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      max-width: 900px;
-      padding: 20px;
-      animation: fadeIn 2s ease-out;
-      z-index: 1;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translate(-50%, -45%); }
-      to { opacity: 1; transform: translate(-50%, -50%); }
-    }
-
-    .hero-content h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(42px, 6vw, 68px);
-      margin-bottom: 18px;
-      letter-spacing: 1px;
-    }
-
-    .hero-content p {
-      font-size: 22px;
-      opacity: 0.95;
-      margin-bottom: 28px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 6px;
-      padding: 14px 28px;
-      border-radius: 999px;
-      background: #0ea5e9;
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-      transition: all .3s;
-    }
-
-    .btn:hover { background: #0284c7; transform: translateY(-2px); }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1400px;
-      margin: auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    #about, #destinations, #gallery, #contact { background: #fff; }
-
-    #about h2, #destinations h2, #gallery h2, #contact h2 {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    #about p {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .mini-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .mini-card {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 16px;
-      padding: 40px 24px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: transform .3s, box-shadow .3s;
-    }
-
-    .mini-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
-    }
-
-    .mini-card i {
-      font-size: 32px;
-      color: #fff;
-      background: #0ea5e9;
-      padding: 14px;
-      border-radius: 50%;
-      margin-bottom: 14px;
-    }
-
-    .mini-card h3 {
-      font-family: 'Montserrat', sans-serif;
-      margin: 10px 0;
-      font-size: 18px;
-    }
-
-    .main-gallery {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      max-width: 700px;
-      margin: 40px auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    }
-
-    .main-gallery img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      transition: transform .4s ease;
-    }
-
-    .main-gallery:hover img { transform: scale(1.02); }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 100;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.95);
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox.active { display: flex; }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-    }
-
-    .lightbox .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 40px;
-      color: #fff;
-      cursor: pointer;
-      padding: 10px;
-      user-select: none;
-    }
-
-    .lightbox .arrow.left { left: 30px; }
-    .lightbox .arrow.right { right: 30px; }
-
-    .lightbox .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 36px;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .contact {
-      background: #fafafa;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .contact p { color: #555; margin-bottom: 20px; }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      border: 1px solid #ddd;
-      padding: 10px 16px;
-      border-radius: 999px;
-      transition: background .3s;
-    }
-
-    .social-links a:hover { background: #f0f0f0; }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #777;
-      border-top: 1px solid #eee;
-    }
-
-    .whatsapp {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      background: #25D366;
-      color: #fff;
-      padding: 12px 16px;
-      border-radius: 999px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-      z-index: 200;
-    }
-
-    .whatsapp:hover {
-      filter: brightness(0.95);
-      transform: translateY(-2px);
-      transition: all .3s;
-    }
+    body{margin:0;padding:0;font-family:'Lora',serif;color:#111;background:#fff;line-height:1.6;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%;height:auto;}
+    header{position:fixed;top:0;left:0;width:100%;z-index:10;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:6px 60px;box-sizing:border-box;}
+    .logo img{height:60px;width:auto;object-fit:contain;}
+    .nav{display:flex;align-items:center;gap:36px;}
+    .nav a{font-family:'Montserrat',sans-serif;font-weight:600;color:#111;transition:color .3s;font-size:1rem;}
+    .nav a:hover{color:#0ea5e9;}
+    .nav .cta{padding:8px 20px;background:#0ea5e9;color:#fff;border-radius:999px;}
+    .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#fff;text-align:center;}
+    .hero::before{content:'';position:absolute;inset:0;background:url('https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,c_fill/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg') center center/cover no-repeat;z-index:-2;filter:brightness(0.85);}
+    .hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;max-width:900px;padding:20px;animation:fadeIn 2s ease-out;z-index:1;}
+    @keyframes fadeIn{from{opacity:0;transform:translate(-50%,-45%);}to{opacity:1;transform:translate(-50%,-50%);}}
+    .hero-content h1{font-family:'Montserrat',sans-serif;font-size:clamp(42px,6vw,68px);margin-bottom:18px;}
+    .hero-content p{font-size:22px;opacity:0.95;margin-bottom:28px;}
+    .btn{display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;background:#0ea5e9;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;box-shadow:0 3px 6px rgba(0,0,0,0.15);transition:all .3s;}
+    .btn:hover{background:#0284c7;transform:translateY(-2px);}
+    section{padding:80px 20px;max-width:1400px;margin:auto;position:relative;z-index:2;}
+    #about h2,#destinations h2,#gallery h2,#contact h2{font-family:'Montserrat',sans-serif;text-align:center;margin-bottom:40px;}
+    #about p{max-width:800px;margin:auto;text-align:center;}
+    .mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;text-align:center;margin-top:40px;}
+    .mini-card{background:#fff;border:1px solid #eee;border-radius:16px;padding:40px 24px;box-shadow:0 8px 20px rgba(0,0,0,0.05);transition:transform .3s, box-shadow .3s;}
+    .mini-card:hover{transform:translateY(-6px);box-shadow:0 10px 26px rgba(0,0,0,0.08);}
+    .mini-card i{font-size:32px;color:#fff;background:#0ea5e9;padding:14px;border-radius:50%;margin-bottom:14px;}
+    .main-gallery{display:flex;justify-content:center;align-items:center;cursor:pointer;max-width:700px;margin:40px auto;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.1);}
+    .main-gallery img{width:100%;height:auto;object-fit:cover;transition:transform .4s ease;}
+    .main-gallery:hover img{transform:scale(1.02);}
+    .lightbox{display:none;position:fixed;z-index:100;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);align-items:center;justify-content:center;}
+    .lightbox.active{display:flex;}
+    .lightbox img{max-width:90%;max-height:80%;border-radius:10px;}
+    .lightbox .arrow{position:absolute;top:50%;transform:translateY(-50%);font-size:40px;color:#fff;cursor:pointer;padding:10px;user-select:none;}
+    .lightbox .arrow.left{left:30px;}
+    .lightbox .arrow.right{right:30px;}
+    .lightbox .close{position:absolute;top:20px;right:30px;font-size:36px;color:#fff;cursor:pointer;}
+    .contact{background:#fafafa;text-align:center;padding:80px 20px;}
+    .contact p{color:#555;margin-bottom:20px;}
+    .social-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+    .social-links a{display:flex;align-items:center;gap:8px;font-weight:600;border:1px solid #ddd;padding:10px 16px;border-radius:999px;transition:background .3s;}
+    .social-links a:hover{background:#f0f0f0;}
+    footer{text-align:center;padding:30px;color:#777;border-top:1px solid #eee;}
+    .whatsapp{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;padding:12px 16px;border-radius:999px;font-family:'Montserrat',sans-serif;font-weight:600;box-shadow:0 6px 16px rgba(0,0,0,0.25);z-index:200;}
+    .whatsapp:hover{filter:brightness(0.95);transform:translateY(-2px);transition:all .3s;}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pristine Waters Fly Fishing Patagonia",
+    "url": "https://www.pristinewaters.cl",
+    "description": "Guided fly fishing experiences across Patagonia, Chile — sustainable, authentic and unforgettable.",
+    "telephone": "+56 9 7955 9776",
+    "image": "https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Punta Arenas",
+      "addressRegion": "Magallanes",
+      "addressCountry": "Chile"
+    }
+  }
+  </script>
 </head>
 <body>
   <header>
     <a href="#top" class="logo">
-      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/v1741276492/logo_oemeer.jpg" alt="Pristine Waters logo">
+      <img src="https://res.cloudinary.com/dypiqewb8/image/upload/f_auto,q_auto/v1741276492/logo_oemeer.jpg" alt="Pristine Waters logo" decoding="async" width="160" height="60">
     </a>
-    <div class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <a href="#about">About Us</a>
       <a href="#destinations">Destinations</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact" class="cta">Contact</a>
-    </div>
+    </nav>
   </header>
 
   <section class="hero" id="top">
@@ -336,7 +105,7 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Pristine Waters unlocks unforgettable fly fishing adventures in Patagonia. Our dedicated team crafts personalized trips that blend world-class fishing with breathtaking, untouched landscapes. Enjoy top-quality equipment, expert guidance, and sustainable practices for an immersive, one-of-a-kind experience.</p>
+    <p>Pristine Waters crafts tailor-made fly fishing adventures in the pristine rivers and lakes of Chilean Patagonia. We combine local expertise, sustainability, and world-class guiding to create experiences that connect you deeply with nature.</p>
   </section>
 
   <section id="destinations">
@@ -352,72 +121,53 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="main-gallery">
-      <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267070/trout-fly-fishing-punta-arenas-2_i55yq3.jpg"
-           alt="Main gallery preview" id="mainImage">
+      <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,c_fill/v1761267070/trout-fly-fishing-punta-arenas-2_i55yq3.jpg" 
+           alt="Fly fishing in Punta Arenas" id="mainImage" width="1200" height="800" loading="eager">
     </div>
   </section>
 
   <div class="lightbox">
     <span class="close">&times;</span>
     <span class="arrow left"><i class="fa-solid fa-chevron-left"></i></span>
-    <img src="" alt="Expanded image">
+    <img src="" alt="Expanded gallery image">
     <span class="arrow right"><i class="fa-solid fa-chevron-right"></i></span>
   </div>
 
   <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Plan your next fishing adventure.</p>
+    <p>Plan your next fly fishing adventure in Patagonia.</p>
     <div class="social-links">
       <a href="mailto:info@pristinewaters.cl"><i class="fa-solid fa-envelope"></i> Email</a>
-      <a href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-      <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      <a href="https://wa.me/56979559776" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://www.instagram.com/pristinewaters_flyfishing/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Pristine Waters Fly Fishing Patagonia</p>
+    <p>© 2025 Pristine Waters Fly Fishing Patagonia — Punta Arenas, Chile</p>
   </footer>
 
-  <a class="whatsapp" href="https://wa.me/56979559776" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat with us</a>
+  <a class="whatsapp" href="https://wa.me/56979559776" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Chat with us</a>
 
   <script>
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    const closeBtn = document.querySelector('.lightbox .close');
-    const leftArrow = document.querySelector('.lightbox .arrow.left');
-    const rightArrow = document.querySelector('.lightbox .arrow.right');
-
-    // Galería optimizada con Cloudinary (f_auto,q_auto)
-    const galleryImages = [
-      "https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267070/trout-fly-fishing-punta-arenas-2_i55yq3.jpg",
-      "https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg",
-      "https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267072/trout-fly-fishing-punta-arenas-9_xrx4qq.jpg"
+    const lightbox=document.querySelector('.lightbox');
+    const lightboxImg=lightbox.querySelector('img');
+    const closeBtn=document.querySelector('.lightbox .close');
+    const leftArrow=document.querySelector('.lightbox .arrow.left');
+    const rightArrow=document.querySelector('.lightbox .arrow.right');
+    const galleryImages=[
+      "https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,c_fill/v1761267070/trout-fly-fishing-punta-arenas-2_i55yq3.jpg",
+      "https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,c_fill/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg",
+      "https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,c_fill/v1761267072/trout-fly-fishing-punta-arenas-9_xrx4qq.jpg",
+      "https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,c_fill/trout-fly-fishing-punta-arenas-4_dfv9fx.jpg"
     ];
-
-    let currentIndex = 0;
-
-    function showImage(index) {
-      currentIndex = index;
-      lightboxImg.src = galleryImages[index];
-      lightbox.classList.add("active");
-    }
-
-    document.getElementById("mainImage").addEventListener("click", () => showImage(0));
-
-    closeBtn.addEventListener("click", () => lightbox.classList.remove("active"));
-    lightbox.addEventListener("click", e => { if (e.target === lightbox) lightbox.classList.remove("active"); });
-
-    leftArrow.addEventListener("click", e => {
-      e.stopPropagation();
-      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      showImage(currentIndex);
-    });
-
-    rightArrow.addEventListener("click", e => {
-      e.stopPropagation();
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      showImage(currentIndex);
-    });
+    let currentIndex=0;
+    function showImage(index){currentIndex=index;lightboxImg.src=galleryImages[index];lightbox.classList.add("active");}
+    document.getElementById("mainImage").addEventListener("click",()=>showImage(0));
+    closeBtn.addEventListener("click",()=>lightbox.classList.remove("active"));
+    lightbox.addEventListener("click",e=>{if(e.target===lightbox)lightbox.classList.remove("active");});
+    leftArrow.addEventListener("click",e=>{e.stopPropagation();currentIndex=(currentIndex-1+galleryImages.length)%galleryImages.length;showImage(currentIndex);});
+    rightArrow.addEventListener("click",e=>{e.stopPropagation();currentIndex=(currentIndex+1)%galleryImages.length;showImage(currentIndex);});
   </script>
 </body>
 </html>
