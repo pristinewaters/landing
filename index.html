@@ -58,12 +58,12 @@
           <p>Explore spring creeks, lagoons, and rivers surrounded by Patagonian steppe and wildlife.</p>
         </div>
         <div class="card">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_800/v1761267071/trout-fly-fishing-punta-arenas-9_xrx4qq.jpg" alt="Tierra del Fuego" />
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Tierra del Fuego" />
           <h3>Tierra del Fuego</h3>
           <p>Legendary waters home to wild brown trout and the powerful sea-run trout of the Río Grande.</p>
         </div>
         <div class="card">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_800/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg" alt="Torres del Paine" />
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg" alt="Torres del Paine" />
           <h3>Torres del Paine</h3>
           <p>Combine world-class scenery with unique fly fishing moments in crystal-clear glacial rivers.</p>
         </div>
@@ -88,6 +88,16 @@
       </div>
     </section>
 
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-image" />
+      <div class="lightbox-controls">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+      </div>
+    </div>
+
     <!-- CONTACT -->
     <section id="contact" class="section contact-section">
       <h2>Contact</h2>
@@ -102,5 +112,38 @@
     <footer>
       <p>© 2025 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
     </footer>
+
+    <script>
+      // Simple Lightbox Script
+      const lightbox = document.getElementById("lightbox");
+      const images = document.querySelectorAll(".carousel-track img");
+      const lightboxImage = document.querySelector(".lightbox-image");
+      const closeBtn = document.querySelector(".close");
+      const prev = document.querySelector(".prev");
+      const next = document.querySelector(".next");
+
+      let currentIndex = 0;
+
+      images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImage.src = img.src;
+          currentIndex = index;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => (lightbox.style.display = "none"));
+      prev.addEventListener("click", () => showImage(-1));
+      next.addEventListener("click", () => showImage(1));
+
+      function showImage(direction) {
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        lightboxImage.src = images[currentIndex].src;
+      }
+
+      window.addEventListener("click", (e) => {
+        if (e.target === lightbox) lightbox.style.display = "none";
+      });
+    </script>
   </body>
 </html>
