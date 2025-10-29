@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Guided fly fishing experiences in Chilean Patagonia. Discover pristine waters, expert guides, and unforgettable adventures with Pristine Waters Fly Fishing Patagonia." />
+    <meta name="description" content="Bespoke guided fly fishing in Chilean Patagonia and Tierra del Fuego. Premium gear, bilingual guides, gourmet river lunches, and sustainable practices. Pristine Waters Fly Fishing Patagonia." />
     <title>Pristine Waters Fly Fishing Patagonia</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -16,16 +16,17 @@
         <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg" alt="Pristine Waters Logo" />
       </div>
 
-      <!-- Botón hamburguesa -->
-      <div class="hamburger" id="hamburger">
+      <!-- Botón hamburguesa (móvil) -->
+      <div class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" role="button">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
 
-      <nav id="nav-menu">
+      <nav id="nav-menu" aria-label="Primary">
         <ul>
           <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Fishing Programs</a></li>
           <li><a href="#destinations">Destinations</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -40,48 +41,126 @@
         alt="Fly Fishing Patagonia"
         class="hero-bg"
       />
-      <div class="hero-text">
-        <h1>Experience Fly Fishing in the Southernmost Waters of the World</h1>
-        <p>Exclusive guided adventures in Chilean Patagonia</p>
+      <div class="hero-overlay"></div>
+      <div class="hero-text reveal reveal-up">
+        <h1>Fly Fishing at the Edge of the World</h1>
+        <p>Where passion meets wilderness.</p>
+        <a href="#destinations" class="cta-btn">Explore Destinations</a>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
-      <h2>About Us</h2>
-      <p>
-        At Pristine Waters, we’re dedicated to providing you with an unforgettable fly fishing experience.
-        Our exclusive access to breathtaking, untouched waterways ensures you’ll enjoy nature at its best while honing your skills.
-        We take pride in our deep knowledge of local ecosystems and our commitment to conservation, making each adventure both enjoyable and meaningful.
-      </p>
+      <h2 class="reveal reveal-up">About Us</h2>
+      <div class="about-text reveal reveal-up">
+        <p>
+          At <strong>Pristine Waters</strong>, we’re not just a fly-fishing outfitter — we’re storytellers of Patagonia’s rivers, guardians of its silence, and companions on journeys that awaken something deeper.
+        </p>
+        <p>
+          Born and raised in the southernmost region of the world, our team of passionate anglers and naturalists crafts <strong>bespoke fly-fishing adventures</strong> that blend world-class angling with the spirit of wild Patagonia.
+        </p>
+        <p>
+          Each experience combines <strong>expert guiding, premium equipment, gourmet field cuisine,</strong> and a deep respect for nature through <strong>sustainable practices and responsible catch &amp; release</strong>.
+        </p>
+        <p>
+          Whether you seek the thrill of a sea-run brown trout on the Río Grande, the serenity of a spring creek in Tierra del Fuego, or the majesty of Torres del Paine’s glacial waters — every cast becomes a story, every river a memory, and every journey a lesson written by Patagonia itself.
+        </p>
+      </div>
+    </section>
+
+    <!-- FISHING PROGRAMS (NUEVO) -->
+    <section id="programs" class="section light-bg">
+      <h2 class="reveal reveal-up">Fishing Programs</h2>
+      <div class="programs-lead reveal reveal-up">
+        <p>
+          Our excursions celebrate the extraordinary diversity of southern Chile — from windswept pampas and turquoise lagoons to ancient forests and glacial rivers. Each outing blends adventure, serenity, and discovery.
+        </p>
+        <p>
+          Whether for a day or a week, every program is a journey through landscapes that redefine the meaning of “remote.” Here, time slows, instincts sharpen, and nature rewards those who listen.
+        </p>
+      </div>
+
+      <!-- Highlights con íconos SVG -->
+      <div class="program-grid">
+        <!-- Guía Bilingüe -->
+        <div class="program-item reveal reveal-up">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm-9 9a9 9 0 0 1 18 0v1H3Z"/>
+          </svg>
+          <h3>Bilingual Guide</h3>
+          <p>Local experts who read water, wind, and wildlife — and make you feel at home.</p>
+        </div>
+
+        <!-- Transporte 4x4 -->
+        <div class="program-item reveal reveal-up">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M3 13h2l2-4h6l2 4h2a3 3 0 1 1 0 6h-1a3 3 0 0 1-6 0H9a3 3 0 0 1-6 0H2v-4a2 2 0 0 1 1-2Zm4.5-3L6 13h8l-1.5-3ZM7 19a1 1 0 1 0-1-1 1 1 0 0 0 1 1Zm10 0a1 1 0 1 0-1-1 1 1 0 0 0 1 1Z"/>
+          </svg>
+          <h3>4×4 Transport</h3>
+          <p>Hotel or port pick-up and drop-off. Safe, flexible logistics for last-minute changes.</p>
+        </div>
+
+        <!-- Equipo Completo -->
+        <div class="program-item reveal reveal-up">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M4 6h10v2H4zm0 4h10v2H4zm0 4h7v2H4zM20 4h-4v16h4l2-4-2-4 2-4z"/>
+          </svg>
+          <h3>Premium Gear</h3>
+          <p>Rods, waders, boots, and flies included. Travel light — we’ve got you covered.</p>
+        </div>
+
+        <!-- Almuerzo Gourmet -->
+        <div class="program-item reveal reveal-up">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M4 3h2v8a2 2 0 1 1-2 0Zm6 0h2v7h2V3h2v7h1a4 4 0 0 1 0 8v3h-2v-3h-7v3H8v-3a4 4 0 0 1 0-8h2Z"/>
+          </svg>
+          <h3>Gourmet River Lunch</h3>
+          <p>Cheese & charcuterie, fresh sandwiches, fruit, chocolate — and a toast by the water.</p>
+        </div>
+      </div>
+
+      <div class="program-cta reveal reveal-up">
+        <a href="#destinations" class="cta-outline">See Destinations</a>
+      </div>
     </section>
 
     <!-- DESTINATIONS -->
-    <section id="destinations" class="section light-bg">
-      <h2>Destinations</h2>
+    <section id="destinations" class="section">
+      <h2 class="reveal reveal-up">Destinations</h2>
       <div class="cards">
-        <div class="card">
+        <!-- Punta Arenas -->
+        <div class="card reveal reveal-left">
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_800/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg" alt="Punta Arenas" />
           <h3>Punta Arenas</h3>
-          <p>Explore spring creeks, lagoons, and rivers surrounded by Patagonian steppe and wildlife.</p>
+          <p>
+            In the heart of Patagonia, rivers and lagoons — including <strong>Laguna Parrillar</strong> — flow through windswept steppe and native forest. Wild brown and rainbow trout challenge skill and patience beneath a vast southern sky.
+          </p>
         </div>
-        <div class="card">
+
+        <!-- Tierra del Fuego -->
+        <div class="card reveal reveal-up">
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Tierra del Fuego" />
           <h3>Tierra del Fuego</h3>
-          <p>Legendary waters home to wild brown trout and the powerful sea-run trout of the Río Grande.</p>
+          <p>
+            Raw, mysterious, unforgettable. Rivers shaped by wind and time hold legendary <strong>sea-run brown trout</strong> — a pilgrimage for anglers who come to test themselves at the edge of the world.
+          </p>
         </div>
-        <div class="card">
+
+        <!-- Torres del Paine -->
+        <div class="card reveal reveal-right">
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg" alt="Torres del Paine" />
           <h3>Torres del Paine</h3>
-          <p>Combine world-class scenery with unique fly fishing moments in crystal-clear glacial rivers.</p>
+          <p>
+            Beneath the Paine massif, <strong>Río Serrano</strong> carries glacial waters alive with Chinook and trout. Majestic, unpredictable, and humbling — a river that defines the soul of the south.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- GALLERY -->
-    <section id="gallery" class="section">
-      <h2>Gallery</h2>
-      <div class="carousel">
+    <section id="gallery" class="section light-bg">
+      <h2 class="reveal reveal-up">Gallery</h2>
+      <div class="carousel reveal reveal-up">
         <div class="carousel-track">
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg" alt="Gallery 1" />
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267070/trout-fly-fishing-punta-arenas-7_e2i3eq.jpg" alt="Gallery 2" />
@@ -98,21 +177,42 @@
 
     <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox">
-      <span class="close">&times;</span>
-      <img class="lightbox-image" />
+      <span class="close" aria-label="Close">&times;</span>
+      <img class="lightbox-image" alt="Expanded gallery item"/>
       <div class="lightbox-controls">
-        <span class="prev">&#10094;</span>
-        <span class="next">&#10095;</span>
+        <span class="prev" aria-label="Previous">&#10094;</span>
+        <span class="next" aria-label="Next">&#10095;</span>
       </div>
     </div>
 
     <!-- CONTACT -->
     <section id="contact" class="section contact-section">
-      <h2>Contact</h2>
-      <div class="contact-links">
-        <a href="mailto:info@pristinewaters.cl" class="contact-btn">Mail Us</a>
-        <a href="https://www.instagram.com/pristinewaters_flyfishing" target="_blank" class="contact-btn">Instagram</a>
-        <a href="https://wa.me/56979559776" target="_blank" class="contact-btn">WhatsApp</a>
+      <h2 class="reveal reveal-up">Contact</h2>
+
+      <div class="contact-links reveal reveal-up">
+        <a href="mailto:info@pristinewaters.cl" class="contact-chip" target="_blank" rel="noopener">
+          <!-- Mail icon -->
+          <svg viewBox="0 0 24 24" class="chip-icon" aria-hidden="true">
+            <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Zm2 .5V8l8 4 8-4V6.5L12 11 4 6.5Z"/>
+          </svg>
+          Mail Us
+        </a>
+
+        <a href="https://www.instagram.com/pristinewaters_flyfishing" class="contact-chip" target="_blank" rel="noopener">
+          <!-- Instagram icon -->
+          <svg viewBox="0 0 24 24" class="chip-icon" aria-hidden="true">
+            <path d="M12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5Zm0-5C7.03 2 2 7.03 2 12s5.03 10 10 10 10-5.03 10-10S16.97 2 12 2Zm5.5 3a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 17.5 5Z"/>
+          </svg>
+          Instagram
+        </a>
+
+        <a href="https://wa.me/56979559776" class="contact-chip" target="_blank" rel="noopener">
+          <!-- WhatsApp icon -->
+          <svg viewBox="0 0 24 24" class="chip-icon" aria-hidden="true">
+            <path d="M20.52 3.48A11.77 11.77 0 0 0 12 0a12 12 0 0 0-10.3 18l-1.7 6 6-1.7A12 12 0 0 0 12 24a12 12 0 0 0 8.52-20.52ZM12 21.5a9.5 9.5 0 0 1-4.85-1.32l-.35-.2-3.58 1 1-3.58-.2-.35A9.5 9.5 0 1 1 12 21.5Zm5.07-7.35c-.3-.15-1.76-.86-2.03-.96s-.47-.15-.67.15-.76.96-.93 1.16-.34.22-.63.07a7.75 7.75 0 0 1-2.28-1.41A8.54 8.54 0 0 1 8.9 11c-.17-.3 0-.46.13-.61s.3-.37.45-.56.22-.3.34-.5a.52.52 0 0 0 0-.52c-.07-.15-.67-1.61-.92-2.2s-.5-.5-.67-.5h-.57a1.1 1.1 0 0 0-.8.37 3.39 3.39 0 0 0-1.06 2.52 5.92 5.92 0 0 0 1.26 3.14 13.54 13.54 0 0 0 5.2 4.87 17.36 17.36 0 0 0 1.7.63 4.08 4.08 0 0 0 1.87.12 3.07 3.07 0 0 0 2-1.41 2.5 2.5 0 0 0 .17-1.41c-.07-.15-.26-.22-.56-.37Z"/>
+          </svg>
+          WhatsApp
+        </a>
       </div>
     </section>
 
@@ -127,16 +227,17 @@
       const hamburger = document.getElementById('hamburger');
       const navMenu = document.getElementById('nav-menu');
       const navLinks = document.querySelectorAll('#nav-menu a');
-
       hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+        hamburger.setAttribute('aria-expanded', !expanded);
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
       });
-
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           navMenu.classList.remove('active');
           hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
         });
       });
 
@@ -166,7 +267,6 @@
           currentIndex = index;
         });
       });
-
       closeBtn.addEventListener("click", () => (lightbox.style.display = "none"));
       prev.addEventListener("click", () => showImage(-1));
       next.addEventListener("click", () => showImage(1));
@@ -177,6 +277,15 @@
       window.addEventListener("click", (e) => {
         if (e.target === lightbox) lightbox.style.display = "none";
       });
+
+      // Animaciones reveal (fade-in al hacer scroll)
+      const reveals = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('in-view');
+        });
+      }, { threshold: 0.15 });
+      reveals.forEach(el => io.observe(el));
     </script>
   </body>
 </html>
