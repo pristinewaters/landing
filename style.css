@@ -24,10 +24,9 @@ header {
   padding: 1rem 2rem; background-color: var(--blue-dark);
   position: sticky; top: 0; z-index: 1000;
   transition: box-shadow 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15); /* sombra sutil */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
-header.scrolled { box-shadow: 0 4px 15px rgba(0,0,0,0.25); } /* sombra al hacer scroll */
-
+header.scrolled { box-shadow: 0 4px 15px rgba(0,0,0,0.25); }
 .logo img { height: 65px; }
 
 /* Desktop menu */
@@ -75,6 +74,7 @@ nav a:hover { color: var(--blue-medium); }
 .section.light-bg { background-color: var(--light-bg); }
 .section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--blue-dark); }
 
+/* About */
 .about-text { max-width: 900px; margin: 0 auto; font-size: 1.06rem; gap: 0.8rem; display: grid; }
 .about-text p + p { margin-top: 0.6rem; }
 
@@ -133,9 +133,7 @@ nav a:hover { color: var(--blue-medium); }
 
 /* Contact */
 .contact-section { background: var(--light-bg); }
-.contact-links {
-  display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.2rem;
-}
+.contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.2rem; }
 .contact-chip {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: #fff; color: var(--blue-dark);
@@ -143,7 +141,6 @@ nav a:hover { color: var(--blue-medium); }
   box-shadow: 0 6px 18px rgba(0,0,0,0.06); transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .contact-chip:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
-.chip-icon { width: 18px; height: 18px; fill: var(--blue-medium); }
 
 /* Footer */
 footer { text-align: center; padding: 1.6rem; background-color: var(--blue-dark); color: var(--white); font-size: 0.9rem; }
@@ -151,9 +148,31 @@ footer { text-align: center; padding: 1.6rem; background-color: var(--blue-dark)
 /* ========== Animaciones reveal (fade-in) ========== */
 .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
-
 .reveal-up { transform: translateY(16px); }
 .reveal-left { transform: translateX(-22px); }
 .reveal-right { transform: translateX(22px); }
-
 .reveal-left.in-view, .reveal-right.in-view { transform: translateX(0); opacity: 1; }
+
+/* ==== Ajustes específicos para móviles (hero text) ==== */
+@media (max-width: 600px) {
+  .hero-text {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 1rem;
+  }
+  .hero-text h1 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+  }
+  .cta-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
