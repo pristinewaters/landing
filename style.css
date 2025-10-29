@@ -1,235 +1,171 @@
-/* ====== RESET ====== */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ====== BODY ====== */
+/* Body */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
   line-height: 1.6;
-  color: #222;
-  background-color: #fff;
 }
 
-/* ====== NAVBAR ====== */
-.navbar {
+/* Header */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff;
-  padding: 15px 50px;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-bottom: 1px solid #eaeaea;
   position: sticky;
   top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #eee;
+  z-index: 100;
 }
 
 .logo img {
   height: 60px;
-  width: auto;
 }
 
-.nav-links {
+nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 1.5rem;
 }
 
-.nav-links li a {
+nav a {
   text-decoration: none;
-  color: #003366;
-  font-weight: 600;
-  transition: color 0.3s;
+  color: #1b1b1b;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
+nav a:hover {
   color: #0077b6;
 }
 
-/* ====== HERO ====== */
+/* Hero Section */
 .hero {
-  background: url('https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg') center center/cover no-repeat;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   text-align: center;
-  color: #fff;
-  padding: 0 20px;
+  color: white;
+}
+
+.hero-img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  max-width: 800px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  font-size: 1.2rem;
 }
 
-.btn {
-  background: #0077b6;
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 25px;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #005f8f;
-}
-
-/* ====== SECTIONS ====== */
-section {
-  padding: 80px 10%;
+/* Sections */
+.section {
+  padding: 4rem 2rem;
   text-align: center;
 }
 
-section h2 {
+.section.light-bg {
+  background-color: #eef2f3;
+}
+
+.section h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
-  color: #003366;
+  margin-bottom: 1.5rem;
 }
 
-/* ====== ABOUT ====== */
-.about p {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-  color: #333;
-}
-
-/* ====== DESTINATIONS ====== */
-.destinations {
+/* Cards */
+.cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.dest-card {
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
-.dest-card:hover {
+.card:hover {
   transform: translateY(-5px);
 }
 
-.dest-card img {
+.card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.dest-card h3 {
-  color: #003366;
-  margin: 15px 0 10px;
+.card h3 {
+  font-size: 1.4rem;
+  margin: 1rem 0 0.5rem;
 }
 
-.dest-card p {
-  padding: 0 20px 20px;
-  color: #444;
-  font-size: 0.95rem;
+.card p {
+  padding: 0 1rem 1rem;
 }
 
-/* ====== GALLERY ====== */
-.gallery {
-  background-color: #f4f9ff;
-}
-
+/* Carousel */
 .carousel {
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding: 10px;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .carousel img {
-  width: 400px;
-  height: 260px;
+  width: 350px;
   border-radius: 10px;
-  object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .carousel img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* ====== CONTACT ====== */
-.contact p {
-  margin-bottom: 30px;
-  font-size: 1.05rem;
-  color: #333;
-}
-
-.contact .btn {
-  margin: 10px;
-}
-
-/* ====== FOOTER ====== */
-footer {
-  background: #003366;
-  color: #fff;
-  text-align: center;
-  padding: 25px 15px;
-  font-size: 0.95rem;
-}
-
-footer p {
-  margin-bottom: 10px;
-}
-
-.social-links a {
-  color: #aad4ff;
+/* Button */
+.btn {
+  background-color: #0077b6;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 5px;
   text-decoration: none;
-  margin: 0 8px;
-  transition: color 0.3s;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
-.social-links a:hover {
-  color: #fff;
+.btn:hover {
+  background-color: #005f87;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .destinations {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .carousel img {
-    width: 300px;
-    height: 200px;
-  }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #001f3f;
+  color: white;
+  font-size: 0.9rem;
 }
