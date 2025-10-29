@@ -1,25 +1,4 @@
-# robots.txt for Pristine Waters Patagonia
-# This file tells search engines how to crawl and index the website
-
 User-agent: *
 Allow: /
 
-# Disallow potential admin or system paths (not used yet, but future-proofed)
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /admin/
-
-# Sitemap and canonical domain
 Sitemap: https://www.pristinewaters.cl/sitemap.xml
-
-# Ensure favicon and main assets are indexed
-Allow: /favicon.png
-Allow: /style.css
-Allow: /index.html
-
-# Additional guidance for bots
-User-agent: Googlebot-Image
-Disallow:
-Allow: /*.jpg$
-Allow: /*.png$
-Allow: /*.webp$
