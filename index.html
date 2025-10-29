@@ -15,7 +15,15 @@
       <div class="logo">
         <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg" alt="Pristine Waters Logo" />
       </div>
-      <nav>
+
+      <!-- Botón hamburguesa -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav id="nav-menu">
         <ul>
           <li><a href="#about">About Us</a></li>
           <li><a href="#destinations">Destinations</a></li>
@@ -113,15 +121,33 @@
       <p>© 2025 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
-      // Simple Lightbox Script
+      // Menú hamburguesa
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+      const navLinks = document.querySelectorAll('#nav-menu a');
+
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+
+      // Cierra el menú al hacer clic en un enlace
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          hamburger.classList.remove('active');
+        });
+      });
+
+      // Lightbox
       const lightbox = document.getElementById("lightbox");
       const images = document.querySelectorAll(".carousel-track img");
       const lightboxImage = document.querySelector(".lightbox-image");
       const closeBtn = document.querySelector(".close");
       const prev = document.querySelector(".prev");
       const next = document.querySelector(".next");
-
       let currentIndex = 0;
 
       images.forEach((img, index) => {
@@ -135,12 +161,10 @@
       closeBtn.addEventListener("click", () => (lightbox.style.display = "none"));
       prev.addEventListener("click", () => showImage(-1));
       next.addEventListener("click", () => showImage(1));
-
       function showImage(direction) {
         currentIndex = (currentIndex + direction + images.length) % images.length;
         lightboxImage.src = images[currentIndex].src;
       }
-
       window.addEventListener("click", (e) => {
         if (e.target === lightbox) lightbox.style.display = "none";
       });
