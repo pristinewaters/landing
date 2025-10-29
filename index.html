@@ -7,64 +7,6 @@
     <title>Pristine Waters Fly Fishing Patagonia</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
-
-    <!-- ✅ SCHEMA.ORG STRUCTURED DATA FOR SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Pristine Waters Fly Fishing Patagonia",
-      "description": "Boutique guided fly fishing in Chilean Patagonia and Tierra del Fuego. Private programs with bilingual guides, 4x4 transport, premium equipment, and gourmet riverside meals.",
-      "image": "https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg",
-      "url": "https://www.pristinewaters.cl",
-      "telephone": "+56 9 7955 9776",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Punta Arenas",
-        "addressRegion": "Magallanes y de la Antártica Chilena",
-        "addressCountry": "CL"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -53.1638,
-        "longitude": -70.9171
-      },
-      "sameAs": [
-        "https://www.instagram.com/pristinewaters_flyfishing"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Guided Fly Fishing Programs",
-        "itemListElement": [
-          {
-            "@type": "TouristTrip",
-            "name": "Full Day Fly Fishing Patagonia",
-            "description": "10-hour guided fly fishing trip with bilingual guide, full equipment, transport, and gourmet lunch by the river.",
-            "offers": { "@type": "Offer", "price": "350", "priceCurrency": "USD" }
-          },
-          {
-            "@type": "TouristTrip",
-            "name": "Half Day Fly Fishing Experience",
-            "description": "6-hour guided trip ideal for travelers with limited time. Includes all gear and transport.",
-            "offers": { "@type": "Offer", "price": "250", "priceCurrency": "USD" }
-          },
-          {
-            "@type": "TouristTrip",
-            "name": "3-Day Patagonia Fly Fishing Package",
-            "description": "Three-day adventure including fishing in multiple rivers, accommodation, and gourmet meals.",
-            "offers": { "@type": "Offer", "price": "1000", "priceCurrency": "USD" }
-          },
-          {
-            "@type": "TouristTrip",
-            "name": "5-Day Tierra del Fuego Expedition",
-            "description": "Five-day guided fishing experience across remote rivers of Tierra del Fuego, Chile. Includes lodging and meals.",
-            "offers": { "@type": "Offer", "price": "2000", "priceCurrency": "USD" }
-          }
-        ]
-      }
-    }
-    </script>
   </head>
 
   <body>
@@ -74,14 +16,13 @@
         <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg" alt="Pristine Waters Logo" />
       </div>
 
-      <!-- Botón hamburguesa (móvil) -->
-      <div class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" role="button">
+      <div class="hamburger" id="hamburger">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
 
-      <nav id="nav-menu" aria-label="Primary">
+      <nav id="nav-menu">
         <ul>
           <li><a href="#about">About Us</a></li>
           <li><a href="#programs">Fishing Programs</a></li>
@@ -138,39 +79,102 @@
         </p>
       </div>
 
-      <!-- Highlights con íconos SVG -->
       <div class="program-grid">
         <div class="program-item reveal reveal-up">
           <svg viewBox="0 0 24 24" class="icon"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm-9 9a9 9 0 0 1 18 0v1H3Z"/></svg>
           <h3>Bilingual Guide</h3>
           <p>Local experts who read water, wind, and wildlife — and make you feel at home.</p>
         </div>
+
         <div class="program-item reveal reveal-up">
           <svg viewBox="0 0 24 24" class="icon"><path d="M3 13h2l2-4h6l2 4h2a3 3 0 1 1 0 6h-1a3 3 0 0 1-6 0H9a3 3 0 0 1-6 0H2v-4a2 2 0 0 1 1-2Zm4.5-3L6 13h8l-1.5-3Z"/></svg>
           <h3>4×4 Transport</h3>
           <p>Hotel or port pick-up and drop-off. Safe, flexible logistics for last-minute changes.</p>
         </div>
+
         <div class="program-item reveal reveal-up">
           <svg viewBox="0 0 24 24" class="icon"><path d="M4 6h10v2H4zm0 4h10v2H4zm0 4h7v2H4zM20 4h-4v16h4l2-4-2-4 2-4z"/></svg>
           <h3>Premium Gear</h3>
           <p>Rods, waders, boots, and flies included. Travel light — we’ve got you covered.</p>
         </div>
+
         <div class="program-item reveal reveal-up">
           <svg viewBox="0 0 24 24" class="icon"><path d="M4 3h2v8a2 2 0 1 1-2 0Zm6 0h2v7h2V3h2v7h1a4 4 0 0 1 0 8v3h-2v-3h-7v3H8v-3a4 4 0 0 1 0-8h2Z"/></svg>
           <h3>Gourmet River Lunch</h3>
           <p>Cheese & charcuterie, fresh sandwiches, fruit, chocolate — and a toast by the water.</p>
         </div>
       </div>
-      <div class="program-cta reveal reveal-up">
-        <a href="#destinations" class="cta-outline">See Destinations</a>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section id="destinations" class="section">
+      <h2 class="reveal reveal-up">Destinations</h2>
+      <div class="cards">
+        <div class="card reveal reveal-left">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_800/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg" alt="Punta Arenas" />
+          <h3>Punta Arenas</h3>
+          <p>
+            In the heart of Patagonia, rivers and lagoons — including <strong>Laguna Parrillar</strong> — flow through windswept steppe and native forest. Wild brown and rainbow trout challenge skill and patience beneath a vast southern sky.
+          </p>
+        </div>
+
+        <div class="card reveal reveal-up">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Tierra del Fuego" />
+          <h3>Tierra del Fuego</h3>
+          <p>
+            Raw, mysterious, unforgettable. Rivers shaped by wind and time hold legendary <strong>sea-run brown trout</strong> — a pilgrimage for anglers who come to test themselves at the edge of the world.
+          </p>
+        </div>
+
+        <div class="card reveal reveal-right">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg" alt="Torres del Paine" />
+          <h3>Torres del Paine</h3>
+          <p>
+            Beneath the Paine massif, <strong>Río Serrano</strong> carries glacial waters alive with Chinook and trout. Majestic, unpredictable, and humbling — a river that defines the soul of the south.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- DESTINATIONS + GALLERY + CONTACT + FOOTER -->
-    <!-- (Mantén las secciones previas que ya tienes: no cambian) -->
-
+    <!-- FOOTER -->
     <footer>
       <p>© 2025 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
     </footer>
+
+    <!-- ✅ SCHEMA.ORG (Moved to end for compatibility) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Pristine Waters Fly Fishing Patagonia",
+      "description": "Boutique guided fly fishing in Chilean Patagonia and Tierra del Fuego. Private programs with bilingual guides, 4x4 transport, premium equipment, and gourmet riverside meals.",
+      "image": "https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg",
+      "url": "https://www.pristinewaters.cl",
+      "telephone": "+56 9 7955 9776",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Punta Arenas",
+        "addressRegion": "Magallanes y de la Antártica Chilena",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -53.1638,
+        "longitude": -70.9171
+      },
+      "sameAs": ["https://www.instagram.com/pristinewaters_flyfishing"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Guided Fly Fishing Programs",
+        "itemListElement": [
+          { "@type": "TouristTrip", "name": "Full Day Fly Fishing Patagonia", "offers": { "@type": "Offer", "price": "350", "priceCurrency": "USD" } },
+          { "@type": "TouristTrip", "name": "Half Day Fly Fishing Experience", "offers": { "@type": "Offer", "price": "250", "priceCurrency": "USD" } },
+          { "@type": "TouristTrip", "name": "3-Day Patagonia Fly Fishing Package", "offers": { "@type": "Offer", "price": "1000", "priceCurrency": "USD" } },
+          { "@type": "TouristTrip", "name": "5-Day Tierra del Fuego Expedition", "offers": { "@type": "Offer", "price": "2000", "priceCurrency": "USD" } }
+        ]
+      }
+    }
+    </script>
   </body>
 </html>
