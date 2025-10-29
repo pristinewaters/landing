@@ -1,166 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ✅ Google Verification -->
-  <meta name="google-site-verification" content="Fga41cShzBtVed5YBrwM8ZqGaOiiMYOADN5v01SqdeE" />
-
-  <!-- ✅ SEO -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pristine Waters Patagonia | Fly Fishing Chile</title>
-  <meta name="description" content="Guided fly fishing adventures from Punta Arenas to Tierra del Fuego. Chase sea-run brown trout, rainbow trout, and Chinook salmon in Chilean Patagonia." />
-  <meta name="keywords" content="fly fishing Punta Arenas, Tierra del Fuego, sea-run brown trout, Patagonia fly fishing guide, Chile fishing, Chinook salmon, rainbow trout, Pristine Waters Patagonia" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Pristine Waters Fly Fishing Patagonia" />
-  <meta name="theme-color" content="#1b4965" />
-  <link rel="canonical" href="https://www.pristinewaters.cl/" />
-
-  <!-- ✅ FAVICON (local, en raíz del repositorio) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pristine Waters Fly Fishing Patagonia | Guided Experiences in Chile</title>
+  <meta name="description" content="Pristine Waters offers private, boutique fly fishing trips in Southern Chile — from Punta Arenas to Torres del Paine and Tierra del Fuego. Guided experiences crafted for anglers who seek nature, connection, and authenticity.">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
 
-  <!-- ✅ Open Graph / Social -->
-  <meta property="og:title" content="Pristine Waters Patagonia | Fly Fishing Chile" />
-  <meta property="og:description" content="World-class fly fishing experiences in Chilean Patagonia. Explore Punta Arenas & Tierra del Fuego with expert local guides." />
-  <meta property="og:image" content="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg" />
-  <meta property="og:url" content="https://www.pristinewaters.cl/" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pristine Waters Fly Fishing Patagonia">
+  <meta property="og:description" content="Inspired by Nature, Defined by Experience. Boutique fly fishing trips in Southern Chile.">
+  <meta property="og:image" content="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg">
+  <meta property="og:url" content="https://www.pristinewaters.cl">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ✅ Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- ✅ Styles -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: #222;
+      background-color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255,255,255,0.95);
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 42px;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin-left: 25px;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2b82f6;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      max-width: 700px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #2b82f6;
+    }
+
+    .about p, .destinations p {
+      line-height: 1.8;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      color: #fff;
+      background-color: #2b82f6;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .contact a:hover {
+      background-color: #ff5a63;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #f8f9fa;
+      color: #333;
+      padding: 40px 0;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      border-top: 1px solid #e3e3e3;
+    }
+
+    .footer-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .footer-text .brand {
+      color: #2b82f6;
+      font-weight: 600;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      color: #ff5a63;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #2b82f6;
+    }
+
+    .footer-legal {
+      font-size: 13px;
+      color: #777;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 10px 20px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      nav a {
+        margin-left: 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- 🌊 HEADER -->
+
   <header>
-    <div class="container nav">
-      <div class="logo">
-        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg" alt="Pristine Waters Patagonia Logo">
-      </div>
-
-      <nav id="navbar" aria-label="Main navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-    </div>
+    <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1733260000/logo-pristinewaters.png" alt="Pristine Waters Logo">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- 🏞️ HERO -->
-  <section class="hero" id="home">
-    <div class="overlay"></div>
-    <div class="hero-content fade-in">
-      <h1>Where the World Ends, Fly Fishing Begins</h1>
-      <p>Guided fly fishing adventures from Punta Arenas to Tierra del Fuego, in the heart of Chilean Patagonia.</p>
-      <a href="#contact" class="btn-primary">Book Your Experience</a>
-    </div>
+  <section class="hero">
+    <h1>Fishing that feels personal, because it is.</h1>
+    <p>Private fly fishing experiences in the pristine waters of Southern Chile — crafted for anglers seeking authenticity, nature, and connection.</p>
   </section>
 
-  <!-- 🎣 ABOUT -->
-  <section id="about" class="about section fade-section">
-    <div class="container">
-      <h2>About Pristine Waters</h2>
-      <p>
-        At Pristine Waters, we believe that fly fishing is more than a sport — it’s a connection to nature, culture, and conservation.
-        Based in Punta Arenas, Chile, we guide anglers through some of the most remote and untouched waters,
-        combining professional expertise with deep respect for the environment.
-      </p>
-    </div>
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>At Pristine Waters, we’re dedicated to providing unforgettable fly fishing experiences across Chilean Patagonia. Our exclusive access to remote rivers and lakes ensures you’ll enjoy nature in its purest form — guided by experts who understand these waters deeply.</p>
   </section>
 
-  <!-- 🌍 DESTINATIONS -->
-  <section id="destinations" class="destinations section fade-section">
-    <div class="container">
-      <h2>Destinations — Magallanes & Chilean Patagonia</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267070/trout-fly-fishing-punta-arenas-2_i55yq3.jpg" alt="Fly Fishing Punta Arenas">
-          <h3>Punta Arenas</h3>
-          <p>Ideal for day trips and short adventures. Explore rivers and spring creeks near the southernmost city on the continent.</p>
-        </div>
-
-        <div class="card">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg" alt="Tierra del Fuego Fly Fishing">
-          <h3>Tierra del Fuego</h3>
-          <p>Legendary for its sea-run brown trout. Experience multi-day expeditions across pristine, wind-swept landscapes.</p>
-        </div>
-
-        <div class="card">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg" alt="Torres del Paine Fly Fishing">
-          <h3>Torres del Paine</h3>
-          <p>Combine fly fishing with the breathtaking beauty of Patagonia’s most iconic national park — an unforgettable mix of wilderness and wonder.</p>
-        </div>
-      </div>
-    </div>
+  <section id="destinations" class="destinations">
+    <h2>Destinations</h2>
+    <p>From Punta Arenas and Torres del Paine to the legendary rivers of Tierra del Fuego, our trips are designed for small groups and tailored to every angler’s style — whether you seek brown trout, sea-run browns, or king salmon.</p>
   </section>
 
-  <!-- 🖼️ GALLERY -->
-  <section id="gallery" class="gallery section fade-section">
-    <div class="container">
-      <h2>Gallery</h2>
-      <div class="carousel">
-        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Sea Trout Tierra del Fuego">
-        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg" alt="Trout Fly Fishing Punta Arenas">
-        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267070/trout-fly-fishing-punta-arenas-7_e2i3eq.jpg" alt="Punta Arenas Fly Fishing">
-        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267070/trout-fly-fishing-punta-arenas-6_xuwdsk.jpg" alt="Fly Fishing Chile">
-        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267067/trout-fly-fishing-puerto-natales_11-_lvzgjn.jpg" alt="Puerto Natales Fishing">
-        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-5_txsq5p.jpg" alt="Tierra del Fuego Salmon">
-        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267069/trout-fly-fishing-punta-arenas-5_lyagm4.jpg" alt="Fly Fishing Patagonia">
-      </div>
-    </div>
+  <section id="gallery" class="gallery">
+    <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Sea Trout Patagonia">
+    <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-9_xrx4qq.jpg" alt="Fly Fishing Punta Arenas">
+    <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg" alt="Torres del Paine Fly Fishing">
   </section>
 
-  <!-- ✉️ CONTACT -->
-  <section id="contact" class="contact section fade-section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Let’s start planning your next fly fishing adventure in Patagonia.</p>
-      <div class="contact-links">
-        <a href="https://wa.me/56979559776" class="btn-secondary" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="mailto:contact@pristinewaters.cl" class="btn-secondary">Email Us</a>
-        <a href="https://www.instagram.com/pristinewaters_flyfishing/" class="btn-secondary" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
+  <section id="contact" class="contact">
+    <h2>Contact & Booking</h2>
+    <a href="https://wa.me/56979559776" target="_blank">Book on WhatsApp</a>
+    <a href="mailto:contact@pristinewaters.cl" target="_blank">Send an Email</a>
   </section>
 
-  <!-- ⚓ FOOTER -->
   <footer>
-    <p>© 2025 Pristine Waters Patagonia — Guided Fly Fishing in Chilean Patagonia.</p>
+    <div class="footer-container">
+      <p class="footer-text">
+        © 2025 <span class="brand">Pristine Waters</span> — Inspired by Nature, Defined by Experience.
+      </p>
+      <div class="footer-links">
+        <a href="https://www.pristinewaters.cl" target="_blank">Website</a>
+        <a href="https://www.instagram.com/pristinewaters_flyfishing" target="_blank">Instagram</a>
+        <a href="https://wa.me/56979559776" target="_blank">WhatsApp</a>
+      </div>
+      <p class="footer-legal">Registered with SERNATUR — Punta Arenas, Chile.</p>
+    </div>
   </footer>
 
-  <!-- ✨ JS -->
-  <script>
-    // Fade animation
-    const fadeSections = document.querySelectorAll('.fade-section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-    fadeSections.forEach(section => observer.observe(section));
-
-    // Menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbar = document.getElementById('navbar');
-    menuToggle.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
