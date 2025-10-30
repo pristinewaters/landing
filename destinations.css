@@ -1,7 +1,6 @@
-/* ================================================
-   Pristine Waters — Destination Pages Styles
-   (Punta Arenas, Tierra del Fuego, Torres del Paine)
-   ================================================ */
+/* =========================================================
+   PRISTINE WATERS — DESTINATION PAGES (Clean Stable)
+   ========================================================= */
 
 body {
   overflow-x: hidden;
@@ -11,7 +10,7 @@ body {
   background-color: #fff;
 }
 
-/* --- Hero --- */
+/* HERO */
 .hero {
   position: relative;
   z-index: 0;
@@ -20,20 +19,17 @@ body {
   text-align: center;
   color: #fff;
 }
-
 .hero img.hero-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(82%);
 }
-
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
 }
-
 .hero-text {
   position: absolute;
   top: 52%;
@@ -42,18 +38,16 @@ body {
   max-width: 900px;
   padding: 0 1rem;
 }
-
 .hero-text h1 {
   font-size: 2.4rem;
   margin-bottom: 0.5rem;
 }
-
 .hero-text p {
   font-size: 1.1rem;
   opacity: 0.95;
 }
 
-/* --- Main Section --- */
+/* CONTENT */
 .section {
   position: relative;
   z-index: 1;
@@ -62,18 +56,13 @@ body {
   padding: 4rem 2rem;
   text-align: left;
 }
-
 .article {
   max-width: 900px;
   margin: 0 auto;
   font-size: 1.08rem;
   line-height: 1.7;
 }
-
-.article p {
-  margin-bottom: 1.2rem;
-}
-
+.article p { margin-bottom: 1.2rem; }
 .article img {
   width: 100%;
   border-radius: 10px;
@@ -81,12 +70,9 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
+.article img:hover { transform: scale(1.01); }
 
-.article img:hover {
-  transform: scale(1.01);
-}
-
-/* --- Info Box --- */
+/* INFO BOX */
 .distances {
   background: #eef2f3;
   border-left: 4px solid #0077b6;
@@ -97,12 +83,9 @@ body {
   line-height: 1.6;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
+.distances strong { color: #002b5b; }
 
-.distances strong {
-  color: #002b5b;
-}
-
-/* --- Button --- */
+/* BUTTON */
 .cta-outline {
   display: inline-block;
   padding: 0.7rem 1.1rem;
@@ -113,54 +96,21 @@ body {
   font-weight: 700;
   transition: all 0.2s ease;
 }
+.cta-outline:hover { background: #0077b6; color: #fff; }
 
-.cta-outline:hover {
-  background: #0077b6;
-  color: #fff;
-}
-
-/* --- Responsive --- */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .section {
-    padding: 3rem 1.5rem;
-  }
-
-  .article {
-    font-size: 1rem;
-  }
-
-  .article img {
-    margin: 1.2rem 0;
-  }
-
-  .hero-text h1 {
-    font-size: 1.9rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
+  .section { padding: 3rem 1.5rem; }
+  .article { font-size: 1rem; }
+  .article img { margin: 1.2rem 0; }
+  .hero-text h1 { font-size: 1.9rem; }
+  .hero-text p { font-size: 1rem; }
 }
-
 @media (max-width: 600px) {
-  .article {
-    font-size: 0.98rem;
-    line-height: 1.6;
-  }
-
-  .distances {
-    font-size: 0.95rem;
-  }
+  .article { font-size: 0.98rem; line-height: 1.6; }
+  .distances { font-size: 0.95rem; }
 }
 
-/* --- Animation --- */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
