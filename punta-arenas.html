@@ -3,46 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Fly fishing in Punta Arenas: rivers, spring creeks, and lagoons at the southern edge of Patagonia. Guided experiences with premium gear, 4x4 transport, and gourmet river lunch." />
-    <title>Punta Arenas — Fly Fishing at the Southern Edge | Pristine Waters</title>
-
-    <!-- Favicons (same set as index) -->
-    <link rel="icon" type="image/png" href="icons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="icons/favicon-192x192.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-    <link rel="manifest" href="icons/site.webmanifest">
-
-    <!-- GA4 (same property) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMC2M67KHZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WMC2M67KHZ');
-    </script>
+    <meta name="description" content="Fly fishing near Punta Arenas — clear spring creeks, lagoons, and rivers surrounded by the vast silence of southern Patagonia. Experience solitude, elegance, and connection with Pristine Waters." />
+    <title>Punta Arenas — Fly Fishing in Southern Patagonia | Pristine Waters</title>
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <style>
-      /* Minor page-specific accents to feel editorial */
-      .subhero { max-width: 900px; margin: 0 auto; font-size: 1.06rem; color: #444; }
-      .pill { display:inline-block; margin:.5rem .35rem 0 0; padding:.35rem .7rem; border-radius:999px; border:1.5px solid var(--blue-medium); font-weight:700; font-size:.85rem; color:var(--blue-medium);}
-      .grid-spots { margin: 2rem auto 0; display:grid; gap:1.4rem; grid-template-columns: repeat(3,1fr); max-width: 1100px; }
-      .spot { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.06); text-align:left; }
-      .spot img { width:100%; height:210px; object-fit:cover;}
-      .spot .txt { padding:1rem 1rem 1.1rem;}
-      .spot h3 { color:var(--blue-dark); margin-bottom:.3rem; font-size:1.08rem;}
-      .spot p { color:#4a4a4a; font-size:.98rem;}
-      @media (max-width: 980px){ .grid-spots{ grid-template-columns:1fr 1fr; } }
-      @media (max-width: 560px){ .grid-spots{ grid-template-columns:1fr; } }
+      /* --- Adjustments exclusive to this internal page --- */
 
-      .info-band { max-width: 1100px; margin:2rem auto 0; display:grid; gap:1rem; grid-template-columns: repeat(4,1fr); }
-      .info-card { background:#fff; border-radius:12px; padding:1rem; box-shadow:0 8px 24px rgba(0,0,0,.06); }
-      .info-card h4 { color:var(--blue-medium); margin-bottom:.4rem; font-size:1rem;}
-      .info-card p, .info-card ul { color:#4a4a4a; font-size:.96rem; margin:0; padding-left:1.1rem;}
-      .info-card ul { padding-left:1rem; }
-      .cta-stack { margin-top: 1.2rem; display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; }
-      .btn-primary { display:inline-block; padding:.8rem 1.2rem; background:var(--blue-medium); color:#fff; border-radius:10px; font-weight:700; text-decoration:none; }
-      .btn-primary:hover { filter:brightness(.95); transform: translateY(-1px); transition: all .15s ease; }
+      .hero {
+        position: relative;
+        text-align: center;
+        color: var(--white);
+        height: 75vh;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        width: 100%;
+        height: 110%;
+        object-fit: cover;
+        object-position: center 35%; /* raises the visible portion */
+        filter: brightness(80%);
+      }
+
+      .article {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+        line-height: 1.7;
+        font-size: 1.08rem;
+        color: #333;
+      }
+
+      .article p {
+        margin-bottom: 1.2rem;
+      }
+
+      .article img {
+        width: 100%;
+        border-radius: 10px;
+        margin: 1.8rem 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      }
+
+      .section h2 {
+        text-align: left;
+        margin-bottom: 1.5rem;
+      }
+
+      .distances {
+        background: var(--light-bg);
+        border-left: 4px solid var(--blue-medium);
+        padding: 1rem 1.4rem;
+        margin: 2rem 0;
+        font-size: 1rem;
+      }
+
+      .cta-outline {
+        margin-top: 2rem;
+      }
     </style>
   </head>
 
@@ -50,7 +70,9 @@
     <!-- HEADER -->
     <header id="main-header">
       <div class="logo">
-        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg" alt="Pristine Waters Logo" />
+        <a href="index.html">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg" alt="Pristine Waters Logo" />
+        </a>
       </div>
 
       <div class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" role="button">
@@ -61,10 +83,9 @@
 
       <nav id="nav-menu" aria-label="Primary">
         <ul>
-          <!-- Link back to main page sections -->
           <li><a href="index.html#about">About Us</a></li>
-          <li><a href="index.html#programs">Fishing Programs</a></li>
-          <li><a href="index.html#destinations">Destinations</a></li>
+          <li><a href="index.html#programs">Programs</a></li>
+          <li><a href="index.html#destinations" class="active">Destinations</a></li>
           <li><a href="index.html#gallery">Gallery</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
@@ -75,174 +96,67 @@
     <section class="hero">
       <img
         src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-7_ysti5z.jpg"
-        alt="Fly fishing in Punta Arenas — panoramic hero"
+        alt="Fly Fishing in Punta Arenas"
         class="hero-bg"
       />
       <div class="hero-overlay"></div>
       <div class="hero-text reveal reveal-up">
-        <h1>Punta Arenas — Fly Fishing at the Southern Edge</h1>
-        <p>Rivers, spring creeks, and lagoons where wind, light, and trout write their own story.</p>
-        <a href="#highlights" class="cta-btn">Explore Waters</a>
+        <h1>Fly Fishing in Punta Arenas</h1>
+        <p>Where silence, clarity, and the southern wind meet.</p>
       </div>
     </section>
 
-    <!-- INTRO -->
+    <!-- ARTICLE -->
     <section class="section">
-      <h2 class="reveal reveal-up">A Quiet Geography of Water</h2>
-      <div class="subhero reveal reveal-up">
+      <div class="article reveal reveal-up">
         <p>
-          Just beyond the city limits, a network of intimate spring creeks, steady rivers, and reflective lagoons unfolds across open pampas and ancient forest patches. Each water has its rhythm — some reward delicate presentations and patience; others invite longer casts along cutbanks and gentle seams.
+          South of Punta Arenas, the landscape opens into endless steppe — a land where the sky dominates and the rivers carve quiet lines across the earth. Here, the experience of fly fishing becomes something deeper than the pursuit of fish; it becomes a return to simplicity and presence.
         </p>
+
+        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837914/fly-fishing-puerto-natales-10_bkb0r2.jpg" alt="Spring Creek Patagonia" />
+
         <p>
-          Here, fly fishing is elemental: the whisper of a line carried by southern wind, the soft step along grassy banks, the sudden pause of a trout beneath a sky that never seems to end. It’s a place to slow down, read the water, and feel the day expand.
+          The <strong>spring creeks</strong> near Punta Arenas flow like veins of glass through low vegetation and golden grass. Their clarity challenges perception — every shadow, every ripple tells a story. Patience and delicacy become the true tools of the angler.
         </p>
-        <div class="reveal reveal-up" style="margin-top:.6rem;">
-          <span class="pill">Spring Creeks</span>
-          <span class="pill">Rivers</span>
-          <span class="pill">Lagoons</span>
-          <span class="pill">Day Trips</span>
+
+        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837896/IMG_0018_eugv8u.jpg" alt="Río San Juan" />
+
+        <p>
+          On the <strong>Río San Juan</strong>, the breeze carries the scent of salt and peat. The river meanders through wide valleys, its calm stretches perfect for sight fishing brown trout. It’s a place where time slows, where each cast feels like a quiet dialogue with the wind.
+        </p>
+
+        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267069/trout-fly-fishing-punta-arenas-5_lyagm4.jpg" alt="Río del Medio" />
+
+        <p>
+          The <strong>Río del Medio</strong> offers intimate water — a setting for those who appreciate stealth and observation. Pools form behind scattered rocks, and every drift teaches something about precision and rhythm.
+        </p>
+
+        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg" alt="Laguna Parrillar" />
+
+        <p>
+          At <strong>Laguna Parrillar</strong>, reflections blend with clouds and mountain ridges. The stillness invites contemplation. Casts extend into silence, broken only by the soft rise of a trout under a mirrored surface.
+        </p>
+
+        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267068/trout-fly-fishing-puerto-natales-10_psujga.jpg" alt="Río Penitente" />
+
+        <p>
+          Further west, the <strong>Río Penitente</strong> flows across open pampa, where light changes by the minute. It’s a river of contrasts — wide and strong yet tranquil in certain stretches — ideal for immersing yourself in the vastness of southern Patagonia.
+        </p>
+
+        <div class="distances">
+          <p><strong>Distances from Punta Arenas:</strong> between 50 and 90 km, depending on the river or lagoon selected.</p>
+          <p><strong>Included:</strong> Bilingual guide, 4×4 transport, premium gear, waders, flies, and gourmet river lunch.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- HIGHLIGHTS (SPOTS) -->
-    <section id="highlights" class="section light-bg">
-      <h2 class="reveal reveal-up">Waters We Love</h2>
+        <p>
+          Each outing is designed not as a rush, but as an encounter — a day shaped by light, water, and the subtle grace of southern Patagonia. With <strong>Pristine Waters</strong>, every moment becomes a story told by the wind and remembered by the river.
+        </p>
 
-      <div class="grid-spots">
-        <!-- Spring creek -->
-        <article class="spot reveal reveal-left">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837914/fly-fishing-puerto-natales-10_bkb0r2.jpg" alt="Spring creek near Punta Arenas" />
-          <div class="txt">
-            <h3>Spring Creeks</h3>
-            <p>Clear, intimate flows that reward quiet steps and precise drifts. Subtle seams, grassy banks, and a light that changes everything.</p>
-          </div>
-        </article>
+        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838073/trout-fly-fishing-punta-arenas-8_ejxhcy.jpg" alt="Angler with Trout" />
 
-        <!-- Río San Juan -->
-        <article class="spot reveal reveal-up">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837896/IMG_0018_eugv8u.jpg" alt="Río San Juan — Punta Arenas" />
-          <div class="txt">
-            <h3>Río San Juan</h3>
-            <p>Diverse waters close to the city: gentle glides, deep turns, and long banks that invite a thoughtful approach with streamers or nymphs.</p>
-          </div>
-        </article>
-
-        <!-- Río del Medio -->
-        <article class="spot reveal reveal-right">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267069/trout-fly-fishing-punta-arenas-5_lyagm4.jpg" alt="Río del Medio — detail" />
-          <div class="txt">
-            <h3>Río del Medio</h3>
-            <p>A more intimate character — soft currents, clean structure, and readings that favor stealth, timing, and fine tippet control.</p>
-          </div>
-        </article>
-
-        <!-- Laguna Parrillar -->
-        <article class="spot reveal reveal-left">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg" alt="Laguna Parrillar — tranquil landscape" />
-          <div class="txt">
-            <h3>Laguna Parrillar</h3>
-            <p>Quiet water bordered by native forest and wide skies. A place for unhurried casts, reflection, and the pleasure of light.</p>
-          </div>
-        </article>
-
-        <!-- Río Penitente -->
-        <article class="spot reveal reveal-up">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267068/trout-fly-fishing-puerto-natales-10_psujga.jpg" alt="Río Penitente — open pampas" />
-          <div class="txt">
-            <h3>Río Penitente</h3>
-            <p>A classic Magellanic river framed by open pampas and sweeping horizons. Wide pools and steady current define its calm, spacious rhythm.</p>
-          </div>
-        </article>
-
-        <!-- Gear / fly detail -->
-        <article class="spot reveal reveal-right">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838042/trout-fly-fishing-puerto-natales-1_iwhdxt.jpg" alt="Fly fishing gear detail — Patagonia" />
-          <div class="txt">
-            <h3>Reading and Rhythm</h3>
-            <p>From subtle spring-creek drifts to confident streamer swings, each water invites its own cadence — led by wind, light, and trout.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="program-cta reveal reveal-up" style="margin-top:1.6rem;">
-        <a href="#plan" class="cta-outline">Plan Your Day</a>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE DETAILS -->
-    <section id="plan" class="section">
-      <h2 class="reveal reveal-up">Experience Details</h2>
-      <div class="info-band">
-        <div class="info-card reveal reveal-left">
-          <h4>Includes</h4>
-          <ul>
-            <li>Bilingual guide</li>
-            <li>Premium gear (rods, waders, boots, flies)</li>
-            <li>4×4 transport (hotel/port pick-up & drop-off)</li>
-            <li>Gourmet field lunch</li>
-          </ul>
+        <div style="text-align:left; margin-top: 2rem;">
+          <a href="index.html" class="cta-outline">← Back to Home</a>
         </div>
-        <div class="info-card reveal reveal-up">
-          <h4>Season</h4>
-          <p>November — April</p>
-          <h4 style="margin-top:.6rem;">Duration</h4>
-          <p>Half Day or Full Day</p>
-        </div>
-        <div class="info-card reveal reveal-up">
-          <h4>Distance</h4>
-          <p>~45–70 minutes from Punta Arenas</p>
-          <h4 style="margin-top:.6rem;">Access</h4>
-          <p>Public access waters and private estancias</p>
-        </div>
-        <div class="info-card reveal reveal-right">
-          <h4>Style & Approach</h4>
-          <p>Dry flies on spring creeks; nymphs and streamers in rivers and lagoons — always led by conditions, light, and flow.</p>
-        </div>
-      </div>
-
-      <div class="cta-stack reveal reveal-up">
-        <a class="btn-primary" href="https://wa.me/56979559776" target="_blank" rel="noopener">Book via WhatsApp</a>
-        <a class="btn-primary" href="mailto:info@pristinewaters.cl" target="_blank" rel="noopener">Email Us</a>
-        <a class="btn-primary" href="https://www.instagram.com/pristinewaters_flyfishing" target="_blank" rel="noopener">Instagram</a>
-        <a class="cta-outline" href="index.html" style="align-self:center;">Back to Home</a>
-      </div>
-    </section>
-
-    <!-- GALLERY (magazine feel) -->
-    <section class="section light-bg">
-      <h2 class="reveal reveal-up">Punta Arenas in Images</h2>
-      <div class="carousel reveal reveal-up">
-        <div class="carousel-track">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-7_ysti5z.jpg" alt="Punta Arenas hero" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837914/fly-fishing-puerto-natales-10_bkb0r2.jpg" alt="Spring creek detail" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837896/IMG_0018_eugv8u.jpg" alt="Río San Juan" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267069/trout-fly-fishing-punta-arenas-5_lyagm4.jpg" alt="Río del Medio" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg" alt="Laguna Parrillar" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267068/trout-fly-fishing-puerto-natales-10_psujga.jpg" alt="Río Penitente" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838042/trout-fly-fishing-puerto-natales-1_iwhdxt.jpg" alt="Gear detail" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838073/trout-fly-fishing-punta-arenas-8_ejxhcy.jpg" alt="Angler with trout" />
-        </div>
-      </div>
-    </section>
-
-    <!-- LIGHTBOX (re-usable like index) -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-      <span class="close" aria-label="Close">&times;</span>
-      <img class="lightbox-image" alt="Expanded gallery item"/>
-      <div class="lightbox-controls" aria-hidden="true">
-        <span class="prev" aria-label="Previous">&#10094;</span>
-        <span class="next" aria-label="Next">&#10095;</span>
-      </div>
-    </div>
-
-    <!-- CONTACT CTA -->
-    <section class="section contact-section">
-      <h2 class="reveal reveal-up">Ready to fish?</h2>
-      <div class="contact-links reveal reveal-up">
-        <a href="mailto:info@pristinewaters.cl" class="contact-chip" target="_blank" rel="noopener">Mail Us</a>
-        <a href="https://www.instagram.com/pristinewaters_flyfishing" class="contact-chip" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://wa.me/56979559776" class="contact-chip" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </section>
 
@@ -251,18 +165,20 @@
       <p>© 2025 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
     </footer>
 
-    <!-- SCRIPTS (same behavior as index) -->
+    <!-- SCRIPTS -->
     <script>
-      // Hamburger
+      // Header & menu behavior
       const hamburger = document.getElementById('hamburger');
       const navMenu = document.getElementById('nav-menu');
       const navLinks = document.querySelectorAll('#nav-menu a');
+
       hamburger.addEventListener('click', () => {
         const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
         hamburger.setAttribute('aria-expanded', !expanded);
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
       });
+
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           navMenu.classList.remove('active');
@@ -271,40 +187,10 @@
         });
       });
 
-      // Header shadow
       const header = document.getElementById('main-header');
       window.addEventListener('scroll', () => {
         header.classList.toggle('scrolled', window.scrollY > 20);
       });
-
-      // Lightbox
-      const lightbox = document.getElementById("lightbox");
-      const images = document.querySelectorAll(".carousel-track img");
-      const lightboxImage = document.querySelector(".lightbox-image");
-      const closeBtn = document.querySelector(".close");
-      const prev = document.querySelector(".prev");
-      const next = document.querySelector(".next");
-      let currentIndex = 0;
-
-      images.forEach((img, index) => {
-        img.addEventListener("click", () => {
-          lightbox.style.display = "flex";
-          lightbox.setAttribute('aria-hidden', 'false');
-          lightboxImage.src = img.src;
-          currentIndex = index;
-        });
-      });
-      function showImage(direction) {
-        currentIndex = (currentIndex + direction + images.length) % images.length;
-        lightboxImage.src = images[currentIndex].src;
-      }
-      closeBtn.addEventListener("click", () => {
-        lightbox.style.display = "none";
-        lightbox.setAttribute('aria-hidden', 'true');
-      });
-      prev.addEventListener("click", () => showImage(-1));
-      next.addEventListener("click", () => showImage(1));
-      window.addEventListener("click", (e) => { if (e.target === lightbox) { lightbox.style.display = "none"; lightbox.setAttribute('aria-hidden', 'true'); }});
 
       // Reveal animations
       const reveals = document.querySelectorAll('.reveal');
