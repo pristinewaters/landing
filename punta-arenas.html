@@ -9,13 +9,16 @@
     />
     <title>Punta Arenas — Fly Fishing in Southern Patagonia | Pristine Waters</title>
 
-    <!-- ✅ Rutas relativas seguras -->
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" type="image/png" href="./favicon.png" />
+    <!-- ✅ RUTA ABSOLUTA AL CSS EN GITHUB PAGES -->
+    <link
+      rel="stylesheet"
+      href="https://javierleppe.github.io/pristinewaters/style.css"
+    />
+
+    <link rel="icon" type="image/png" href="https://javierleppe.github.io/pristinewaters/favicon.png" />
 
     <style>
-      /* --- Page-specific adjustments --- */
-
+      /* Ajustes visuales específicos para la página */
       .hero {
         position: relative;
         text-align: center;
@@ -28,7 +31,7 @@
         width: 100%;
         height: 110%;
         object-fit: cover;
-        object-position: center 50%; /* adjusted to show the fish properly */
+        object-position: center 50%;
         filter: brightness(80%);
       }
 
@@ -37,7 +40,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%; /* prevents overlay from blocking rest of content */
+        height: 100%;
         background: linear-gradient(
           0deg,
           rgba(0, 0, 0, 0.4) 0%,
@@ -53,46 +56,6 @@
         transform: translate(-50%, -50%);
         z-index: 2;
       }
-
-      .article {
-        position: relative;
-        z-index: 0;
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: left;
-        line-height: 1.7;
-        font-size: 1.08rem;
-        color: #333;
-        padding-top: 3rem;
-      }
-
-      .article p {
-        margin-bottom: 1.2rem;
-      }
-
-      .article img {
-        width: 100%;
-        border-radius: 10px;
-        margin: 1.8rem 0;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      }
-
-      .section h2 {
-        text-align: left;
-        margin-bottom: 1.5rem;
-      }
-
-      .distances {
-        background: var(--light-bg);
-        border-left: 4px solid var(--blue-medium);
-        padding: 1rem 1.4rem;
-        margin: 2rem 0;
-        font-size: 1rem;
-      }
-
-      .cta-outline {
-        margin-top: 2rem;
-      }
     </style>
   </head>
 
@@ -100,7 +63,7 @@
     <!-- HEADER -->
     <header id="main-header">
       <div class="logo">
-        <a href="./index.html">
+        <a href="https://javierleppe.github.io/pristinewaters/index.html">
           <img
             src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg"
             alt="Pristine Waters Logo"
@@ -122,13 +85,11 @@
 
       <nav id="nav-menu" aria-label="Primary">
         <ul>
-          <li><a href="./index.html#about">About Us</a></li>
-          <li><a href="./index.html#programs">Programs</a></li>
-          <li>
-            <a href="./index.html#destinations" class="active">Destinations</a>
-          </li>
-          <li><a href="./index.html#gallery">Gallery</a></li>
-          <li><a href="./index.html#contact">Contact</a></li>
+          <li><a href="https://javierleppe.github.io/pristinewaters/index.html#about">About Us</a></li>
+          <li><a href="https://javierleppe.github.io/pristinewaters/index.html#programs">Programs</a></li>
+          <li><a href="https://javierleppe.github.io/pristinewaters/index.html#destinations" class="active">Destinations</a></li>
+          <li><a href="https://javierleppe.github.io/pristinewaters/index.html#gallery">Gallery</a></li>
+          <li><a href="https://javierleppe.github.io/pristinewaters/index.html#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -147,7 +108,7 @@
       </div>
     </section>
 
-    <!-- ARTICLE -->
+    <!-- CONTENIDO PRINCIPAL -->
     <section class="section">
       <div class="article reveal reveal-up">
         <p>
@@ -242,7 +203,11 @@
         />
 
         <div style="text-align: left; margin-top: 2rem">
-          <a href="./index.html" class="cta-outline">← Back to Home</a>
+          <a
+            href="https://javierleppe.github.io/pristinewaters/index.html"
+            class="cta-outline"
+            >← Back to Home</a
+          >
         </div>
       </div>
     </section>
