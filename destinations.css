@@ -3,15 +3,29 @@
    (Punta Arenas, Tierra del Fuego, Torres del Paine)
    ================================================ */
 
-/* --- General Layout for Destination Pages --- */
-.section {
-  padding: 4rem 2rem;
-  background-color: #ffffff;
-  text-align: left;
-  position: relative;
-  z-index: 1;
+/* ==== FIX: Ensure article content shows correctly under sticky header ==== */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
+.hero {
+  position: relative;
+  z-index: 0;
+  height: 70vh;
+  overflow: visible !important;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  margin-top: 2rem; /* Separation from hero */
+  padding: 4rem 2rem;
+  text-align: left;
+}
+
+/* --- Article layout --- */
 .article {
   max-width: 900px;
   margin: 0 auto;
