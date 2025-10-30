@@ -184,6 +184,16 @@
       </div>
     </section>
 
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <span class="close" aria-label="Close">&times;</span>
+      <img class="lightbox-image" alt="Expanded gallery item"/>
+      <div class="lightbox-controls" aria-hidden="true">
+        <span class="prev" aria-label="Previous">&#10094;</span>
+        <span class="next" aria-label="Next">&#10095;</span>
+      </div>
+    </div>
+
     <!-- CONTACT -->
     <section id="contact" class="section contact-section">
       <h2 class="reveal reveal-up">Contact</h2>
@@ -223,6 +233,7 @@
         header.classList.toggle('scrolled', window.scrollY > 20);
       });
 
+      // LIGHTBOX FUNCTIONALITY
       const lightbox = document.getElementById("lightbox");
       const images = document.querySelectorAll(".carousel-track img");
       const lightboxImage = document.querySelector(".lightbox-image");
