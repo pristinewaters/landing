@@ -1,25 +1,35 @@
-# robots.txt for Pristine Waters Patagonia
-# This file tells search engines how to crawl and index the website
+# =========================================================
+# robots.txt for Pristine Waters Fly Fishing Patagonia
+# Website: https://www.pristinewaters.cl
+# Purpose: Instruct search engines how to crawl and index
+# =========================================================
 
 User-agent: *
 Allow: /
 
-# Disallow potential admin or system paths (not used yet, but future-proofed)
+# --- Prevent crawlers from accessing system or admin paths ---
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /admin/
+Disallow: /icons/
 
-# Sitemap and canonical domain
+# --- Sitemap and canonical domain ---
 Sitemap: https://www.pristinewaters.cl/sitemap.xml
 
-# Ensure favicon and main assets are indexed
+# --- Allow indexing of key assets ---
 Allow: /favicon.png
+Allow: /icons/favicon.png
 Allow: /style.css
 Allow: /index.html
+Allow: /*.js$
 
-# Additional guidance for bots
+# --- Image indexing for Google Images ---
 User-agent: Googlebot-Image
 Disallow:
 Allow: /*.jpg$
 Allow: /*.png$
 Allow: /*.webp$
+Allow: /*.heic$
+
+# --- Branding note ---
+# © 2025 Pristine Waters — Inspired by Nature, Defined by Experience.
