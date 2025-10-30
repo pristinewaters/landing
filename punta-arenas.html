@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <style>
-      /* --- Adjustments exclusive to this internal page --- */
+      /* --- Page-specific adjustments --- */
 
       .hero {
         position: relative;
@@ -23,17 +23,38 @@
         width: 100%;
         height: 110%;
         object-fit: cover;
-        object-position: center 35%; /* raises the visible portion */
+        object-position: center 50%; /* adjusted to show the fish properly */
         filter: brightness(80%);
       }
 
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* prevents overlay from blocking rest of content */
+        background: linear-gradient(0deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.05) 60%);
+        z-index: 1;
+      }
+
+      .hero-text {
+        position: absolute;
+        top: 52%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+
       .article {
+        position: relative;
+        z-index: 0;
         max-width: 900px;
         margin: 0 auto;
         text-align: left;
         line-height: 1.7;
         font-size: 1.08rem;
         color: #333;
+        padding-top: 3rem;
       }
 
       .article p {
@@ -167,18 +188,15 @@
 
     <!-- SCRIPTS -->
     <script>
-      // Header & menu behavior
       const hamburger = document.getElementById('hamburger');
       const navMenu = document.getElementById('nav-menu');
       const navLinks = document.querySelectorAll('#nav-menu a');
-
       hamburger.addEventListener('click', () => {
         const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
         hamburger.setAttribute('aria-expanded', !expanded);
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
       });
-
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           navMenu.classList.remove('active');
@@ -186,13 +204,10 @@
           hamburger.setAttribute('aria-expanded', 'false');
         });
       });
-
       const header = document.getElementById('main-header');
       window.addEventListener('scroll', () => {
         header.classList.toggle('scrolled', window.scrollY > 20);
       });
-
-      // Reveal animations
       const reveals = document.querySelectorAll('.reveal');
       const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in-view'); });
