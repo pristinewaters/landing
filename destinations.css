@@ -1,0 +1,36 @@
+/* ==== Styles for destination pages ==== */
+.section {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.article {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #333333;
+}
+
+.article p {
+  margin-bottom: 1.2rem;
+}
+
+.article img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 1.8rem 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.distances {
+  background: #eef2f3;
+  border-left: 4px solid #0077b6;
+  padding: 1rem 1.4rem;
+  margin: 2rem 0;
+  font-size: 1rem;
+  border-radius: 8px;
+}
