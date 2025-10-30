@@ -14,12 +14,19 @@
     />
     <title>Punta Arenas — Fly Fishing in Southern Patagonia | Pristine Waters</title>
 
-    <!-- ✅ CSS y favicon desde dominio real -->
+    <!-- CSS y favicon -->
     <link rel="stylesheet" href="https://www.pristinewaters.cl/style.css" />
     <link rel="icon" type="image/png" href="https://www.pristinewaters.cl/favicon.png" />
 
     <style>
-      /* Ajustes visuales específicos para la página Punta Arenas */
+      /* ==== Reforzamos visibilidad y estructura del contenido ==== */
+
+      main {
+        display: block;
+        background-color: #fff;
+        color: #333;
+      }
+
       .hero {
         position: relative;
         text-align: center;
@@ -57,6 +64,52 @@
         transform: translate(-50%, -50%);
         z-index: 2;
       }
+
+      .article {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 4rem 1.5rem;
+        font-size: 1.08rem;
+        line-height: 1.7;
+        color: #333;
+      }
+
+      .article p {
+        margin-bottom: 1.4rem;
+      }
+
+      .article img {
+        width: 100%;
+        border-radius: 10px;
+        margin: 1.8rem 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      }
+
+      .distances {
+        background: var(--light-bg);
+        border-left: 4px solid var(--blue-medium);
+        padding: 1rem 1.4rem;
+        margin: 2rem 0;
+        border-radius: 10px;
+      }
+
+      .cta-outline {
+        display: inline-block;
+        margin-top: 1rem;
+        border: 2px solid var(--blue-medium);
+        padding: 0.7rem 1.2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--blue-medium);
+        font-weight: 700;
+        transition: 0.2s ease;
+      }
+
+      .cta-outline:hover {
+        background: var(--blue-medium);
+        color: #fff;
+      }
     </style>
   </head>
 
@@ -64,7 +117,7 @@
     <!-- HEADER -->
     <header id="main-header">
       <div class="logo">
-        <a href="https://www.pristinewaters.cl/index.html">
+        <a href="https://www.pristinewaters.cl/">
           <img
             src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg"
             alt="Pristine Waters Logo"
@@ -111,8 +164,8 @@
       </div>
     </section>
 
-    <!-- ARTICLE -->
-    <section class="section">
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
       <div class="article reveal reveal-up">
         <p>
           South of Punta Arenas, the landscape opens into endless steppe — a
@@ -206,14 +259,10 @@
         />
 
         <div style="text-align: left; margin-top: 2rem">
-          <a
-            href="https://www.pristinewaters.cl/index.html"
-            class="cta-outline"
-            >← Back to Home</a
-          >
+          <a href="https://www.pristinewaters.cl/" class="cta-outline">← Back to Home</a>
         </div>
       </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer>
