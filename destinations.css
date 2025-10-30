@@ -1,4 +1,9 @@
-/* ==== Styles for destination pages ==== */
+/* ================================================
+   Pristine Waters — Destination Pages Styles
+   (Punta Arenas, Tierra del Fuego, Torres del Paine)
+   ================================================ */
+
+/* --- General Layout for Destination Pages --- */
 .section {
   padding: 4rem 2rem;
   background-color: #ffffff;
@@ -19,18 +24,90 @@
   margin-bottom: 1.2rem;
 }
 
+/* --- Images --- */
 .article img {
   width: 100%;
   border-radius: 10px;
   margin: 1.8rem 0;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
 }
 
+.article img:hover {
+  transform: scale(1.01);
+}
+
+/* --- Distances Info Box --- */
 .distances {
   background: #eef2f3;
   border-left: 4px solid #0077b6;
-  padding: 1rem 1.4rem;
+  padding: 1.2rem 1.6rem;
   margin: 2rem 0;
   font-size: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
+  line-height: 1.6;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.distances strong {
+  color: #002b5b;
+}
+
+/* --- CTA Link Back to Home --- */
+.cta-outline {
+  display: inline-block;
+  padding: 0.7rem 1.1rem;
+  border: 2px solid #0077b6;
+  color: #0077b6;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.cta-outline:hover {
+  background: #0077b6;
+  color: #fff;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .article {
+    font-size: 1rem;
+  }
+
+  .article img {
+    margin: 1.2rem 0;
+  }
+
+  .distances {
+    padding: 1rem 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .article {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .distances {
+    font-size: 0.95rem;
+  }
+}
+
+/* --- Smooth Fade-in Animation --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
