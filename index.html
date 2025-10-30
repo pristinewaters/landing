@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,17 +21,12 @@
     <link rel="manifest" href="icons/site.webmanifest" />
 
     <!-- GOOGLE ANALYTICS -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-WMC2M67KHZ"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMC2M67KHZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-WMC2M67KHZ");
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WMC2M67KHZ');
     </script>
 
     <link rel="stylesheet" href="style.css" />
@@ -48,10 +42,8 @@
         />
       </div>
 
-      <div class="hamburger" id="hamburger" role="button">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+      <div class="hamburger" id="hamburger" aria-label="Open navigation" role="button">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
       </div>
 
       <nav id="nav-menu">
@@ -85,24 +77,13 @@
       <h2 class="reveal reveal-up">About Us</h2>
       <div class="about-text reveal reveal-up">
         <p>
-          At <strong>Pristine Waters</strong>, we’re not just a fly-fishing
-          outfitter — we’re storytellers of Patagonia’s rivers, guardians of its
-          silence, and companions on journeys that awaken something deeper.
+          At <strong>Pristine Waters</strong>, we’re not just a fly-fishing outfitter — we’re storytellers of Patagonia’s rivers, guardians of its silence, and companions on journeys that awaken something deeper.
         </p>
         <p>
-          Born and raised in the southernmost region of the world, our team of
-          passionate anglers and naturalists crafts
-          <strong>bespoke fly-fishing adventures</strong> that blend world-class
-          angling with the spirit of wild Patagonia.
+          Born and raised in the southernmost region of the world, our team of passionate anglers and naturalists crafts <strong>bespoke fly-fishing adventures</strong> that blend world-class angling with the spirit of wild Patagonia.
         </p>
         <p>
-          Each experience combines
-          <strong
-            >expert guiding, premium equipment, gourmet field cuisine,</strong
-          >
-          and a deep respect for nature through
-          <strong>sustainable practices and responsible catch &amp; release</strong
-          >.
+          Each experience combines <strong>expert guiding, premium equipment, gourmet field cuisine,</strong> and a deep respect for nature through <strong>sustainable practices and responsible catch &amp; release</strong>.
         </p>
       </div>
     </section>
@@ -111,38 +92,25 @@
     <section id="programs" class="section light-bg">
       <h2 class="reveal reveal-up">Fishing Programs</h2>
       <div class="programs-lead reveal reveal-up">
-        <p>
-          Our excursions celebrate the extraordinary diversity of southern Chile
-          — from windswept pampas and turquoise lagoons to ancient forests and
-          glacial rivers.
-        </p>
+        <p>Our excursions celebrate the extraordinary diversity of southern Chile — from windswept pampas and turquoise lagoons to ancient forests and glacial rivers.</p>
       </div>
 
       <div class="program-grid">
         <div class="program-item reveal reveal-up">
           <h3>Bilingual Guide</h3>
-          <p>
-            Local experts who read water, wind, and wildlife — and make you feel
-            at home.
-          </p>
+          <p>Local experts who read water, wind, and wildlife — and make you feel at home.</p>
         </div>
         <div class="program-item reveal reveal-up">
           <h3>4×4 Transport</h3>
-          <p>
-            Hotel or port pick-up and drop-off. Safe, flexible logistics for
-            last-minute changes.
-          </p>
+          <p>Hotel or port pick-up and drop-off. Safe, flexible logistics for last-minute changes.</p>
         </div>
         <div class="program-item reveal reveal-up">
           <h3>Premium Gear</h3>
-          <p>Rods, waders, boots, and flies included. Travel light.</p>
+          <p>Rods, waders, boots, and flies included. Travel light — we’ve got you covered.</p>
         </div>
         <div class="program-item reveal reveal-up">
           <h3>Gourmet River Lunch</h3>
-          <p>
-            Cheese & charcuterie, sandwiches, fruit, chocolate — and a toast by
-            the water.
-          </p>
+          <p>Cheese, charcuterie, fruit, sandwiches, chocolate, and wine by the water.</p>
         </div>
       </div>
     </section>
@@ -152,43 +120,19 @@
       <h2 class="reveal reveal-up">Destinations</h2>
       <div class="cards">
         <div class="card reveal reveal-up">
-          <a href="punta-arenas.html">
-            <img
-              src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_800/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg"
-              alt="Punta Arenas"
-            />
-            <h3>Punta Arenas</h3>
-            <p>
-              Rivers and lagoons flowing through windswept steppe and native
-              forest.
-            </p>
-          </a>
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_800/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg" alt="Punta Arenas" />
+          <h3>Punta Arenas</h3>
+          <p>Rivers and lagoons flowing through windswept steppe and native forest.</p>
         </div>
         <div class="card reveal reveal-up">
-          <a href="tierra-del-fuego.html">
-            <img
-              src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg"
-              alt="Tierra del Fuego"
-            />
-            <h3>Tierra del Fuego</h3>
-            <p>
-              Rivers shaped by wind and time hold legendary
-              <strong>sea-run brown trout</strong>.
-            </p>
-          </a>
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Tierra del Fuego" />
+          <h3>Tierra del Fuego</h3>
+          <p>Rivers shaped by wind and time hold legendary <strong>sea-run brown trout</strong>.</p>
         </div>
         <div class="card reveal reveal-up">
-          <a href="torres-del-paine.html">
-            <img
-              src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg"
-              alt="Torres del Paine"
-            />
-            <h3>Torres del Paine</h3>
-            <p>
-              Beneath the massif, <strong>Río Serrano</strong> carries glacial
-              waters alive with trout.
-            </p>
-          </a>
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg" alt="Torres del Paine" />
+          <h3>Torres del Paine</h3>
+          <p>Beneath the massif, <strong>Río Serrano</strong> carries glacial waters alive with trout.</p>
         </div>
       </div>
     </section>
@@ -198,18 +142,9 @@
       <h2 class="reveal reveal-up">Gallery</h2>
       <div class="carousel reveal reveal-up">
         <div class="carousel-track">
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg"
-            alt="Gallery 1"
-          />
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267070/trout-fly-fishing-punta-arenas-7_e2i3eq.jpg"
-            alt="Gallery 2"
-          />
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg"
-            alt="Gallery 3"
-          />
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg" alt="Gallery 1" />
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267070/trout-fly-fishing-punta-arenas-7_e2i3eq.jpg" alt="Gallery 2" />
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Gallery 3" />
         </div>
       </div>
     </section>
@@ -219,15 +154,8 @@
       <h2 class="reveal reveal-up">Contact</h2>
       <div class="contact-links reveal reveal-up">
         <a href="mailto:info@pristinewaters.cl" class="contact-chip">Mail Us</a>
-        <a
-          href="https://www.instagram.com/pristinewaters_flyfishing"
-          class="contact-chip"
-          target="_blank"
-          >Instagram</a
-        >
-        <a href="https://wa.me/56979559776" class="contact-chip" target="_blank"
-          >WhatsApp</a
-        >
+        <a href="https://www.instagram.com/pristinewaters_flyfishing" class="contact-chip" target="_blank">Instagram</a>
+        <a href="https://wa.me/56979559776" class="contact-chip" target="_blank">WhatsApp</a>
       </div>
     </section>
 
@@ -240,11 +168,11 @@
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("nav-menu");
       const header = document.getElementById("main-header");
-      hamburger.addEventListener("click", () => {
+      hamburger.addEventListener("click", ()=> {
         navMenu.classList.toggle("active");
         hamburger.classList.toggle("active");
       });
-      window.addEventListener("scroll", () => {
+      window.addEventListener("scroll", ()=> {
         header.classList.toggle("scrolled", window.scrollY > 20);
       });
     </script>
