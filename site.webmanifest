@@ -1,0 +1,21 @@
+{
+  "name": "Pristine Waters Fly Fishing Patagonia",
+  "short_name": "Pristine Waters",
+  "start_url": "/landing/index.html",
+  "display": "standalone",
+  "background_color": "#002b5b",
+  "theme_color": "#002b5b",
+  "description": "Private guided fly fishing in Chilean Patagonia and Tierra del Fuego.",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
