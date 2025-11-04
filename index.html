@@ -64,13 +64,22 @@
       </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO (VIDEO VERSION) -->
     <section class="hero">
-      <img
-        src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_1600/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg"
-        alt="Fly Fishing Patagonia"
-        class="hero-bg"
-      />
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_1600/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg"
+        class="hero-video"
+      >
+        <source
+          src="https://res.cloudinary.com/dqbyskmnq/video/upload/v1762266805/video_promo_esqfck.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support HTML5 video.
+      </video>
       <div class="hero-overlay"></div>
       <div class="hero-text reveal reveal-up">
         <h1>Fly Fishing at the Edge of the World</h1>
@@ -200,18 +209,6 @@
       <h2 class="reveal reveal-up">Gallery</h2>
       <div class="carousel reveal reveal-up">
         <div class="carousel-track">
-
-          <!-- 🎥 Video -->
-          <video
-            src="https://res.cloudinary.com/dqbyskmnq/video/upload/v1761838101/IMG_0491_hgqbtg.mov"
-            autoplay
-            muted
-            loop
-            playsinline
-            class="carousel-video"
-          ></video>
-
-          <!-- 🖼️ Imágenes nuevas -->
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-7_ysti5z.jpg" alt="Fly Fishing Punta Arenas 1" />
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-6_keyobk.jpg" alt="Fly Fishing Punta Arenas 2" />
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-9_gvrkfm.jpg" alt="Fly Fishing Punta Arenas 3" />
@@ -224,12 +221,9 @@
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838044/torres-del-paine-fly-fishing-5_hgoldf.heic" alt="Torres del Paine Fly Fishing" />
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837997/sea-trout-fly-fishing-tierra-del-fuego-5_j2ookz.jpg" alt="Tierra del Fuego Sea Trout" />
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837951/IMG_6902_idehi9.heic" alt="Fly Fishing Patagonia River" />
-
-          <!-- 🌅 Imágenes originales -->
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg" alt="Gallery 1" />
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267070/trout-fly-fishing-punta-arenas-7_e2i3eq.jpg" alt="Gallery 2" />
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Gallery 3" />
-
         </div>
       </div>
     </section>
@@ -271,7 +265,7 @@
       });
 
       // LIGHTBOX
-      const mediaItems = [...document.querySelectorAll(".carousel-track img, .carousel-video")];
+      const imageItems = [...document.querySelectorAll(".carousel-track img")];
       const lightbox = document.getElementById("lightbox");
       const content = document.getElementById("lightboxContent");
       const closeBtn = document.getElementById("lightboxClose");
@@ -281,26 +275,22 @@
 
       const openLightbox = (index) => {
         currentIndex = index;
-        const media = mediaItems[index];
+        const img = imageItems[index];
         lightbox.classList.add("active");
-        if (media.tagName === "VIDEO") {
-          content.innerHTML = `<video src="${media.src}" controls autoplay></video>`;
-        } else {
-          content.innerHTML = `<img src="${media.src}" alt="Fly Fishing Patagonia" />`;
-        }
+        content.innerHTML = `<img src="${img.src}" alt="Fly Fishing Patagonia" />`;
       };
 
       const showNext = () => {
-        currentIndex = (currentIndex + 1) % mediaItems.length;
+        currentIndex = (currentIndex + 1) % imageItems.length;
         openLightbox(currentIndex);
       };
 
       const showPrev = () => {
-        currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+        currentIndex = (currentIndex - 1 + imageItems.length) % imageItems.length;
         openLightbox(currentIndex);
       };
 
-      mediaItems.forEach((item, index) => {
+      imageItems.forEach((item, index) => {
         item.addEventListener("click", () => openLightbox(index));
       });
 
