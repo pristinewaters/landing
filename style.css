@@ -1,312 +1,439 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Bespoke guided fly fishing in Chilean Patagonia and Tierra del Fuego. Premium gear, bilingual guides, gourmet river lunches, and sustainable practices. Pristine Waters Fly Fishing Patagonia."
-    />
-    <meta name="author" content="Pristine Waters Fly Fishing Patagonia" />
-    <meta
-      name="google-site-verification"
-      content="jVVYdQkgyX7kVZ6b4GKa4w0gJ1brOaxpNmsDXyGBo4Q"
-    />
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <title>Pristine Waters Fly Fishing Patagonia</title>
+:root {
+  --blue-dark: #002b5b;
+  --blue-medium: #0077b6;
+  --light-bg: #eef2f3;
+  --white: #ffffff;
+  --text: #333333;
+}
 
-    <!-- FAVICONS -->
-    <link rel="icon" type="image/png" href="icons/favicon-32x32.png" />
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
-    <link rel="manifest" href="icons/site.webmanifest" />
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    <!-- GOOGLE ANALYTICS -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-WMC2M67KHZ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-WMC2M67KHZ");
-    </script>
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--blue-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+header.scrolled {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
 
-  <body>
-    <!-- HEADER -->
-    <header id="main-header">
-      <div class="logo">
-        <img
-          src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg"
-          alt="Pristine Waters Logo"
-        />
-      </div>
+.logo img {
+  height: 65px;
+}
 
-      <div class="hamburger" id="hamburger" aria-label="Open navigation">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
 
-      <nav id="nav-menu">
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#programs">Fishing Programs</a></li>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+nav a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
 
-    <!-- HERO (VIDEO VERSION) -->
-    <section class="hero">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_1600/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg"
-        class="hero-video"
-      >
-        <source
-          src="https://res.cloudinary.com/dqbyskmnq/video/upload/v1762266805/video_promo_esqfck.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support HTML5 video.
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="hero-text reveal reveal-up">
-        <h1>Fly Fishing at the Edge of the World</h1>
-        <p>Where passion meets wilderness.</p>
-        <a href="#destinations" class="cta-btn">Explore Destinations</a>
-      </div>
-    </section>
+nav a:hover {
+  color: var(--blue-medium);
+}
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2 class="reveal reveal-up">About Us</h2>
-      <div class="about-text reveal reveal-up">
-        <p>
-          At <strong>Pristine Waters</strong>, we’re not just a fly-fishing
-          outfitter — we’re storytellers of Patagonia’s rivers, guardians of its
-          silence, and companions on journeys that awaken something deeper.
-        </p>
-        <p>
-          Born and raised in the southernmost region of the world, our team of
-          passionate anglers and naturalists crafts
-          <strong>bespoke fly-fishing adventures</strong> that blend world-class
-          angling with the spirit of wild Patagonia.
-        </p>
-        <p>
-          Each experience combines
-          <strong
-            >expert guiding, premium equipment, gourmet field cuisine,</strong
-          >
-          and a deep respect for nature through
-          <strong
-            >sustainable practices and responsible catch &amp; release</strong
-          >.
-        </p>
-      </div>
-    </section>
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+}
 
-    <!-- PROGRAMS -->
-    <section id="programs" class="section light-bg">
-      <h2 class="reveal reveal-up">Fishing Programs</h2>
-      <div class="programs-lead reveal reveal-up">
-        <p>
-          Our excursions celebrate the extraordinary diversity of southern
-          Chile — from windswept pampas and turquoise lagoons to ancient forests
-          and glacial rivers.
-        </p>
-      </div>
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
 
-      <div class="program-grid">
-        <div class="program-item reveal reveal-up">
-          <h3>Bilingual Guide</h3>
-          <p>
-            Local experts who read water, wind, and wildlife — and make you feel
-            at home.
-          </p>
-        </div>
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+    z-index: 2000;
+  }
+  nav ul {
+    flex-direction: column;
+    background-color: var(--blue-dark);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 230px;
+    border-radius: 0 0 0 8px;
+    display: none;
+    padding: 1rem;
+  }
+  nav.active ul {
+    display: flex;
+    animation: fadeIn 0.25s ease;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+  nav a {
+    color: var(--white);
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  nav a:last-child {
+    border-bottom: none;
+  }
+}
 
-        <div class="program-item reveal reveal-up">
-          <h3>4×4 Transport</h3>
-          <p>
-            Hotel or port pick-up and drop-off. Safe, flexible logistics for
-            last-minute changes.
-          </p>
-        </div>
+/* HERO (VIDEO) */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-        <div class="program-item reveal reveal-up">
-          <h3>Premium Gear</h3>
-          <p>
-            Rods, waders, boots, and flies included. Travel light — we’ve got
-            you covered.
-          </p>
-        </div>
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
 
-        <div class="program-item reveal reveal-up">
-          <h3>Gourmet River Lunch</h3>
-          <p>
-            Cheese, charcuterie, fruit, sandwiches, chocolate, and wine by the
-            water.
-          </p>
-        </div>
-      </div>
-    </section>
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.25) 40%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+}
 
-    <!-- DESTINATIONS -->
-    <section id="destinations" class="section">
-      <h2 class="reveal reveal-up">Destinations</h2>
-      <div class="cards">
-        <div class="card reveal reveal-up">
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto,w_800/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg"
-            alt="Punta Arenas"
-          />
-          <h3>Punta Arenas</h3>
-          <p>
-            Rivers and lagoons flowing through windswept steppe and native
-            forest.
-          </p>
-        </div>
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 1rem;
+  animation: fadeUp 1.5s ease forwards;
+  opacity: 0;
+}
 
-        <div class="card reveal reveal-up">
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg"
-            alt="Tierra del Fuego"
-          />
-          <h3>Tierra del Fuego</h3>
-          <p>
-            Rivers shaped by wind and time hold legendary
-            <strong>sea-run brown trout</strong>.
-          </p>
-        </div>
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
-        <div class="card reveal reveal-up">
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg"
-            alt="Torres del Paine"
-          />
-          <h3>Torres del Paine</h3>
-          <p>
-            Beneath the massif, <strong>Río Serrano</strong> carries glacial
-            waters alive with trout.
-          </p>
-        </div>
-      </div>
-    </section>
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
 
-    <!-- GALLERY -->
-    <section id="gallery" class="section light-bg">
-      <h2 class="reveal reveal-up">Gallery</h2>
-      <div class="carousel reveal reveal-up">
-        <div class="carousel-track">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-6_keyobk.jpg" alt="Fly Fishing Punta Arenas 1" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-9_gvrkfm.jpg" alt="Fly Fishing Punta Arenas 2" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838057/trout-fly-fishing-punta-arenas-4_iol5ts.heic" alt="Fly Fishing Punta Arenas 3" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838052/trout-fly-fishing-puerto-natales-10_paqay3.jpg" alt="Fly Fishing Puerto Natales 1" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838052/trout-fly-fishing-punta-arenas-5_remu6a.jpg" alt="Fly Fishing Punta Arenas 4" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838052/trout-fly-fishing-punta-arenas-2_h4fy8i.jpg" alt="Fly Fishing Punta Arenas 5" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838051/trout-fly-fishing-punta-arenas-1_qgzqfm.jpg" alt="Fly Fishing Punta Arenas 6" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838051/trout-fly-fishing-puerto-natales-2_aohl8l.jpg" alt="Fly Fishing Puerto Natales 2" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838044/torres-del-paine-fly-fishing-5_hgoldf.heic" alt="Torres del Paine Fly Fishing" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837997/sea-trout-fly-fishing-tierra-del-fuego-5_j2ookz.jpg" alt="Tierra del Fuego Sea Trout" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837951/IMG_6902_idehi9.heic" alt="Fly Fishing Patagonia River" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg" alt="Gallery 1" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267070/trout-fly-fishing-punta-arenas-7_e2i3eq.jpg" alt="Gallery 2" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Gallery 3" />
-        </div>
-      </div>
-    </section>
+.cta-btn {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  background: var(--blue-medium);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
 
-    <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
-      <h2 class="reveal reveal-up">Contact</h2>
-      <div class="contact-links reveal reveal-up">
-        <a href="mailto:info@pristinewaters.cl" class="contact-chip" target="_blank">Mail Us</a>
-        <a href="https://www.instagram.com/pristinewaters_flyfishing" class="contact-chip" target="_blank">Instagram</a>
-        <a href="https://wa.me/56979559776" class="contact-chip" target="_blank">WhatsApp</a>
-      </div>
-    </section>
+.cta-btn:hover {
+  transform: translateY(-2px);
+  background: #036aa0;
+}
 
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2025 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
-    </footer>
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-      <span class="lightbox-close" id="lightboxClose">&times;</span>
-      <span class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</span>
-      <span class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</span>
-      <div class="lightbox-content" id="lightboxContent"></div>
-    </div>
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    <!-- SCRIPTS -->
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("nav-menu");
-      const header = document.getElementById("main-header");
-      hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-      window.addEventListener("scroll", () => {
-        header.classList.toggle("scrolled", window.scrollY > 20);
-      });
+/* SECTIONS */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.section.light-bg {
+  background-color: var(--light-bg);
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--blue-dark);
+}
 
-      // LIGHTBOX
-      const imageItems = [...document.querySelectorAll(".carousel-track img")];
-      const lightbox = document.getElementById("lightbox");
-      const content = document.getElementById("lightboxContent");
-      const closeBtn = document.getElementById("lightboxClose");
-      const prevBtn = document.getElementById("lightboxPrev");
-      const nextBtn = document.getElementById("lightboxNext");
-      let currentIndex = 0;
+/* ABOUT */
+.about-text {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.06rem;
+  display: grid;
+  gap: 0.8rem;
+}
 
-      const openLightbox = (index) => {
-        currentIndex = index;
-        const img = imageItems[index];
-        lightbox.classList.add("active");
-        content.innerHTML = `<img src="${img.src}" alt="Fly Fishing Patagonia" />`;
-      };
+/* PROGRAMS */
+.programs-lead {
+  max-width: 860px;
+  margin: 0 auto 1.6rem;
+  font-size: 1.06rem;
+}
+.program-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 980px) {
+  .program-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.program-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.program-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.program-item h3 {
+  color: var(--blue-dark);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+.program-item p {
+  font-size: 0.98rem;
+  color: #4a4a4a;
+}
 
-      const showNext = () => {
-        currentIndex = (currentIndex + 1) % imageItems.length;
-        openLightbox(currentIndex);
-      };
+/* DESTINATIONS */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 320px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+.card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+.card h3 {
+  font-size: 1.2rem;
+  margin: 0.9rem 1rem 0.4rem;
+  color: var(--blue-medium);
+}
+.card p {
+  padding: 0 1rem 1.1rem;
+  font-size: 0.98rem;
+  color: #4a4a4a;
+}
 
-      const showPrev = () => {
-        currentIndex = (currentIndex - 1 + imageItems.length) % imageItems.length;
-        openLightbox(currentIndex);
-      };
+/* GALLERY */
+.carousel {
+  overflow-x: auto;
+  display: flex;
+  scroll-behavior: smooth;
+}
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.carousel-track img {
+  width: 350px;
+  height: 230px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.carousel-track img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.carousel-track img:hover {
+  transform: scale(1.04);
+}
 
-      imageItems.forEach((item, index) => {
-        item.addEventListener("click", () => openLightbox(index));
-      });
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+.lightbox.active {
+  display: flex;
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.lightbox-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 20px;
+}
+.lightbox-prev {
+  left: 10px;
+}
+.lightbox-next {
+  right: 10px;
+}
 
-      closeBtn.addEventListener("click", () => lightbox.classList.remove("active"));
-      nextBtn.addEventListener("click", showNext);
-      prevBtn.addEventListener("click", showPrev);
+/* CONTACT */
+.contact-section {
+  background: var(--light-bg);
+}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue-medium);
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.contact-chip:hover {
+  background: #036aa0;
+}
 
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) lightbox.classList.remove("active");
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (!lightbox.classList.contains("active")) return;
-        if (e.key === "ArrowRight") showNext();
-        if (e.key === "ArrowLeft") showPrev();
-        if (e.key === "Escape") lightbox.classList.remove("active");
-      });
-    </script>
-  </body>
-</html>
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1.8rem 1rem;
+  background-color: var(--blue-dark);
+  color: var(--white);
+  font-size: 0.95rem;
+}
