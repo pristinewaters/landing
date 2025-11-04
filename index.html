@@ -11,7 +11,7 @@
     <title>Pristine Waters Fly Fishing Patagonia</title>
 
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="style.css?v=3.0" />
+    <link rel="stylesheet" href="style.css?v=2.0" />
   </head>
 
   <body>
@@ -142,14 +142,6 @@
       </div>
     </section>
 
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-      <span class="lightbox-close" id="lightboxClose">&times;</span>
-      <span class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</span>
-      <img id="lightboxImg" src="" alt="Expanded view" class="lightbox-content" />
-      <span class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</span>
-    </div>
-
     <!-- CONTACT -->
     <section id="contact" class="section contact-section">
       <h2>Contact</h2>
@@ -177,42 +169,6 @@
 
       window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 20);
-      });
-
-      // Lightbox
-      const images = document.querySelectorAll(".carousel-track img");
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightboxImg");
-      const closeBtn = document.getElementById("lightboxClose");
-      const nextBtn = document.getElementById("lightboxNext");
-      const prevBtn = document.getElementById("lightboxPrev");
-      let currentIndex = 0;
-
-      images.forEach((img, index) => {
-        img.addEventListener("click", () => {
-          lightbox.classList.add("active");
-          lightboxImg.src = img.src;
-          currentIndex = index;
-        });
-      });
-
-      const showImage = (index) => {
-        if (index < 0) index = images.length - 1;
-        if (index >= images.length) index = 0;
-        currentIndex = index;
-        lightboxImg.src = images[currentIndex].src;
-      };
-
-      nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
-      prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
-      closeBtn.addEventListener("click", () => lightbox.classList.remove("active"));
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) lightbox.classList.remove("active");
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") lightbox.classList.remove("active");
-        if (e.key === "ArrowRight") showImage(currentIndex + 1);
-        if (e.key === "ArrowLeft") showImage(currentIndex - 1);
       });
     </script>
   </body>
