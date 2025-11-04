@@ -238,24 +238,9 @@
     <section id="contact" class="section contact-section">
       <h2 class="reveal reveal-up">Contact</h2>
       <div class="contact-links reveal reveal-up">
-        <a
-          href="mailto:info@pristinewaters.cl"
-          class="contact-chip"
-          target="_blank"
-          >Mail Us</a
-        >
-        <a
-          href="https://www.instagram.com/pristinewaters_flyfishing"
-          class="contact-chip"
-          target="_blank"
-          >Instagram</a
-        >
-        <a
-          href="https://wa.me/56979559776"
-          class="contact-chip"
-          target="_blank"
-          >WhatsApp</a
-        >
+        <a href="mailto:info@pristinewaters.cl" class="contact-chip" target="_blank">Mail Us</a>
+        <a href="https://www.instagram.com/pristinewaters_flyfishing" class="contact-chip" target="_blank">Instagram</a>
+        <a href="https://wa.me/56979559776" class="contact-chip" target="_blank">WhatsApp</a>
       </div>
     </section>
 
@@ -264,6 +249,15 @@
       <p>© 2025 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
     </footer>
 
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <span class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</span>
+      <span class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</span>
+      <div class="lightbox-content" id="lightboxContent"></div>
+    </div>
+
+    <!-- SCRIPTS -->
     <script>
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("nav-menu");
@@ -274,6 +268,55 @@
       });
       window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 20);
+      });
+
+      // LIGHTBOX
+      const mediaItems = [...document.querySelectorAll(".carousel-track img, .carousel-video")];
+      const lightbox = document.getElementById("lightbox");
+      const content = document.getElementById("lightboxContent");
+      const closeBtn = document.getElementById("lightboxClose");
+      const prevBtn = document.getElementById("lightboxPrev");
+      const nextBtn = document.getElementById("lightboxNext");
+      let currentIndex = 0;
+
+      const openLightbox = (index) => {
+        currentIndex = index;
+        const media = mediaItems[index];
+        lightbox.classList.add("active");
+        if (media.tagName === "VIDEO") {
+          content.innerHTML = `<video src="${media.src}" controls autoplay></video>`;
+        } else {
+          content.innerHTML = `<img src="${media.src}" alt="Fly Fishing Patagonia" />`;
+        }
+      };
+
+      const showNext = () => {
+        currentIndex = (currentIndex + 1) % mediaItems.length;
+        openLightbox(currentIndex);
+      };
+
+      const showPrev = () => {
+        currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+        openLightbox(currentIndex);
+      };
+
+      mediaItems.forEach((item, index) => {
+        item.addEventListener("click", () => openLightbox(index));
+      });
+
+      closeBtn.addEventListener("click", () => lightbox.classList.remove("active"));
+      nextBtn.addEventListener("click", showNext);
+      prevBtn.addEventListener("click", showPrev);
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) lightbox.classList.remove("active");
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("active")) return;
+        if (e.key === "ArrowRight") showNext();
+        if (e.key === "ArrowLeft") showPrev();
+        if (e.key === "Escape") lightbox.classList.remove("active");
       });
     </script>
   </body>
