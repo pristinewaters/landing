@@ -2,38 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Bespoke guided fly fishing in Chilean Patagonia and Tierra del Fuego. Premium gear, bilingual guides, gourmet river lunches, and sustainable practices. Pristine Waters Fly Fishing Patagonia."
-    />
-    <meta name="author" content="Pristine Waters Fly Fishing Patagonia" />
-    <title>Pristine Waters Fly Fishing Patagonia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Private guided fly fishing in Chilean Patagonia — from Punta Arenas to Torres del Paine and Tierra del Fuego. Boutique experiences with bilingual guides, gourmet field lunches, and a deep connection to nature." />
+    <meta name="google-site-verification" content="jVVYdQkgyX7kVZ6b4GKa4w0gJ1brOaxpNmsDXyGBo4Q" />
+    <title>Pristine Waters — Fly Fishing Patagonia</title>
+
+    <!-- Preconnect & Preload -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+    <link rel="preload" href="style.css?v=3.0" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css?v=3.0"></noscript>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
 
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="style.css?v=2.0" />
   </head>
 
   <body>
     <!-- HEADER -->
     <header id="main-header">
       <div class="logo">
-        <img
-          src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg"
-          alt="Pristine Waters Logo"
-        />
+        <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761324439/logo_kadmho.jpg"
+             alt="Pristine Waters Logo" width="171" height="114" />
       </div>
 
-      <div class="hamburger" id="hamburger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+      <div class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" role="button">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
       </div>
 
       <nav id="nav-menu">
         <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#programs">Fishing Programs</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#destinations">Destinations</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -41,134 +43,92 @@
       </nav>
     </header>
 
-    <!-- HERO (VIDEO) -->
+    <!-- HERO -->
     <section class="hero">
-      <video autoplay muted loop playsinline class="hero-video" poster="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg">
-        <source src="https://res.cloudinary.com/dqbyskmnq/video/upload/v1762266805/video_promo_esqfck.mp4" type="video/mp4" />
-        Your browser does not support HTML5 video.
+      <video autoplay muted loop playsinline class="hero-video" fetchpriority="high"
+        poster="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-1.jpg">
+        <source src="https://res.cloudinary.com/dqbyskmnq/video/upload/v1762266805/video_promo_esqfck.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay"></div>
-      <div class="hero-text">
-        <h1>Fly Fishing at the Edge of the World</h1>
-        <p>Where passion meets wilderness.</p>
-        <a href="#destinations" class="cta-btn">Explore Destinations</a>
+      <div class="hero-content">
+        <h1>Pristine Waters Fly Fishing Patagonia</h1>
+        <p>Guided Fly Fishing Experiences — Punta Arenas, Torres del Paine & Tierra del Fuego</p>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
-      <h2>About Us</h2>
-      <div class="about-text">
+      <div class="container">
+        <h2>Inspired by Nature, Defined by Experience</h2>
         <p>
-          At <strong>Pristine Waters</strong>, we’re not just a fly-fishing outfitter — we’re storytellers of Patagonia’s rivers, guardians of its silence, and companions on journeys that awaken something deeper.
+          At Pristine Waters, we’re dedicated to providing unforgettable fly fishing adventures across Southern Chile.
+          Our programs blend deep knowledge of local ecosystems with personalized guiding, premium equipment, and a
+          commitment to conservation.
         </p>
-        <p>
-          Born and raised in the southernmost region of the world, our team of passionate anglers and naturalists crafts
-          <strong>bespoke fly-fishing adventures</strong> that blend world-class angling with the spirit of wild Patagonia.
-        </p>
-        <p>
-          Each experience combines <strong>expert guiding, premium equipment, gourmet field cuisine,</strong> and a deep respect for nature through
-          <strong>sustainable practices and responsible catch &amp; release</strong>.
-        </p>
-      </div>
-    </section>
-
-    <!-- PROGRAMS -->
-    <section id="programs" class="section light-bg">
-      <h2>Fishing Programs</h2>
-      <p class="programs-lead">
-        Our excursions celebrate the extraordinary diversity of southern Chile — from windswept pampas and turquoise lagoons to ancient forests and glacial rivers.
-      </p>
-
-      <div class="program-grid">
-        <div class="program-item">
-          <h3>Bilingual Guide</h3>
-          <p>Local experts who read water, wind, and wildlife — and make you feel at home.</p>
-        </div>
-
-        <div class="program-item">
-          <h3>4×4 Transport</h3>
-          <p>Hotel or port pick-up and drop-off. Safe, flexible logistics for last-minute changes.</p>
-        </div>
-
-        <div class="program-item">
-          <h3>Premium Gear</h3>
-          <p>Rods, waders, boots, and flies included. Travel light — we’ve got you covered.</p>
-        </div>
-
-        <div class="program-item">
-          <h3>Gourmet River Lunch</h3>
-          <p>Cheese, charcuterie, fruit, sandwiches, chocolate, and wine by the water.</p>
-        </div>
       </div>
     </section>
 
     <!-- DESTINATIONS -->
     <section id="destinations" class="section">
-      <h2>Destinations</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg" alt="Punta Arenas" />
-          <h3>Punta Arenas</h3>
-          <p>Rivers and lagoons flowing through windswept steppe and native forest.</p>
-        </div>
+      <div class="container">
+        <h2>Destinations</h2>
+        <div class="destinations-grid">
 
-        <div class="card">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Tierra del Fuego" />
-          <h3>Tierra del Fuego</h3>
-          <p>Rivers shaped by wind and time hold legendary <strong>sea-run brown trout</strong>.</p>
-        </div>
+          <article class="destination-card">
+            <img loading="lazy" src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267070/trout-fly-fishing-punta-arenas-2_i55yq3.jpg" alt="Fly Fishing Punta Arenas">
+            <h3>Punta Arenas</h3>
+            <p>Crystal-clear spring creeks surrounded by open Patagonian steppe. Ideal for half and full-day fishing programs.</p>
+          </article>
 
-        <div class="card">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg" alt="Torres del Paine" />
-          <h3>Torres del Paine</h3>
-          <p>Beneath the massif, <strong>Río Serrano</strong> carries glacial waters alive with trout.</p>
+          <article class="destination-card">
+            <img loading="lazy" src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg" alt="Fly Fishing Torres del Paine">
+            <h3>Torres del Paine</h3>
+            <p>Fish amidst glaciers and granite peaks. A world-class experience blending wilderness and exclusivity.</p>
+          </article>
+
+          <article class="destination-card">
+            <img loading="lazy" src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg" alt="Fly Fishing Tierra del Fuego">
+            <h3>Tierra del Fuego</h3>
+            <p>Legendary rivers for sea-run brown trout. A destination that defines the spirit of wild Patagonia.</p>
+          </article>
+
         </div>
       </div>
     </section>
 
     <!-- GALLERY -->
-    <section id="gallery" class="section light-bg">
-      <h2>Gallery</h2>
-      <div class="carousel">
-        <div class="carousel-track">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-6_keyobk.jpg" alt="Fly Fishing 1" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-9_gvrkfm.jpg" alt="Fly Fishing 2" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838052/trout-fly-fishing-punta-arenas-5_remu6a.jpg" alt="Fly Fishing 3" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838051/trout-fly-fishing-puerto-natales-2_aohl8l.jpg" alt="Puerto Natales" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837997/sea-trout-fly-fishing-tierra-del-fuego-5_j2ookz.jpg" alt="Sea Trout Tierra del Fuego" />
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837951/IMG_6902_idehi9.heic" alt="Fishing Patagonia" />
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <img loading="lazy" src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267071/trout-fly-fishing-punta-arenas-10_t0ukk3.jpg" alt="Fly Fishing Patagonia">
+          <img loading="lazy" src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267070/torres-del-paine-fly-fishing-2_rhssbq.jpg" alt="Torres del Paine Fly Fishing">
+          <img loading="lazy" src="https://res.cloudinary.com/dqbyskmnq/image/upload/f_auto,q_auto/v1761267071/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg" alt="Sea Trout Fly Fishing">
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
-      <h2>Contact</h2>
-      <div class="contact-links">
-        <a href="mailto:info@pristinewaters.cl" class="contact-chip">Mail Us</a>
-        <a href="https://www.instagram.com/pristinewaters_flyfishing" class="contact-chip" target="_blank">Instagram</a>
-        <a href="https://wa.me/56979559776" class="contact-chip" target="_blank">WhatsApp</a>
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Plan your next adventure in Patagonia. Get in touch with us for custom itineraries and availability.</p>
+        <a href="https://wa.me/56979559776" class="btn" target="_blank" rel="noopener">Contact via WhatsApp</a>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      <p>© 2025 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
+      <p>© 2025 Pristine Waters — Inspired by Nature, Defined by Experience. Registered with SERNATUR Chile.</p>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("nav-menu");
-      const header = document.getElementById("main-header");
-
-      hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-
-      window.addEventListener("scroll", () => {
-        header.classList.toggle("scrolled", window.scrollY > 20);
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
       });
     </script>
   </body>
