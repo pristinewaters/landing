@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stories from the water: notes on guiding, sustainability and Tierra del Fuego, from the Pristine Waters journal."
+    />
+    <meta name="author" content="Pristine Waters Fly Fishing Patagonia" />
+    <meta name="theme-color" content="#0B2436" />
+    <title>Journal — Pristine Waters</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css?v=3.1" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="main-header" class="scrolled">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg"
+            alt="Pristine Waters"
+          />
+        </a>
+      </div>
+
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#programs">The Program</a></li>
+          <li><a href="index.html#destinations">Destinations</a></li>
+          <li><a href="index.html#experience">A Day on the Water</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+    </header>
+
+    <!-- JOURNAL HERO -->
+    <section class="journal-hero">
+      <p class="eyebrow center">Journal</p>
+      <h1>Stories from the water</h1>
+    </section>
+
+    <!-- JOURNAL GRID -->
+    <section class="section">
+      <div class="journal-grid">
+        <a href="journal-when-the-line-comes-tight.html" class="journal-card">
+          <img
+            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg"
+            alt="Guide releasing a trout"
+            loading="lazy"
+          />
+          <div class="journal-card-body">
+            <p class="journal-kicker">A Guide's Life</p>
+            <h3>When the Line Comes Tight</h3>
+            <p>What actually happens in the quiet minutes before, during and after a fish is landed, from the guide's side of the rod.</p>
+            <span class="read-more">Read the story →</span>
+          </div>
+        </a>
+
+        <a href="journal-fishing-to-belong.html" class="journal-card">
+          <img
+            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg"
+            alt="Fishing in Tierra del Fuego"
+            loading="lazy"
+          />
+          <div class="journal-card-body">
+            <p class="journal-kicker">Tierra del Fuego, Winter 2025</p>
+            <h3>Fishing to Belong</h3>
+            <p>On sustainability, respect, and why we don't fish just to catch, but to feel part of something greater.</p>
+            <span class="read-more">Read the story →</span>
+          </div>
+        </a>
+
+        <a href="journal-rio-grande-tierra-del-fuego.html" class="journal-card">
+          <img
+            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837997/sea-trout-fly-fishing-tierra-del-fuego-5_j2ookz.jpg"
+            alt="Río Grande, Tierra del Fuego"
+            loading="lazy"
+          />
+          <div class="journal-card-body">
+            <p class="journal-kicker">Río Grande, Tierra del Fuego</p>
+            <h3>Where Fly Fishing Becomes History</h3>
+            <p>The place that started it all, and why we don't just take people fishing, we show them a place we love.</p>
+            <span class="read-more">Read the story →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+
+      navMenu.querySelectorAll("a").forEach((link) =>
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
+        })
+      );
+    </script>
+  </body>
+</html>
