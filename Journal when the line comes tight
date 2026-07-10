@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A guide's account of what actually happens in the quiet minutes before, during and after a fish is landed in Tierra del Fuego."
+    />
+    <meta name="author" content="Javier Leppe Balbontín" />
+    <meta name="theme-color" content="#0B2436" />
+    <title>When the Line Comes Tight — Pristine Waters Journal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css?v=3.1" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="main-header" class="scrolled">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg"
+            alt="Pristine Waters"
+          />
+        </a>
+      </div>
+
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#programs">The Program</a></li>
+          <li><a href="index.html#destinations">Destinations</a></li>
+          <li><a href="index.html#experience">A Day on the Water</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+    </header>
+
+    <!-- ARTICLE HERO -->
+    <section class="article-hero">
+      <img
+        src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg"
+        alt="Guide releasing a trout"
+      />
+      <div class="article-hero-text">
+        <p class="eyebrow">A Guide's Life</p>
+        <h1>When the Line Comes Tight</h1>
+        <p class="article-byline">By Javier Leppe Balbontín, Guide, Pristine Waters</p>
+      </div>
+    </section>
+
+    <!-- ARTICLE BODY -->
+    <article class="article-body">
+      <h2>It Begins With Presence</h2>
+      <p>
+        There's a moment, right before anything happens, when the river feels like it's holding its breath.
+      </p>
+      <p>
+        You can see it in an angler's shoulders: the slight rise, the tiny hesitation, the way their eyes lock
+        onto a seam as if staring harder could make the take arrive sooner. As a guide, you learn that this is
+        the real beginning. Not the cast. Not the fly. Not even the first step into the water.
+      </p>
+      <p class="article-pull">
+        It begins with presence. When the line finally comes tight, it's never just luck. It's the sum of a
+        hundred quiet decisions, most of them invisible to the client, stacked carefully, respectfully, in
+        service of a single second of truth.
+      </p>
+
+      <h2>The Work You Don't See</h2>
+      <p>My day starts long before the first cast.</p>
+      <p>
+        Weather check. Wind direction. River height, and how it might change through the day. I rig leaders in
+        advance, tie flies that match the mood of the water, and pack spares, because Patagonia loves to test
+        every assumption you bring into it.
+      </p>
+      <p>Then I think about the person coming with me.</p>
+      <p>
+        Some clients arrive with thousands of hours on the water and a mind full of patterns. Others arrive with
+        brand-new waders, carrying a lifelong dream and a quiet fear of looking clumsy. My job is the same for
+        both: create a space where they can belong, not perform.
+      </p>
+      <p>That's not marketing. That's hospitality. That's trust.</p>
+      <p>It's also strategy. Because the river rewards calm. The fish, especially down here, reward intention.</p>
+
+      <h2>The Connection Is the Technique</h2>
+      <p>
+        When we step into the water, I'm not just watching the current. I'm watching the angler.
+      </p>
+      <p>
+        How they hold the rod when they're nervous. How they rush the forward cast when they want it too much.
+        How they stop breathing when they're trying to be "good" at this. So I simplify. One target. One rhythm.
+      </p>
+      <p>
+        A reminder to let the line settle before the mend. A half-inch adjustment on the drift. A little more
+        patience in the swing. And sometimes, the most important instruction of the day: do less, let it happen.
+      </p>
+      <p>
+        In Tierra del Fuego, you learn fast that the wind isn't an inconvenience, it's an instructor. It forces
+        adaptation, humility, and composure. And when the client finally understands that, when they stop
+        fighting the conditions and start fishing with them, you can almost feel the river opening a door.
+      </p>
+
+      <h2>Then It Happens</h2>
+      <p>
+        The fly lands where it needs to land. Not perfect. Not pretty. But alive, drifting with the current
+        instead of dragging against it.
+      </p>
+      <p>
+        I'm standing slightly behind and to the side, where I can see the line angle, the belly forming, the
+        tiny micro-drag the angler can't feel yet. I'm ready to speak, but I wait a beat longer. Sometimes the
+        best guiding is knowing when not to interrupt.
+      </p>
+      <p>
+        The take is rarely cinematic at first. It might be a pause. A soft stop. A whisper of tension that feels
+        like nothing, until it feels like everything. And then the line comes tight.
+      </p>
+      <p>
+        For a split second, the angler doesn't move. Their brain tries to confirm what their hands already know.
+        Was that it? Yes. And now the whole world changes.
+      </p>
+      <p class="article-pull">
+        The rod bends, and suddenly the person in front of you isn't thinking about casting mechanics or fly
+        selection or whether they look ridiculous in waders. They're inside the moment. Fully, unmistakably
+        alive.
+      </p>
+      <p>
+        As a guide, I've felt that tug hundreds of times, and it never gets old. Not because I'm chasing the
+        fish. Because I'm watching someone arrive.
+      </p>
+
+      <h2>My Role in the Fight</h2>
+      <p>This is where guiding becomes almost like choreography. Not control, support.</p>
+      <p>
+        I'm coaching the rhythm: pressure, angles, when to give, when to hold. I'm reading the fish's intent
+        through the rod curve and the line's vibration. I'm moving quietly to position the net without turning
+        the moment into a scramble.
+      </p>
+      <p>And all the while I'm managing something else too: emotion.</p>
+      <p>
+        Big fish don't just pull line. They pull stories out of people. They pull old dreams to the surface.
+        They pull out the kid inside the adult who forgot what pure joy feels like.
+      </p>
+      <p>Some clients laugh. Some swear. Some go silent. Every reaction is valid, because it matters.</p>
+
+      <h2>What We Do After Matters More</h2>
+      <p>
+        When the fish finally comes to hand, the temptation is always the same: lift it, show it, prove it
+        happened.
+      </p>
+      <p>But down here, the river teaches a different kind of pride.</p>
+      <p>
+        I've seen how a day shifts when an angler understands that releasing a fish isn't just something you do,
+        it's something you mean.
+      </p>
+      <p>It becomes a quiet act of respect. A way of saying: this was a gift, not a conquest.</p>
+      <p>
+        So we keep the fish wet. We move with care. We take the photo fast, or we don't take it at all. And we
+        let the fish return to the current on its own power, with the same dignity it arrived with.
+      </p>
+      <p>That release, done well, does something to people. It slows them down. It turns a catch into a relationship.</p>
+
+      <h2>Why I Guide</h2>
+      <p>People think guiding is about putting clients on fish.</p>
+      <p>
+        Yes, that's part of it. You need skill. You need local knowledge. You need to make good decisions.
+      </p>
+      <p>
+        But what I'm really doing, the thing that keeps me in this work, is creating moments where someone feels
+        connected to something larger than themselves.
+      </p>
+      <p>Not in an abstract way. In a physical, undeniable way.</p>
+      <p>
+        Cold water around their legs. Wind against their face. A living fish on the end of the line. A heartbeat
+        that syncs, briefly, with a wild place.
+      </p>
+      <p>And when that happens, the client doesn't just leave with a photo. They leave with a story that will stay with them for life.</p>
+      <p class="article-signoff">That's what I do. Show them a place I love.</p>
+    </article>
+
+    <a href="journal.html" class="back-link">← Back to Journal</a>
+
+    <!-- CTA -->
+    <section class="article-cta">
+      <h2 class="light">Ready to feel it yourself?</h2>
+      <p>Tell us your dates and we'll build the days around you.</p>
+      <div class="contact-links">
+        <a href="index.html#contact" class="contact-chip">Plan Your Trip</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+
+      navMenu.querySelectorAll("a").forEach((link) =>
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
+        })
+      );
+    </script>
+  </body>
+</html>
