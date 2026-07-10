@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Río Grande, Tierra del Fuego: the river that started it all, and why Pristine Waters shows people a place worth loving, not just a place to fish."
+    />
+    <meta name="author" content="Javier Leppe Balbontín" />
+    <meta name="theme-color" content="#0B2436" />
+    <title>Río Grande — Where Fly Fishing Becomes History — Pristine Waters Journal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css?v=3.1" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="main-header" class="scrolled">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg"
+            alt="Pristine Waters"
+          />
+        </a>
+      </div>
+
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#programs">The Program</a></li>
+          <li><a href="index.html#destinations">Destinations</a></li>
+          <li><a href="index.html#experience">A Day on the Water</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+    </header>
+
+    <!-- ARTICLE HERO -->
+    <section class="article-hero">
+      <img
+        src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837997/sea-trout-fly-fishing-tierra-del-fuego-5_j2ookz.jpg"
+        alt="Río Grande, Tierra del Fuego"
+      />
+      <div class="article-hero-text">
+        <p class="eyebrow">Río Grande, Tierra del Fuego</p>
+        <h1>Where Fly Fishing Becomes History</h1>
+        <p class="article-byline">By Javier Leppe Balbontín, Guide, Pristine Waters</p>
+      </div>
+    </section>
+
+    <!-- ARTICLE BODY -->
+    <article class="article-body">
+      <p>
+        There are trips you forget, and there are places that stay with you forever, even if you weren't looking
+        for them.
+      </p>
+      <p>
+        Tierra del Fuego is one of those places. When I cast my first fly into a Patagonian river, standing in
+        cold water with the wind shaking my line, I had no idea that moment would mark the start of something
+        that would follow me for life.
+      </p>
+      <p>
+        Tierra del Fuego has a special way of teaching you. Here, the wind isn't a nuisance; it's a teacher. It
+        forces you to learn to cast differently, to remain calm, to accept that there will be days when nature
+        decides for you. The rivers here have their own moods, changing with every rain, every tide, every cold
+        morning.
+      </p>
+      <p class="article-pull">
+        Fishing in Tierra del Fuego is learning to respect, to appreciate each fish, to find joy in the
+        simplicity of a day marked by cold, wind, and vast skies.
+      </p>
+
+      <h2>The Path: Show Them a Place We Love</h2>
+      <p>
+        Many come here seeking the sea-run brown trout of their dreams, the one you see on magazine covers, with
+        silver skin and the strength of the sea in every pull. And yes, that moment when the fish shows itself
+        and jumps out of the water gets etched in your memory, but it's not the only thing you take home.
+      </p>
+      <p>
+        Because fishing here isn't measured by the number of catches alone, it's found in the silent moments
+        watching the sunrise, in the crunch of the steppe under your boots, in the mate shared before your first
+        cast.
+      </p>
+      <p>
+        Fishing in Tierra del Fuego is learning to respect, to appreciate each fish, to find joy in the
+        simplicity of a day marked by cold, wind, and vast skies. It's understanding that releasing a fish is a
+        way of saying "thank you" to a place that gives you so much.
+      </p>
+      <p>
+        At Pristine Waters, we don't just take people fishing. We show them a place we love, where every day is
+        different, where everyone returns home with more than photos. They return with stories.
+      </p>
+      <p>
+        If you've ever dreamed of Tierra del Fuego, bring your rods, but also bring the willingness to see the
+        world differently.
+      </p>
+      <p class="article-signoff">What story from fly fishing has stayed with you the most?</p>
+    </article>
+
+    <a href="journal.html" class="back-link">← Back to Journal</a>
+
+    <!-- CTA -->
+    <section class="article-cta">
+      <h2 class="light">Write your own river story</h2>
+      <p>Tell us your dates and we'll build the days around you.</p>
+      <div class="contact-links">
+        <a href="index.html#contact" class="contact-chip">Plan Your Trip</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+
+      navMenu.querySelectorAll("a").forEach((link) =>
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
+        })
+      );
+    </script>
+  </body>
+</html>
