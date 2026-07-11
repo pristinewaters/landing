@@ -630,6 +630,12 @@ h2.light {
 .mosaic-item:nth-child(7) { transition-delay: 0.16s; }
 .mosaic-item:nth-child(8) { transition-delay: 0.24s; }
 .mosaic-item:nth-child(9) { transition-delay: 0.32s; }
+.mosaic-item:nth-child(10) { transition-delay: 0.08s; }
+.mosaic-item:nth-child(11) { transition-delay: 0.16s; }
+.mosaic-item:nth-child(12) { transition-delay: 0.24s; }
+.mosaic-item:nth-child(13) { transition-delay: 0.32s; }
+.mosaic-item:nth-child(14) { transition-delay: 0.08s; }
+.mosaic-item:nth-child(15) { transition-delay: 0.16s; }
 
 .mosaic-large {
   grid-column: span 2;
@@ -1003,6 +1009,32 @@ footer {
   font-size: 1.4rem;
   margin-top: 2.6rem;
   margin-bottom: 1rem;
+}
+
+.kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-top: 3rem;
+  margin-bottom: 0.6rem;
+}
+
+.article-text h2:first-of-type,
+.kicker:first-child {
+  margin-top: 0;
+}
+
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 500;
+  float: left;
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  padding-top: 0.3rem;
+  color: var(--ink);
 }
 
 .article-text p {
