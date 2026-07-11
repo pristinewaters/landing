@@ -86,8 +86,8 @@
       <div class="about-grid">
         <div class="about-media">
           <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg"
-            alt="Guide releasing a wild trout in Punta Arenas"
+            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837954/IMG_7964_aqv1av.jpg"
+            alt="Javier Leppe Balbontín, guide and founder of Pristine Waters"
           />
         </div>
         <div class="about-copy">
@@ -265,12 +265,47 @@
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837906/IMG_0434_gf4xmt.jpg" alt="Fly fishing in Patagonia" loading="lazy" />
           <figcaption>Patagonia</figcaption>
         </figure>
-        <figure class="mosaic-item mosaic-wide">
+        <figure class="mosaic-item">
           <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837882/Copia_de_86100_ch1jax.jpg" alt="Wild trout catch in Patagonia" loading="lazy" />
           <figcaption>A day's catch</figcaption>
         </figure>
+        <figure class="mosaic-item">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837896/IMG_0018_eugv8u.jpg" alt="Fly fishing in Patagonia" loading="lazy" />
+          <figcaption>On the water</figcaption>
+        </figure>
+        <figure class="mosaic-item">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837884/fly_fishing_punta_arenas_2_z44r6x.jpg" alt="Fly fishing in Punta Arenas" loading="lazy" />
+          <figcaption>Punta Arenas</figcaption>
+        </figure>
+        <figure class="mosaic-item">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_lafrso.jpg" alt="Fly fishing below Torres del Paine" loading="lazy" />
+          <figcaption>Torres del Paine</figcaption>
+        </figure>
+        <figure class="mosaic-item">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-7_ysti5z.jpg" alt="Trout catch in Punta Arenas" loading="lazy" />
+          <figcaption>A wild trout</figcaption>
+        </figure>
+        <figure class="mosaic-item">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837995/IMG_9210_qelujz.jpg" alt="Fly fishing in Patagonia" loading="lazy" />
+          <figcaption>On the river</figcaption>
+        </figure>
+        <figure class="mosaic-item mosaic-wide">
+          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837931/IMG_0897_oyzyeq.jpg" alt="Fly fishing in Patagonia" loading="lazy" />
+          <figcaption>Patagonia</figcaption>
+        </figure>
       </div>
     </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
+      <figure class="lightbox-figure">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+        <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
 
     <!-- CONTACT -->
     <section id="contact" class="section contact-section">
@@ -312,6 +347,85 @@
 
       window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 20);
+      });
+
+      // GALLERY — scroll reveal
+      const mosaicItems = document.querySelectorAll(".mosaic-item");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      mosaicItems.forEach((item) => revealObserver.observe(item));
+
+      // GALLERY — lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+      const lightboxClose = document.getElementById("lightbox-close");
+      const lightboxPrev = document.getElementById("lightbox-prev");
+      const lightboxNext = document.getElementById("lightbox-next");
+
+      const photos = Array.from(mosaicItems).map((item) => ({
+        src: item.querySelector("img").src,
+        alt: item.querySelector("img").alt,
+        caption: item.querySelector("figcaption")?.textContent || "",
+      }));
+
+      let currentPhoto = 0;
+
+      function openLightbox(index) {
+        currentPhoto = index;
+        showPhoto();
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      function showPhoto() {
+        const photo = photos[currentPhoto];
+        lightboxImg.src = photo.src;
+        lightboxImg.alt = photo.alt;
+        lightboxCaption.textContent = photo.caption;
+      }
+
+      function nextPhoto() {
+        currentPhoto = (currentPhoto + 1) % photos.length;
+        showPhoto();
+      }
+
+      function prevPhoto() {
+        currentPhoto = (currentPhoto - 1 + photos.length) % photos.length;
+        showPhoto();
+      }
+
+      mosaicItems.forEach((item, index) => {
+        item.addEventListener("click", () => openLightbox(index));
+      });
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightboxNext.addEventListener("click", nextPhoto);
+      lightboxPrev.addEventListener("click", prevPhoto);
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("active")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") nextPhoto();
+        if (e.key === "ArrowLeft") prevPhoto();
       });
     </script>
   </body>
