@@ -598,11 +598,8 @@ h2.light {
 }
 
 .mosaic {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 180px;
-  grid-auto-flow: dense;
-  gap: 0.7rem;
+  columns: 4 260px;
+  column-gap: 0.8rem;
   max-width: 1150px;
   margin: 2.5rem auto 0;
 }
@@ -615,6 +612,10 @@ h2.light {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.7s ease, transform 0.7s ease;
+  break-inside: avoid;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+  width: 100%;
 }
 
 .mosaic-item.revealed {
@@ -637,25 +638,17 @@ h2.light {
 .mosaic-item:nth-child(14) { transition-delay: 0.08s; }
 .mosaic-item:nth-child(15) { transition-delay: 0.16s; }
 
-.mosaic-large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.mosaic-wide {
-  grid-column: span 2;
-}
-
 .mosaic-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  border-radius: 3px;
   display: block;
   transition: transform 0.5s ease;
 }
 
 .mosaic-item:hover img {
-  transform: scale(1.06);
+  transform: scale(1.03);
 }
 
 .mosaic-item::after {
@@ -691,13 +684,7 @@ h2.light {
 
 @media (max-width: 760px) {
   .mosaic {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 160px;
-  }
-  .mosaic-large {
-    grid-column: span 2;
-    grid-row: span 1;
-    height: 220px;
+    columns: 2 160px;
   }
   .mosaic-item figcaption {
     opacity: 1;
