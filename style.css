@@ -1,537 +1,1197 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Bespoke guided fly fishing in Chilean Patagonia and Tierra del Fuego. Premium gear, bilingual guides, gourmet river lunches, and sustainable practices. Pristine Waters Fly Fishing Patagonia."
-    />
-    <meta name="author" content="Pristine Waters Fly Fishing Patagonia" />
-    <meta name="theme-color" content="#0B2436" />
-    <link rel="canonical" href="https://www.pristinewaters.cl/" />
-    <title>Pristine Waters — Fly Fishing Patagonia &amp; Tierra del Fuego</title>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <!-- Open Graph / social sharing previews -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Pristine Waters Fly Fishing" />
-    <meta property="og:title" content="Pristine Waters — Fly Fishing Patagonia & Tierra del Fuego" />
-    <meta property="og:description" content="Private, bespoke fly-fishing journeys through Chilean Patagonia's wildest rivers. Walk & wade with bilingual guides in Punta Arenas and Tierra del Fuego." />
-    <meta property="og:image" content="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg" />
-    <meta property="og:url" content="https://www.pristinewaters.cl/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Pristine Waters — Fly Fishing Patagonia & Tierra del Fuego" />
-    <meta name="twitter:description" content="Private, bespoke fly-fishing journeys through Chilean Patagonia's wildest rivers." />
-    <meta name="twitter:image" content="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg" />
+:root {
+  /* Signature palette — grounded in river slate, brass reel hardware, and mist */
+  --ink: #0b2436;
+  --ink-2: #122f45;
+  --brass: #9c7a45;
+  --brass-light: #c9a875;
+  --mist: #f6f4ee;
+  --stone: #e7e1d2;
+  --forest: #2c3a2e;
+  --text: #1c2a22;
+  --text-soft: #4a5750;
+  --white: #ffffff;
 
-    <!-- Structured data: helps Google understand this as a local tourism business -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "name": "Pristine Waters Fly Fishing",
-      "image": "https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg",
-      "url": "https://www.pristinewaters.cl/",
-      "telephone": "+56979559776",
-      "email": "info@pristinewaters.cl",
-      "description": "Private, bespoke guided fly fishing in Chilean Patagonia and Tierra del Fuego. Walk & wade, bilingual guides, gourmet river lunches, sustainable practices.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Punta Arenas",
-        "addressRegion": "Magallanes",
-        "addressCountry": "CL"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -53.16,
-        "longitude": -70.91
-      },
-      "areaServed": ["Punta Arenas", "Tierra del Fuego", "Torres del Paine", "Puerto Natales"],
-      "sameAs": [
-        "https://www.instagram.com/pristinewaters_flyfishing",
-        "https://share.google/QXk9CLwFVrV8P8ZTR"
-      ]
-    }
-    </script>
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  --topo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Cg fill='none' stroke='%239c7a45' stroke-opacity='0.16' stroke-width='1'%3E%3Cpath d='M-20 40 C 60 10, 140 70, 220 40 S 380 10, 440 50'/%3E%3Cpath d='M-20 90 C 60 60, 140 120, 220 90 S 380 60, 440 100'/%3E%3Cpath d='M-20 140 C 60 110, 140 170, 220 140 S 380 110, 440 150'/%3E%3Cpath d='M-20 190 C 60 160, 140 220, 220 190 S 380 160, 440 200'/%3E%3Cpath d='M-20 240 C 60 210, 140 270, 220 240 S 380 210, 440 250'/%3E%3C/g%3E%3C/svg%3E");
+}
 
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="style.css?v=3.1" />
-  </head>
+html {
+  scroll-behavior: smooth;
+}
 
-  <body>
-    <!-- HEADER -->
-    <header id="main-header">
-      <div class="logo">
-        <a href="#top">
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761324439/logo_kadmho.jpg"
-            alt="Pristine Waters"
-          />
-        </a>
-      </div>
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
 
-      <nav id="nav-menu">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#programs">The Program</a></li>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#experience">A Day on the Water</a></li>
-          <li><a href="journal.html">Journal</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact" class="nav-cta">Contact</a></li>
-        </ul>
-      </nav>
+body {
+  font-family: var(--font-body);
+  background-color: var(--white);
+  color: var(--text);
+  line-height: 1.65;
+}
 
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </button>
-    </header>
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.15;
+}
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        class="hero-video"
-        poster="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267064/sea-trout-fly-fishing-tierra-del-fuego-3_ylfwha.jpg"
-      >
-        <source
-          src="https://res.cloudinary.com/dqbyskmnq/video/upload/v1762266805/video_promo_esqfck.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="hero-text">
-        <p class="eyebrow">PATAGONIA · CHILE</p>
-        <h1>Fly Fishing at the Edge of the World</h1>
-        <p class="hero-sub">Private, bespoke fly-fishing journeys through Chilean Patagonia's wildest rivers.</p>
-        <div class="hero-actions">
-          <a href="#destinations" class="cta-btn">Explore Destinations</a>
-          <a href="https://wa.me/56979559776" target="_blank" class="cta-link">Talk to a Guide →</a>
-        </div>
-      </div>
-      <a href="#about" class="scroll-cue" aria-label="Scroll to content"><span></span></a>
-    </section>
+a {
+  color: inherit;
+}
 
-    <!-- ABOUT -->
-    <section id="about" class="section about-section">
-      <div class="about-grid">
-        <div class="about-media">
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837954/IMG_7964_aqv1av.jpg"
-            alt="Javier Leppe Balbontín, guide and founder of Pristine Waters"
-          />
-        </div>
-        <div class="about-copy">
-          <p class="eyebrow">About Us</p>
-          <h2>Guardians of the river's silence</h2>
-          <p>
-            Pristine Waters was born at the southernmost tip of the continent, where the wind never rests and the
-            rivers run clear and cold from glacier to sea. We are anglers and naturalists first. Outfitters second.
-          </p>
-          <p>
-            Every journey is designed around you: the water you want to fish, the pace you want to keep, and the
-            quiet you came south to find. What we offer is simple: expert guiding, honest gear, and a table set
-            beside the river when the fishing is done.
-          </p>
-          <ul class="badge-row">
-            <li>Bilingual expert guides</li>
-            <li>Small, private groups</li>
-            <li>Catch &amp; release ethic</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
 
-    <!-- PROGRAMS -->
-    <section id="programs" class="section programs-section">
-      <p class="eyebrow center">The Program</p>
-      <h2 class="center">We arrange everything. You fish.</h2>
-      <p class="section-lead">
-        From windswept steppe to ancient lenga forest, your guide decides where, when and how you fish.
-        We handle everything else, so all you have to do is fish.
-      </p>
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.7rem;
+}
 
-      <div class="program-grid">
-        <div class="program-item">
-          <svg class="program-icon" viewBox="0 0 48 48" fill="none"><path d="M24 6c-7 6-11 13-11 20a11 11 0 0022 0c0-7-4-14-11-20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M24 18v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <h3>Bilingual Guiding</h3>
-          <p>Local guides who read water, wind and wildlife, and explain it all in your language.</p>
-        </div>
+.eyebrow.light {
+  color: var(--brass-light);
+}
 
-        <div class="program-item">
-          <svg class="program-icon" viewBox="0 0 48 48" fill="none"><rect x="7" y="17" width="34" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="35" r="3.4" stroke="currentColor" stroke-width="1.6"/><circle cx="33" cy="35" r="3.4" stroke="currentColor" stroke-width="1.6"/><path d="M11 17l4-7h18l4 7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-          <h3>Door-to-River Transport</h3>
-          <p>Hotel or port pick-up in a 4×4, with the flexibility to adjust for weather and last-minute changes.</p>
-        </div>
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-        <div class="program-item">
-          <svg class="program-icon" viewBox="0 0 48 48" fill="none"><path d="M12 8l24 24M20 8l16 32M28 8l8 32" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8" r="2.2" fill="currentColor"/></svg>
-          <h3>Premium Gear</h3>
-          <p>Rods, waders, boots and a curated fly box, all included. Travel light, we've got you covered.</p>
-        </div>
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 2.2rem;
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
 
-        <div class="program-item">
-          <svg class="program-icon" viewBox="0 0 48 48" fill="none"><path d="M10 20a14 14 0 0128 0" stroke="currentColor" stroke-width="1.6"/><path d="M8 20h32l-2.5 16a4 4 0 01-4 3.4H14.5a4 4 0 01-4-3.4L8 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-          <h3>Gourmet River Lunch</h3>
-          <p>Local cheese, charcuterie, fruit and Chilean wine, served riverside between runs.</p>
-        </div>
-      </div>
-    </section>
+header.scrolled {
+  background-color: var(--ink);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
 
-    <!-- EXPERIENCE / DAY FLOW -->
-    <section id="experience" class="section experience-section">
-      <p class="eyebrow center light">A Day on the Water</p>
-      <h2 class="center light">How a day with us unfolds</h2>
+.logo img {
+  height: 56px;
+  display: block;
+}
 
-      <div class="timeline">
-        <div class="timeline-step">
-          <span class="timeline-time">07:30</span>
-          <h3>Pickup &amp; Briefing</h3>
-          <p>We collect you from your hotel or the port and brief you over coffee.</p>
-        </div>
-        <div class="timeline-step">
-          <span class="timeline-time">09:00</span>
-          <h3>On the River</h3>
-          <p>Walk &amp; wade, run by run, guided through water only locals know.</p>
-        </div>
-        <div class="timeline-step">
-          <span class="timeline-time">13:00</span>
-          <h3>Riverside Lunch</h3>
-          <p>We break for a full gourmet spread, set on the bank, wine included.</p>
-        </div>
-        <div class="timeline-step">
-          <span class="timeline-time">16:30</span>
-          <h3>Last Light &amp; Release</h3>
-          <p>The evening rise, careful releases, and the ride back as the wind finally settles.</p>
-        </div>
-      </div>
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
 
-      <p class="timeline-disclaimer">A day as it often goes. Every itinerary is shaped around each angler.</p>
-    </section>
+nav a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  position: relative;
+  padding-bottom: 4px;
+}
 
-    <!-- DESTINATIONS -->
-    <section id="destinations" class="section destinations-section">
-      <p class="eyebrow center">Destinations</p>
-      <h2 class="center">Three waters, one wild edge</h2>
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--brass-light);
+  transition: width 0.25s ease;
+}
 
-      <div class="cards">
-        <div class="card">
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267071/trout-fly-fishing-punta-arenas-1_d0mxtx.jpg"
-            alt="Fly fishing in Punta Arenas"
-            loading="lazy"
-          />
-          <div class="card-body">
-            <h3>Punta Arenas</h3>
-            <p>Rivers and lagoons winding through windswept steppe and native forest.</p>
-          </div>
-        </div>
+nav a:hover::after {
+  width: 100%;
+}
 
-        <div class="card">
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/sea-trout-fly-fishing-tierra-del-fuego-2_rzz3mw.jpg"
-            alt="Sea-run brown trout fishing in Tierra del Fuego"
-            loading="lazy"
-          />
-          <div class="card-body">
-            <h3>Tierra del Fuego</h3>
-            <p>Rivers shaped by wind and time hold legendary sea-run brown trout.</p>
-          </div>
-        </div>
+.nav-cta {
+  border: 1px solid var(--brass-light);
+  padding: 0.5rem 1.1rem;
+  border-radius: 2px;
+}
 
-        <div class="card">
-          <img
-            src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_q47ruf.jpg"
-            alt="Fly fishing below Torres del Paine"
-            loading="lazy"
-          />
-          <div class="card-body">
-            <h3>Torres del Paine</h3>
-            <p>Beneath the massif, the Río Serrano carries glacial waters alive with fish.</p>
-          </div>
-        </div>
-      </div>
+.nav-cta::after {
+  display: none;
+}
 
-      <p class="season-note">Season runs October through April.</p>
-      <p class="season-note subtle">
-        Pristine Waters is built around walk &amp; wade. Drift-boat days in Tierra del Fuego exist as a special
-        program, arranged directly with each client.
-      </p>
-    </section>
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
 
-    <!-- GALLERY -->
-    <section id="gallery" class="section gallery-section">
-      <p class="eyebrow center">Gallery</p>
-      <h2 class="center">From the River</h2>
-      <div class="mosaic">
-        <figure class="mosaic-item mosaic-large">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-6_keyobk.jpg" alt="Fly fishing in Punta Arenas" loading="lazy" />
-          <figcaption>Punta Arenas</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-9_gvrkfm.jpg" alt="Angler landing a trout" loading="lazy" />
-          <figcaption>Landing a wild trout</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838052/trout-fly-fishing-punta-arenas-5_remu6a.jpg" alt="Casting on a Patagonian river" loading="lazy" />
-          <figcaption>Casting, walk &amp; wade</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838051/trout-fly-fishing-puerto-natales-2_aohl8l.jpg" alt="Fly fishing near Puerto Natales" loading="lazy" />
-          <figcaption>Puerto Natales</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837997/sea-trout-fly-fishing-tierra-del-fuego-5_j2ookz.jpg" alt="Sea trout catch in Tierra del Fuego" loading="lazy" />
-          <figcaption>Tierra del Fuego</figcaption>
-        </figure>
-        <figure class="mosaic-item mosaic-large">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837911/fly-fishing-puerto-natales-9_dbgxkk.jpg" alt="Fly fishing near Puerto Natales" loading="lazy" />
-          <figcaption>Puerto Natales</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837914/fly-fishing-puerto-natales-10_bkb0r2.jpg" alt="Angler on the water near Puerto Natales" loading="lazy" />
-          <figcaption>On the water</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837906/IMG_0434_gf4xmt.jpg" alt="Fly fishing in Patagonia" loading="lazy" />
-          <figcaption>Patagonia</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837882/Copia_de_86100_ch1jax.jpg" alt="Wild trout catch in Patagonia" loading="lazy" />
-          <figcaption>A day's catch</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837896/IMG_0018_eugv8u.jpg" alt="Fly fishing in Patagonia" loading="lazy" />
-          <figcaption>On the water</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837884/fly_fishing_punta_arenas_2_z44r6x.jpg" alt="Fly fishing in Punta Arenas" loading="lazy" />
-          <figcaption>Punta Arenas</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761267066/torres-del-paine-fly-fishing-5_lafrso.jpg" alt="Fly fishing below Torres del Paine" loading="lazy" />
-          <figcaption>Torres del Paine</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838074/trout-fly-fishing-punta-arenas-7_ysti5z.jpg" alt="Trout catch in Punta Arenas" loading="lazy" />
-          <figcaption>A wild trout</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837995/IMG_9210_qelujz.jpg" alt="Fly fishing in Patagonia" loading="lazy" />
-          <figcaption>On the river</figcaption>
-        </figure>
-        <figure class="mosaic-item mosaic-wide">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837931/IMG_0897_oyzyeq.jpg" alt="Fly fishing in Patagonia" loading="lazy" />
-          <figcaption>Patagonia</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838052/trout-fly-fishing-punta-arenas-2_h4fy8i.jpg" alt="Preparing gear before the day" loading="lazy" />
-          <figcaption>Getting ready</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761838007/sea-trout-fly-fishing-tierra-del-fuego-2_gwg1fn.jpg" alt="Reading the water, Tierra del Fuego" loading="lazy" />
-          <figcaption>Reading the water</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837945/IMG_4619_2_x0na0x.jpg" alt="The river at first light, Tierra del Fuego" loading="lazy" />
-          <figcaption>First light</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837894/fly_fishing_tierra_del_fuego_2_vrewdx.jpg" alt="Handling a wild trout with care" loading="lazy" />
-          <figcaption>Careful hands</figcaption>
-        </figure>
-        <figure class="mosaic-item mosaic-large">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837999/sea-trout-fly-fishing-tierra-del-fuego-1_w8cqq7.jpg" alt="Reading the water in Tierra del Fuego" loading="lazy" />
-          <figcaption>Tierra del Fuego</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837996/PHOTO-2023-03-27-21-17-02_stcdeq.jpg" alt="Wading a quiet Patagonian river" loading="lazy" />
-          <figcaption>Wading in</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837895/DSC_0706_x7qkah.jpg" alt="Releasing a trout at the riverbank" loading="lazy" />
-          <figcaption>The release</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837842/38787_w0fwgw.jpg" alt="The steppe and river, Tierra del Fuego" loading="lazy" />
-          <figcaption>The steppe</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837997/sea-trout-fly-fishing-tierra-del-fuego-4_hp9rgh.jpg" alt="Casting on the Río Grande, Tierra del Fuego" loading="lazy" />
-          <figcaption>Río Grande</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837943/IMG_3950_l39lx2.jpg" alt="Guide on the river, Tierra del Fuego" loading="lazy" />
-          <figcaption>On the water</figcaption>
-        </figure>
-        <figure class="mosaic-item">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837888/fly_fishing_punta_arenas_5_ajl0np.jpg" alt="Walking the steppe, rod in hand, Tierra del Fuego" loading="lazy" />
-          <figcaption>Walking the steppe</figcaption>
-        </figure>
-        <figure class="mosaic-item mosaic-wide">
-          <img src="https://res.cloudinary.com/dqbyskmnq/image/upload/v1761837832/14168_spxnzn.jpg" alt="The Río Grande at dusk, Tierra del Fuego" loading="lazy" />
-          <figcaption>Río Grande at dusk</figcaption>
-        </figure>
-      </div>
-    </section>
+.bar {
+  height: 2px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
 
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
-      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
-      <figure class="lightbox-figure">
-        <img class="lightbox-img" id="lightbox-img" src="" alt="" />
-        <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
-      </figure>
-      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo">&#8250;</button>
-    </div>
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
 
-    <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
-      <p class="eyebrow center light">Contact</p>
-      <h2 class="center light">Plan your days on the water</h2>
-      <p class="section-lead light">Tell us your dates and what you're after. We'll build the trip around it.</p>
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
 
-      <div class="contact-links">
-        <a href="mailto:info@pristinewaters.cl" class="contact-chip">Email Us</a>
-        <a href="https://wa.me/56979559776" class="contact-chip" target="_blank">WhatsApp</a>
-        <a href="https://www.instagram.com/pristinewaters_flyfishing" class="contact-chip" target="_blank">Instagram</a>
-        <a href="https://share.google/QXk9CLwFVrV8P8ZTR" class="contact-chip" target="_blank">Google Maps & Reviews</a>
-      </div>
-      <p class="contact-coords">Based in Punta Arenas, Chile · 53° S, 71° W</p>
+  nav#nav-menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--ink);
+    position: absolute;
+    top: 78px;
+    right: 0;
+    width: 250px;
+    border-radius: 0 0 0 6px;
+    display: none;
+    padding: 1.3rem 1.6rem;
+    gap: 1rem;
+  }
 
-      <div class="contact-map">
-        <iframe
-          src="https://www.google.com/maps?q=Pristine+Waters+Fly+Fishing,+Punta+Arenas,+Chile&output=embed"
-          width="100%"
-          height="320"
-          style="border:0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Pristine Waters location, Punta Arenas"
-        ></iframe>
-      </div>
-    </section>
+  nav#nav-menu.active ul {
+    display: flex;
+  }
 
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2026 Pristine Waters — Inspired by Nature, Defined by Experience.</p>
-    </footer>
+  .nav-cta {
+    margin-top: 0.3rem;
+  }
+}
 
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("nav-menu");
-      const header = document.getElementById("main-header");
+/* HERO */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+  width: 100%;
+  overflow: hidden;
+  color: var(--white);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      hamburger.addEventListener("click", () => {
-        const isOpen = navMenu.classList.toggle("active");
-        hamburger.classList.toggle("active");
-        hamburger.setAttribute("aria-expanded", isOpen);
-      });
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
 
-      navMenu.querySelectorAll("a").forEach((link) =>
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("active");
-          hamburger.classList.remove("active");
-          hamburger.setAttribute("aria-expanded", "false");
-        })
-      );
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 36, 54, 0.55) 0%, rgba(11, 36, 54, 0.35) 45%, rgba(11, 36, 54, 0.75) 100%);
+  z-index: 1;
+}
 
-      window.addEventListener("scroll", () => {
-        header.classList.toggle("scrolled", window.scrollY > 20);
-      });
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  padding: 0 1.5rem;
+}
 
-      // GALLERY — scroll reveal
-      const mosaicItems = document.querySelectorAll(".mosaic-item");
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("revealed");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      mosaicItems.forEach((item) => revealObserver.observe(item));
+.hero-text .eyebrow {
+  color: var(--brass-light);
+}
 
-      // GALLERY — lightbox
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const lightboxCaption = document.getElementById("lightbox-caption");
-      const lightboxClose = document.getElementById("lightbox-close");
-      const lightboxPrev = document.getElementById("lightbox-prev");
-      const lightboxNext = document.getElementById("lightbox-next");
+.hero-text h1 {
+  font-size: clamp(2.4rem, 5.4vw, 4.1rem);
+  color: var(--white);
+  margin-bottom: 1.1rem;
+  font-weight: 500;
+}
 
-      const photos = Array.from(mosaicItems).map((item) => ({
-        src: item.querySelector("img").src,
-        alt: item.querySelector("img").alt,
-        caption: item.querySelector("figcaption")?.textContent || "",
-      }));
+.hero-sub {
+  font-size: 1.15rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.92);
+}
 
-      let currentPhoto = 0;
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-      function openLightbox(index) {
-        currentPhoto = index;
-        showPhoto();
-        lightbox.classList.add("active");
-        document.body.style.overflow = "hidden";
-      }
+.cta-btn {
+  display: inline-block;
+  background: var(--brass);
+  color: var(--ink);
+  padding: 0.95rem 1.9rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
 
-      function closeLightbox() {
-        lightbox.classList.remove("active");
-        document.body.style.overflow = "";
-      }
+.cta-btn:hover {
+  background: var(--brass-light);
+  transform: translateY(-1px);
+}
 
-      function showPhoto() {
-        const photo = photos[currentPhoto];
-        lightboxImg.src = photo.src;
-        lightboxImg.alt = photo.alt;
-        lightboxCaption.textContent = photo.caption;
-      }
+.cta-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.92rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.25s ease;
+}
 
-      function nextPhoto() {
-        currentPhoto = (currentPhoto + 1) % photos.length;
-        showPhoto();
-      }
+.cta-link:hover {
+  border-color: var(--white);
+}
 
-      function prevPhoto() {
-        currentPhoto = (currentPhoto - 1 + photos.length) % photos.length;
-        showPhoto();
-      }
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 22px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+}
 
-      mosaicItems.forEach((item, index) => {
-        item.addEventListener("click", () => openLightbox(index));
-      });
+.scroll-cue span {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--brass-light);
+  border-radius: 2px;
+  animation: scrollcue 1.8s ease-in-out infinite;
+}
 
-      lightboxClose.addEventListener("click", closeLightbox);
-      lightboxNext.addEventListener("click", nextPhoto);
-      lightboxPrev.addEventListener("click", prevPhoto);
+@keyframes scrollcue {
+  0% { opacity: 1; top: 6px; }
+  70% { opacity: 0; top: 16px; }
+  100% { opacity: 0; top: 6px; }
+}
 
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
+/* SECTIONS */
+.section {
+  padding: 6rem 2rem;
+}
 
-      document.addEventListener("keydown", (e) => {
-        if (!lightbox.classList.contains("active")) return;
-        if (e.key === "Escape") closeLightbox();
-        if (e.key === "ArrowRight") nextPhoto();
-        if (e.key === "ArrowLeft") prevPhoto();
-      });
-    </script>
-  </body>
-</html>
+.section-lead {
+  max-width: 620px;
+  margin: 0 auto 3rem;
+  color: var(--text-soft);
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.section-lead.light {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.timeline-disclaimer {
+  text-align: center;
+  margin-top: 2.6rem;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: 0.6rem;
+}
+
+h2.light {
+  color: var(--white);
+}
+
+/* ABOUT */
+.about-section {
+  background: var(--mist);
+}
+
+.about-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.about-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.about-copy p {
+  margin-bottom: 1.1rem;
+  color: var(--text-soft);
+}
+
+.badge-row {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
+.badge-row li {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid var(--brass);
+  padding: 0.45rem 0.9rem;
+  border-radius: 2px;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-media img {
+    min-height: 260px;
+  }
+}
+
+/* PROGRAMS */
+.programs-section {
+  background: var(--white);
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.program-item {
+  background: var(--mist);
+  border-radius: 4px;
+  padding: 2rem 1.6rem;
+  border-top: 2px solid var(--brass);
+}
+
+.program-icon {
+  width: 34px;
+  height: 34px;
+  color: var(--brass);
+  margin-bottom: 1.1rem;
+}
+
+.program-item h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.program-item p {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+/* EXPERIENCE / TIMELINE */
+.experience-section {
+  background: var(--ink);
+  background-image: var(--topo);
+  background-size: 500px;
+  background-repeat: repeat;
+}
+
+.timeline {
+  max-width: 1120px;
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 2.2rem;
+  left: 4%;
+  right: 4%;
+  height: 1px;
+  background: rgba(201, 168, 117, 0.35);
+}
+
+.timeline-step {
+  position: relative;
+}
+
+.timeline-time {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--brass-light);
+  margin-bottom: 1.4rem;
+}
+
+.timeline-step h3 {
+  color: var(--white);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-step p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+  .timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+  .timeline::before {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* DESTINATIONS */
+.destinations-section {
+  background: var(--stone);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 4px;
+  width: 340px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(11, 36, 54, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 1.2rem 1.3rem 1.5rem;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.card p {
+  color: var(--text-soft);
+  font-size: 0.94rem;
+}
+
+.season-note {
+  text-align: center;
+  margin-top: 1.4rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  font-style: italic;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.season-note:first-of-type {
+  margin-top: 2.6rem;
+}
+
+.season-note.subtle {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  font-style: normal;
+}
+
+/* GALLERY */
+.gallery-section {
+  background: var(--white);
+}
+
+.mosaic {
+  columns: 4 260px;
+  column-gap: 0.8rem;
+  max-width: 1150px;
+  margin: 2.5rem auto 0;
+}
+
+.mosaic-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  break-inside: avoid;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.mosaic-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mosaic-item:nth-child(2) { transition-delay: 0.08s; }
+.mosaic-item:nth-child(3) { transition-delay: 0.16s; }
+.mosaic-item:nth-child(4) { transition-delay: 0.24s; }
+.mosaic-item:nth-child(5) { transition-delay: 0.32s; }
+.mosaic-item:nth-child(6) { transition-delay: 0.08s; }
+.mosaic-item:nth-child(7) { transition-delay: 0.16s; }
+.mosaic-item:nth-child(8) { transition-delay: 0.24s; }
+.mosaic-item:nth-child(9) { transition-delay: 0.32s; }
+.mosaic-item:nth-child(10) { transition-delay: 0.08s; }
+.mosaic-item:nth-child(11) { transition-delay: 0.16s; }
+.mosaic-item:nth-child(12) { transition-delay: 0.24s; }
+.mosaic-item:nth-child(13) { transition-delay: 0.32s; }
+.mosaic-item:nth-child(14) { transition-delay: 0.08s; }
+.mosaic-item:nth-child(15) { transition-delay: 0.16s; }
+
+.mosaic-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 3px;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.mosaic-item:hover img {
+  transform: scale(1.03);
+}
+
+.mosaic-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 36, 54, 0) 55%, rgba(11, 36, 54, 0.75) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mosaic-item:hover::after {
+  opacity: 1;
+}
+
+.mosaic-item figcaption {
+  position: absolute;
+  left: 0.9rem;
+  bottom: 0.8rem;
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mosaic-item:hover figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+  .mosaic {
+    columns: 2 160px;
+  }
+  .mosaic-item figcaption {
+    opacity: 1;
+    transform: none;
+  }
+  .mosaic-item::after {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(11, 36, 54, 0) 60%, rgba(11, 36, 54, 0.6) 100%);
+  }
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 18, 28, 0.94);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-figure {
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+  color: var(--brass-light);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: var(--brass-light);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.lightbox-nav:hover {
+  background: rgba(201, 168, 117, 0.25);
+  border-color: var(--brass-light);
+}
+
+.lightbox-prev {
+  left: 1.2rem;
+}
+
+.lightbox-next {
+  right: 1.2rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 1.5rem;
+  }
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.8rem;
+  }
+}
+
+/* CONTACT */
+.contact-section {
+  background: var(--ink);
+  background-image: var(--topo);
+  background-size: 500px;
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.contact-chip {
+  background: transparent;
+  border: 1px solid var(--brass-light);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.contact-chip:hover {
+  background: var(--brass-light);
+  color: var(--ink);
+}
+
+.contact-coords {
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.contact-map {
+  max-width: 700px;
+  margin: 2.5rem auto 0;
+  border-radius: 4px;
+  overflow: hidden;
+  filter: grayscale(0.3) contrast(1.05);
+}
+
+.contact-map iframe {
+  display: block;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1.6rem 1rem;
+  background: var(--forest);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+}
+
+/* JOURNAL — INDEX */
+.journal-hero {
+  background: var(--ink);
+  background-image: var(--topo);
+  background-size: 500px;
+  padding: 7rem 2rem 4rem;
+  text-align: center;
+}
+
+.journal-hero .eyebrow {
+  color: var(--brass-light);
+}
+
+.journal-hero h1 {
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.journal-card {
+  display: block;
+  text-decoration: none;
+  background: var(--white);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(11, 36, 54, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.journal-card:hover {
+  transform: translateY(-4px);
+}
+
+.journal-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.journal-card-body {
+  padding: 1.4rem 1.5rem 1.7rem;
+}
+
+.journal-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.5rem;
+}
+
+.journal-card h3 {
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.journal-card p {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.journal-card .read-more {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brass);
+}
+
+/* JOURNAL — ARTICLE PAGES */
+.article-hero {
+  position: relative;
+  height: 46vh;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.article-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 36, 54, 0.15) 0%, rgba(11, 36, 54, 0.85) 100%);
+}
+
+.article-hero-text {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 2rem 2.5rem;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.article-hero-text .eyebrow {
+  color: var(--brass-light);
+}
+
+.article-hero-text h1 {
+  color: var(--white);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.article-byline {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  margin-top: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.article-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.article-text {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.article-text h2 {
+  font-size: 1.4rem;
+  margin-top: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-top: 3rem;
+  margin-bottom: 0.6rem;
+}
+
+.article-text h2:first-of-type,
+.kicker:first-child {
+  margin-top: 0;
+}
+
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 500;
+  float: left;
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  padding-top: 0.3rem;
+  color: var(--ink);
+}
+
+.article-text p {
+  margin-bottom: 1.2rem;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+.article-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  align-items: center;
+  max-width: 960px;
+  margin: 3rem auto;
+}
+
+.article-row.img-right .article-row-img {
+  order: 2;
+}
+
+.article-row img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  display: block;
+}
+
+.article-img-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 960px;
+  margin: 3rem auto;
+  align-items: start;
+}
+
+.article-img-pair img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  display: block;
+}
+
+.article-full-img {
+  max-width: 1000px;
+  margin: 3rem auto;
+}
+
+.article-full-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .article-row,
+  .article-img-pair {
+    grid-template-columns: 1fr;
+  }
+  .article-row.img-right .article-row-img {
+    order: 0;
+  }
+}
+
+.article-pull {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--ink);
+  line-height: 1.4;
+  border-left: 2px solid var(--brass);
+  padding-left: 1.3rem;
+  margin: 2.2rem 0;
+  font-weight: 400;
+}
+
+.article-signoff {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--stone);
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.article-cta {
+  background: var(--ink);
+  background-image: var(--topo);
+  background-size: 500px;
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: 3rem;
+}
+
+.article-cta h2 {
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+
+.article-cta p {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 480px;
+  margin: 0 auto 1.6rem;
+}
+
+.back-link {
+  display: inline-block;
+  max-width: 680px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.5rem;
+  width: 100%;
+  font-size: 0.88rem;
+  color: var(--brass);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* RELATED STORIES */
+.related-stories {
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding: 2rem 1.5rem 0;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  max-width: 680px;
+  margin: 1rem auto 0;
+}
+
+.related-card {
+  display: block;
+  text-decoration: none;
+  background: var(--mist);
+  border-left: 2px solid var(--brass);
+  padding: 1.2rem 1.4rem;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.related-card:hover {
+  background: var(--stone);
+}
+
+.related-card .journal-kicker {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.related-card h3 {
+  font-size: 1.05rem;
+  color: var(--ink);
+}
