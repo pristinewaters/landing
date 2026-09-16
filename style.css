@@ -1195,3 +1195,209 @@ footer {
   font-size: 1.05rem;
   color: var(--ink);
 }
+
+/* POLICIES & FAQS */
+.policies-hero-sub {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.policies-overview {
+  background: var(--white);
+  padding-top: 4rem;
+}
+
+.policies-layout {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.policies-sidebar {
+  position: sticky;
+  top: 100px;
+  background: var(--mist);
+  border-radius: 4px;
+  padding: 1.6rem 1.4rem;
+}
+
+.policies-sidebar .kicker {
+  margin-top: 0;
+}
+
+.policies-sidebar ul {
+  list-style: none;
+  margin-bottom: 1.4rem;
+}
+
+.policies-sidebar li {
+  margin-bottom: 0.65rem;
+}
+
+.policies-sidebar a {
+  text-decoration: none;
+  color: var(--text-soft);
+  font-size: 0.87rem;
+  transition: color 0.2s ease;
+}
+
+.policies-sidebar a:hover {
+  color: var(--brass);
+}
+
+.pdf-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  background: var(--ink);
+  color: var(--white);
+  padding: 0.8rem 1rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: background 0.2s ease;
+}
+
+.pdf-download-btn svg {
+  flex-shrink: 0;
+  color: var(--brass-light);
+}
+
+.pdf-download-btn span {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+}
+
+.pdf-download-btn:hover {
+  background: var(--ink-2);
+}
+
+.policies-main {
+  min-width: 0;
+}
+
+.policies-intro {
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  margin-bottom: 2rem;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.2rem;
+}
+
+.policy-card {
+  display: block;
+  text-decoration: none;
+  background: var(--mist);
+  border-radius: 4px;
+  padding: 1.5rem 1.4rem;
+  border-top: 2px solid var(--brass);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.policy-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(11, 36, 54, 0.1);
+}
+
+.policy-card .program-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--brass);
+  margin-bottom: 0.9rem;
+}
+
+.policy-card h3 {
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.policy-card p {
+  color: var(--text-soft);
+  font-size: 0.87rem;
+  margin-bottom: 0.8rem;
+}
+
+.policy-card .read-more {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brass);
+}
+
+.policies-faq {
+  background: var(--mist);
+}
+
+.policies-accordion {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--stone);
+  padding: 1rem 0;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.98rem;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  color: var(--brass);
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-left: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  margin-top: 0.8rem;
+  margin-bottom: 0;
+  color: var(--text-soft);
+}
+
+@media (max-width: 860px) {
+  .policies-layout {
+    grid-template-columns: 1fr;
+  }
+  .policies-sidebar {
+    position: static;
+  }
+  .policies-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+  .policy-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
